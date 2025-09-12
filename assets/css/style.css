@@ -84,3 +84,9 @@ img{max-width:100%;display:block}
 .slide-content h1{font-size:1.8rem}
 .slide-content p{font-size:1rem}
 }
+
+/* --- Footer logo sizing fix --- */
+.footer .brand img {
+  max-height: 40px;   /* keeps it compact */
+  width: auto;        /* keep proportions */
+}
