@@ -102,3 +102,21 @@ a{color:inherit}
 
 /* Section dividers for breathing room */
 .section .divider{height:1px;background:rgba(255,255,255,.06);margin:48px 0}
+
+/* --- Section image sizing (prevents huge images) --- */
+.section img.rounded{
+  width:100%;
+  max-height:420px;
+  object-fit:cover;   /* crops nicely, no distortion */
+  object-position:center;
+}
+
+/* Fine-tune team and contact image crops if needed */
+#team img.rounded{
+  max-height:360px;
+  object-position:50% 30%;
+}
+#contact img.rounded{
+  max-height:360px;
+}
+
