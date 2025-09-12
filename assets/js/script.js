@@ -14,7 +14,6 @@
   if(slider){
     const slides = Array.from(slider.querySelectorAll('.slide'));
     if(slides.length){
-      // Ensure controls/dots exist
       let controls = slider.querySelector('.slider-controls');
       if(!controls){
         controls = document.createElement('div');
@@ -29,12 +28,11 @@
       if(!next){ next = document.createElement('button'); next.className='next'; next.textContent='›'; controls.append(next); }
       if(!dotsWrap){ dotsWrap = document.createElement('div'); dotsWrap.className='dots'; controls.append(dotsWrap); }
 
-      // Build dots
       const dots = slides.map((_, i)=>{
         const b = document.createElement('button');
         if(i===0) b.classList.add('active');
-        dotsWrap.appendChild(b);
         b.addEventListener('click', ()=>go(i,true));
+        dotsWrap.appendChild(b);
         return b;
       });
 
