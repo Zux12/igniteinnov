@@ -1,11 +1,83 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>IgniteInnov Ventures</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>IgniteInnov — Innovating the Future, Igniting Possibilities</title>
+<meta name="description" content="IgniteInnov is a multidisciplinary innovation company at the intersection of biotechnology, AI, and digital solutions. We collaborate to build impactful products and research." />
+
+<!-- Open Graph / Social -->
+<meta property="og:title" content="IgniteInnov — Innovating the Future, Igniting Possibilities" />
+<meta property="og:description" content="Biotech R&D, AI & Digital Solutions, and Open Collaboration." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://igniteinnov.com/" />
+<meta property="og:site_name" content="IgniteInnov" />
+<meta property="og:image" content="https://igniteinnov.com/assets/img/banner.jpg" />
+<link rel="icon" href="/assets/img/logo.png" />
+
+<link rel="preload" href="/assets/img/banner.jpg" as="image">
+<link rel="preload" href="/assets/img/banner2.jpg" as="image">
+<link rel="preload" href="/assets/img/banner3.jpg" as="image">
+
+<link rel="stylesheet" href="/assets/css/style.css" />
 </head>
 <body>
-  <h1>Welcome to IgniteInnov Ventures</h1>
-  <p>Our new website is coming soon!</p>
-</body>
+<!-- NAV -->
+<header class="nav">
+<div class="container nav-inner">
+<a href="#home" class="logo">
+<img src="/assets/img/logo.png" alt="IgniteInnov logo" />
+<span>IgniteInnov</span>
+</a>
+<nav class="menu">
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#innovation">Innovation</a>
+<a href="#projects">Projects</a>
+<a href="#team">Team</a>
+<a href="#contact">Contact</a>
+<a href="/certificates.html">Certificates</a>
+</nav>
+<button id="menuToggle" class="hamburger" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
+<span></span><span></span><span></span>
+</button>
+</div>
+<nav id="mobileMenu" class="mobile-menu" hidden>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#innovation">Innovation</a>
+<a href="#projects">Projects</a>
+<a href="#team">Team</a>
+<a href="#contact">Contact</a>
+<a href="/certificates.html">Certificates</a>
+</nav>
+</header>
+
+<!-- HERO SLIDER -->
+<section id="home" class="hero">
+<div class="slider" data-autoplay="6000">
+<div class="slide active" style="--bg:url('/assets/img/banner.jpg')">
+<div class="slide-content">
+<h1>Innovating the Future, Igniting Possibilities</h1>
+<p>Biotechnology, AI, and digital solutions—built with partners, for impact.</p>
+<a href="#projects" class="btn">Explore Our Work</a>
+</div>
+</div>
+<div class="slide" style="--bg:url('/assets/img/banner2.jpg')">
+<div class="slide-content">
+<h1>AI & Digital Solutions</h1>
+<p>Predictive analytics, intelligent assistants, dashboards, and platforms.</p>
+<a href="#services" class="btn">See Services</a>
+</div>
+</div>
+<div class="slide" style="--bg:url('/assets/img/banner3.jpg')">
+<div class="slide-content">
+<h1>Collaboration. Innovation. Entrepreneurship.</h1>
+<p>Join open projects, contribute skills, and grow with recognition.</p>
+<a href="#projects" class="btn">Join a Project</a>
+</div>
+</div>
+
+<div class="slider-controls">
+<button class="prev" aria-label="Previous slide">‹</button>
 </html>
