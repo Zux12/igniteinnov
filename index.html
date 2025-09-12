@@ -24,60 +24,235 @@
 <body>
 <!-- NAV -->
 <header class="nav">
-<div class="container nav-inner">
-<a href="#home" class="logo">
-<img src="/assets/img/logo.png" alt="IgniteInnov logo" />
-<span>IgniteInnov</span>
-</a>
-<nav class="menu">
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#innovation">Innovation</a>
-<a href="#projects">Projects</a>
-<a href="#team">Team</a>
-<a href="#contact">Contact</a>
-<a href="/certificates.html">Certificates</a>
-</nav>
-<button id="menuToggle" class="hamburger" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
-<span></span><span></span><span></span>
-</button>
-</div>
-<nav id="mobileMenu" class="mobile-menu" hidden>
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#innovation">Innovation</a>
-<a href="#projects">Projects</a>
-<a href="#team">Team</a>
-<a href="#contact">Contact</a>
-<a href="/certificates.html">Certificates</a>
-</nav>
+  <div class="container nav-inner">
+    <a href="#home" class="logo">
+      <img src="/assets/img/logo.png" alt="IgniteInnov logo" />
+      <span>IgniteInnov</span>
+    </a>
+    <nav class="menu" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#innovation">Innovation</a>
+      <a href="#projects">Projects</a>
+      <a href="#team">Team</a>
+      <a href="#contact">Contact</a>
+      <a href="/certificates.html">Certificates</a>
+    </nav>
+    <button id="menuToggle" class="hamburger" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav id="mobileMenu" class="mobile-menu" hidden aria-label="Mobile">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#innovation">Innovation</a>
+    <a href="#projects">Projects</a>
+    <a href="#team">Team</a>
+    <a href="#contact">Contact</a>
+    <a href="/certificates.html">Certificates</a>
+  </nav>
 </header>
 
 <!-- HERO SLIDER -->
 <section id="home" class="hero">
-<div class="slider" data-autoplay="6000">
-<div class="slide active" style="--bg:url('/assets/img/banner.jpg')">
-<div class="slide-content">
-<h1>Innovating the Future, Igniting Possibilities</h1>
-<p>Biotechnology, AI, and digital solutions—built with partners, for impact.</p>
-<a href="#projects" class="btn">Explore Our Work</a>
-</div>
-</div>
-<div class="slide" style="--bg:url('/assets/img/banner2.jpg')">
-<div class="slide-content">
-<h1>AI & Digital Solutions</h1>
-<p>Predictive analytics, intelligent assistants, dashboards, and platforms.</p>
-<a href="#services" class="btn">See Services</a>
-</div>
-</div>
-<div class="slide" style="--bg:url('/assets/img/banner3.jpg')">
-<div class="slide-content">
-<h1>Collaboration. Innovation. Entrepreneurship.</h1>
-<p>Join open projects, contribute skills, and grow with recognition.</p>
-<a href="#projects" class="btn">Join a Project</a>
-</div>
-</div>
+  <div class="slider" data-autoplay="6000">
+    <div class="slide active" style="--bg:url('/assets/img/banner.jpg')">
+      <div class="slide-content">
+        <h1>Innovating the Future, Igniting Possibilities</h1>
+        <p>Biotechnology, AI, and digital solutions—built with partners, for impact.</p>
+        <a href="#projects" class="btn">Explore Our Work</a>
+      </div>
+    </div>
+    <div class="slide" style="--bg:url('/assets/img/banner2.jpg')">
+      <div class="slide-content">
+        <h1>AI & Digital Solutions</h1>
+        <p>Predictive analytics, intelligent assistants, dashboards, and platforms.</p>
+        <a href="#services" class="btn">See Services</a>
+      </div>
+    </div>
+    <div class="slide" style="--bg:url('/assets/img/banner3.jpg')">
+      <div class="slide-content">
+        <h1>Collaboration. Innovation. Entrepreneurship.</h1>
+        <p>Join open projects, contribute skills, and grow with recognition.</p>
+        <a href="#projects" class="btn">Join a Project</a>
+      </div>
+    </div>
 
-<div class="slider-controls">
-<button class="prev" aria-label="Previous slide">‹</button>
+    <div class="slider-controls">
+      <button class="prev" aria-label="Previous slide">‹</button>
+      <button class="next" aria-label="Next slide">›</button>
+      <div class="dots" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="container grid-2">
+    <div>
+      <h2>About Us</h2>
+      <p>We are a dynamic, innovation-driven company operating at the intersection of education, healthcare, and biotechnology. Our core strengths span academic consultancy, sports rehabilitation, advanced biotech R&D, and AI-powered digital solutions—uniting science and technology to create meaningful impact.</p>
+      <p>From PLGA-based drug delivery and 3D bioprinting to intelligent predictive systems and modern web platforms, we collaborate with universities, startups, and enterprise partners to build practical, high-impact solutions.</p>
+    </div>
+    <div>
+      <img class="rounded" src="/assets/img/about.jpg" alt="Team collaborating in a modern lab/office" />
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="section alt">
+  <div class="container">
+    <h2>Our Services</h2>
+    <div class="cards grid-4">
+      <article class="card">
+        <div class="icon">🧬</div>
+        <h4>Biotech R&D</h4>
+        <p>3D bioprinting, PLGA-based drug delivery, and regenerative solutions supporting precision medicine.</p>
+      </article>
+      <article class="card">
+        <div class="icon">🤖</div>
+        <h4>Digital & AI Solutions</h4>
+        <p>Predictive models, intelligent assistants, data dashboards, and secure web platforms.</p>
+      </article>
+      <article class="card">
+        <div class="icon">🎓</div>
+        <h4>Academic Consultancy</h4>
+        <p>Proposal crafting, publication support, and thesis formatting for postgraduate excellence.</p>
+      </article>
+      <article class="card">
+        <div class="icon">🤝</div>
+        <h4>Innovation & Collaboration</h4>
+        <p>Partnerships with universities, startups, and industry to accelerate idea-to-impact.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- INNOVATION -->
+<section id="innovation" class="section">
+  <div class="container grid-2">
+    <div>
+      <img class="rounded" src="/assets/img/collaboration.jpg" alt="Innovation & collaboration imagery" />
+    </div>
+    <div>
+      <h2>Innovation & Collaboration</h2>
+      <p>We actively organize and participate in research collaborations, joint ventures, hackathons, and knowledge-exchange programs. Our ecosystem brings together multidisciplinary talent to turn concepts into market-ready products and scientific outcomes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS (Completed + Ongoing) -->
+<section id="projects" class="section alt">
+  <div class="container">
+    <h2>Projects</h2>
+
+    <h3 class="mt-lg">Completed Projects</h3>
+    <div id="completed-projects" class="cards grid-3">
+      <article class="card"><h4>3D Bioprinting for Personalized Medicine</h4><p>Patient-specific 3D tissue models to simulate treatment responses, reducing trial-and-error in therapy selection.</p></article>
+      <article class="card"><h4>PLGA-based Smart Drug Delivery Systems</h4><p>Biodegradable PLGA microparticles engineered for controlled release, improving therapeutic precision and safety.</p></article>
+      <article class="card"><h4>Custom Bone Graft Development</h4><p>Bioactive grafts tailored for dental and orthopaedic use, enhancing healing and recovery timelines.</p></article>
+      <article class="card"><h4>Smart Equipment Failure Prediction (AI)</h4><p>AI models to predict malfunctions for preventive maintenance and improved plant reliability.</p></article>
+      <article class="card"><h4>Digital Dashboard for Academic Consultancy</h4><p>Platform for managing proposals, publications, and grant applications with structured workflows.</p></article>
+      <article class="card"><h4>AI-Powered Healthcare Diagnostic Support</h4><p>Intelligent system assisting clinicians with pattern recognition for early detection.</p></article>
+      <article class="card"><h4>Bioprinted Nutritional Supplement Prototype</h4><p>Pilot 3D-printed nutritional formulation tailored to cancer patients for dietary personalization.</p></article>
+      <article class="card"><h4>Early Fault Detection for Industrial Valves</h4><p>Predictive maintenance algorithm reducing downtime and enhancing safety.</p></article>
+      <article class="card"><h4>Collaborative Research Grant Support Platform</h4><p>Structured tooling for grant writing, formatting, and submission tracking.</p></article>
+      <article class="card"><h4>Sports Rehabilitation AI Assistant</h4><p>Smart rehabilitation program integrating sensors and AI to optimize athlete recovery.</p></article>
+    </div>
+
+    <div class="divider"></div>
+
+    <h3 class="mt-xl">Ongoing Projects — Join Us</h3>
+    <p>Contribute to our innovation projects. Join as a collaborator and receive a digital certificate acknowledging your contribution.</p>
+
+    <div id="ongoing-projects" class="cards grid-3">
+      <!-- AI & Digital Innovation (1–10) -->
+      <article class="card"><h4>Smart Financial Market Prediction System</h4><p>Advanced AI models to forecast market behavior for smarter investment and risk decisions.</p><a class="btn ghost" href="mailto:info@igniteinnov.com?subject=Join:%20Smart%20Financial%20Market%20Prediction%20System">Join Project</a></article>
+      <article class="card"><h4>AI-Driven Smart Medication Assistant</h4><p>Predictive algorithms for personalized treatment recommendations and adherence support.</p><a class="btn ghost" href="mailto:info@igniteinnov.com?subject=Join:%20AI-Driven%20Smart%20Medication%20Assistant">Collaborate</a></article>
+      <article class="card"><h4>Predictive Maintenance & Reliability Systems</h4><p>Machine learning tools for early fault detection across industrial assets.</p><a class="btn ghost" href="mailto:info@igniteinnov.com?subject=Join:%20Predictive%20Maintenance%20%26%20Reliability%20Systems">Inquire</a></article>
+      <article class="card"><h4>Healthcare Chatbot for Patient Support</h4><p>Conversational AI to provide reliable health information and triage guidance.</p><a class="btn ghost" href="mailto:info@igniteinnov.com?subject=Join:%20Healthcare%20Chatbot%20for%20Patient%20Support">Join Project</a></article>
+      <article class="card"><h4>AI-Powered Academic Research Reviewer</h4><p>Automating research review to enhance structure, clarity, and citation quality.</p><a class="btn ghost" href="mailto:info@igniteinnov.com?subject=Join:%20AI-Powered%20Academic%20Research%20Reviewer">Collaborate</a></article>
+      <article class="card"><h4>Digital Twin for Smart Manufacturing</h4><p>Virtual replicas to optimize efficiency, safety, and continuous improvement.</p><a class="btn ghost" href="mailto:info@igniteinnov.com?subject=Join:%20Digital%20Twin%20for%20Smart%20Manufacturing">Inquire</a></article>
+      <article class="card"><h4>AI Sentiment Analyzer for Innovation Proposals</h4><p>NLP-driven evaluation based on tone, clarity, and originality for proposal triage.</p><a class="btn ghost" href="mailto:info@igniteinnov.com?subject=Join:%20AI%20Sentiment%20Analyzer%20for%20Innovation%20Proposals">Join Project</a></article>
+      <article class="card"><h4>Energy Efficiency Optimizer</h4><p>AI systems that reduce energy waste in industrial and office environments.</p><a class="btn ghost" href="mailto:info@igniteinnov.com?subject=Join:%20Energy%20Efficiency%20Optimizer">Collaborate</a></article>
+      <article class="card"><h4>AI-Powered Career Coaching Assistant</h4><p>Guidance platform for students and professionals powered by intelligent matching.</p><a class="btn ghost" href="mailto:info@igniteinnov.com?subject=Join:%20AI-Powered%20Career%20Coaching%20Assistant">Inquire</a></article>
+      <article class="card"><h4>AI-driven Grant Application Screening</h4><p>Tools to pre-screen funding applications for quality and compliance.</p><a class="btn ghost" href="mailto:info@igniteinnov.com?subject=Join:%20AI-driven%20Grant%20Application%20Screening">Join Project</a></article>
+
+      <!-- Biotech & Healthcare Innovation (11–20) -->
+      <article class="card"><h4>Stem Cell-based 3D Bioprinting Research</h4><p>Advancing stem-cell integrated bioprinting for musculoskeletal repair.</p><a class="btn ghost" href="mailto:info@igniteinnov.com?subject=Join:%20Stem%20Cell-based%203D%20Bioprinting%20Research">Collaborate</a></article>
+      <article class="card"><h4>PLGA Nanoparticles for Targeted Cancer Therapy</h4><p>Nano-scale carriers for improved delivery of anti-cancer compounds.</p><a class="btn ghost" href="mailto:info@igniteinnov.com?subject=Join:%20PLGA%20Nanoparticles%20for%20Targeted%20Cancer%20Therapy">Inquire</a></article>
+      <article class="card"><h4>Bioprinted Scaffolds for Tissue Regeneration</h4><p>Bioactive scaffolds to support faster healing in dental and orthopaedic care.</p><a class="btn ghost" href="mailto:info@igniteinnov.com?subject=Join:%20Bioprinted%20Scaffolds%20for%20Tissue%20Regeneration">Join Project</a></article>
+      <article class="card"><h4>Personalized Nutrition Assistant for Cancer Patients</h4><p>Digital assistant building tailored dietary plans to support therapy.</p><a class="btn ghost" href="mailto:info@igniteinnov.com?subject=Join:%20Personalized%20Nutrition%20Assistant%20for%20Cancer%20Patients">Collaborate</a></article>
+      <article class="card"><h4>AI-enhanced Disease Progression Predictor</h4><p>Models to forecast disease progression and guide early intervention.</p><a class="btn ghost" href="mailto:info@igniteinnov.com?subject=Join:%20AI-enhanced%20Disease%20Progression%20Predictor">Inquire</a></article>
+      <article class="card"><h4>Smart Biosensor Development (Wearables)</h4><p>Next-gen biosensors for real-time vital sign monitoring.</p><a class="btn ghost" href="mailto:info@igniteinnov.com?subject=Join:%20Smart%20Biosensor%20Development%20(Wearables)">Join Project</a></article>
+      <article class="card"><h4>Automated Data Analysis for Clinical Trials</h4><p>AI tools to accelerate clinical trial data processing and reporting.</p><a class="btn ghost" href="mailto:info@igniteinnov.com?subject=Join:%20Automated%20Data%20Analysis%20for%20Clinical%20Trials">Collaborate</a></article>
+      <article class="card"><h4>Biotech Innovation Sandbox</h4><p>Shared environment for testing novel drug delivery and bioprinting concepts.</p><a class="btn ghost" href="mailto:info@igniteinnov.com?subject=Join:%20Biotech%20Innovation%20Sandbox">Inquire</a></article>
+      <article class="card"><h4>AI-based Infection Spread Predictor</h4><p>Modeling infection patterns to guide targeted prevention strategies.</p><a class="btn ghost" href="mailto:info@igniteinnov.com?subject=Join:%20AI-based%20Infection%20Spread%20Predictor">Join Project</a></article>
+      <article class="card"><h4>Smart IoT Monitoring for Healthcare Facilities</h4><p>Networked IoT system to monitor equipment status and environment safety.</p><a class="btn ghost" href="mailto:info@igniteinnov.com?subject=Join:%20Smart%20IoT%20Monitoring%20for%20Healthcare%20Facilities">Collaborate</a></article>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team" class="section">
+  <div class="container grid-2">
+    <div>
+      <img class="rounded" src="/assets/img/team.jpg" alt="IgniteInnov team (AI generated group photo)" />
+    </div>
+    <div>
+      <h2>Team</h2>
+      <p>Our multidisciplinary team brings together expertise in biotechnology, AI, and digital innovation—united by a mission to ignite possibilities and shape the future.</p>
+      <p><strong>Founder & Managing Director:</strong> Dr. Ir. M. Zurix Mohamed</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section alt">
+  <div class="container grid-2">
+    <div>
+      <h2>Contact Us</h2>
+      <p>Have a question or want to collaborate? Send us a message.</p>
+      <form id="contactForm" class="contact-form">
+        <label>Name<input type="text" id="name" required aria-label="Your name"></label>
+        <label>Email<input type="email" id="email" required aria-label="Your email"></label>
+        <label>Message<textarea id="message" rows="5" required aria-label="Your message"></textarea></label>
+        <button type="submit" class="btn">Send Email</button>
+        <p class="hint">Your message will open in your email app addressed to <strong>info@igniteinnov.com</strong>.</p>
+      </form>
+    </div>
+    <div>
+      <img class="rounded" src="/assets/img/contact.jpg" alt="Contact IgniteInnov" />
+      <div class="contact-details">
+        <p>📧 info@igniteinnov.com</p>
+        <p>📞 +6013-3809006</p>
+        <p>🏢 Q-13-06, Menara Kayangan Damai, Jalan PJU 8/1, Damansara Perdana, 47820, Petaling Jaya, Selangor Darul Ehsan</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="brand">
+      <img src="/assets/img/logo.png" alt="IgniteInnov logo" />
+      <span>IgniteInnov</span>
+    </div>
+    <div class="links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#innovation">Innovation</a>
+      <a href="#projects">Projects</a>
+      <a href="#team">Team</a>
+      <a href="#contact">Contact</a>
+      <a href="/certificates.html">Certificates</a>
+    </div>
+    <div class="copy">© 2025 IgniteInnov Ventures. All rights reserved.</div>
+  </div>
+</footer>
+
+<script src="/assets/js/script.js"></script>
+</body>
 </html>
