@@ -9,6 +9,12 @@ img{max-width:100%;display:block}
 
 .container{max-width:var(--container);margin:0 auto;padding:0 20px}
 .section{padding:80px 0}
+@media (max-width: 600px){
+  .section{
+    padding: 55px 0; /* slightly tighter on mobile */
+  }
+}
+
 .section.alt{background:var(--surface)}
 .section h2{font-size:2.2rem;margin:0 0 16px}
 .mt-lg{margin-top:28px}
@@ -34,6 +40,12 @@ img{max-width:100%;display:block}
 .hero{position:relative}
 .slider{position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.06)}
 .slide{position:relative;min-height:70vh;display:none;align-items:center}
+@media (max-width: 600px){
+  .slide{
+    min-height: 55vh; /* was 70vh */
+  }
+}
+
 .slide.active{display:flex}
 .slide::before{content:"";position:absolute;inset:0;background:var(--bg) no-repeat center/cover;filter:brightness(.65)}
 .slide-content{position:relative;z-index:1;max-width:var(--container);margin:0 auto;padding:0 20px}
@@ -79,6 +91,14 @@ img{max-width:100%;display:block}
 .grid-4{grid-template-columns:1fr 1fr}
 }
 
+@media (max-width: 600px){
+  .grid-3, .grid-4{
+    grid-template-columns: 1fr; /* one column for small phones */
+    gap: 18px;
+  }
+}
+
+
 @media (max-width: 480px){
 .grid-3,.grid-4{grid-template-columns:1fr}
 .slide-content h1{font-size:1.8rem}
@@ -89,4 +109,26 @@ img{max-width:100%;display:block}
 .footer .brand img {
   max-height: 40px;   /* keeps it compact */
   width: auto;        /* keep proportions */
+}
+
+
+@media (max-width: 600px){
+  .cards .card{
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px){
+  .contact-form input,
+  .contact-form textarea{
+    font-size: 1rem;
+    padding: 14px;
+  }
+}
+
+@media (max-width: 600px){
+  .btn{
+    padding: 12px 20px;
+    font-size: 0.95rem;
+  }
 }
