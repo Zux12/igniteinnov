@@ -91,21 +91,38 @@ img{max-width:100%;display:block}
 .grid-4{grid-template-columns:1fr 1fr}
 }
 
-/* Mobile logo fix */
+/* Mobile header layout: logo on top, menu below */
 @media (max-width: 600px){
+  .nav-inner{
+    flex-direction: column;       /* stack items vertically */
+    align-items: flex-start;      /* left-align */
+    justify-content: flex-start;
+    height: auto;                 /* let it grow with content */
+    padding: 8px 20px;            /* a bit of vertical padding */
+    gap: 6px;                     /* space between rows */
+  }
+
+  .logo{
+    margin-bottom: 4px;
+  }
+
   .logo img{
-    height: 22px;          /* slightly smaller logo */
+    height: 26px;                 /* decent logo size on mobile */
   }
 
   .logo span{
-    display: none;         /* hide long text on small screens */
+    font-size: 0.95rem;
+    line-height: 1.1;
   }
 
-  .nav-inner{
-    gap: 8px;
-    height: 56px;          /* a bit more compact */
+  .menu{
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 14px;                    /* smaller gap between links */
+    font-size: 0.9rem;
   }
 }
+
 
 
 
