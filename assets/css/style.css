@@ -94,18 +94,19 @@ img{max-width:100%;display:block}
 /* Mobile logo fix */
 @media (max-width: 600px){
   .logo img{
-    height: 22px !important;  /* smaller logo */
+    height: 22px;          /* slightly smaller logo */
   }
 
   .logo span{
-    font-size: 0.9rem;        /* smaller text */
-    line-height: 1.1;
+    display: none;         /* hide long text on small screens */
   }
 
   .nav-inner{
-    gap: 10px;                /* reduce spacing */
+    gap: 8px;
+    height: 56px;          /* a bit more compact */
   }
 }
+
 
 
 @media (max-width: 600px){
