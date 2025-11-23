@@ -91,6 +91,23 @@ img{max-width:100%;display:block}
 .grid-4{grid-template-columns:1fr 1fr}
 }
 
+/* Mobile logo fix */
+@media (max-width: 600px){
+  .logo img{
+    height: 22px !important;  /* smaller logo */
+  }
+
+  .logo span{
+    font-size: 0.9rem;        /* smaller text */
+    line-height: 1.1;
+  }
+
+  .nav-inner{
+    gap: 10px;                /* reduce spacing */
+  }
+}
+
+
 @media (max-width: 600px){
   .grid-3, .grid-4{
     grid-template-columns: 1fr; /* one column for small phones */
