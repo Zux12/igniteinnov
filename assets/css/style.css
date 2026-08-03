@@ -236,3 +236,25 @@ img{max-width:100%;display:block}
   margin: 8px 14px;
   width: calc(100% - 28px);
 }
+
+
+.promo-btn-packages{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px 28px;
+  background:#000;
+  color:#fff;
+  border:2px solid #000;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:700;
+  transition:all .25s ease;
+}
+
+.promo-btn-packages:hover{
+  background:#222;
+  border-color:#222;
+  color:#fff;
+  transform:translateY(-2px);
+}
