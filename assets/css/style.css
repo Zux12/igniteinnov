@@ -258,3 +258,104 @@ img{max-width:100%;display:block}
   color:#fff;
   transform:translateY(-2px);
 }
+
+/* =====================================================
+   TOP NAVIGATION FIX
+   ===================================================== */
+
+.nav{
+  position:relative;
+  z-index:1000;
+}
+
+.nav .container{
+  max-width:1400px;
+  padding-left:20px;
+  padding-right:20px;
+}
+
+.nav-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  min-height:82px;
+}
+
+/* Keep the logo in one line */
+.nav .logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-shrink:0;
+  text-decoration:none;
+}
+
+.nav .logo img{
+  width:42px;
+  height:42px;
+  object-fit:contain;
+}
+
+.nav .logo span{
+  white-space:nowrap;
+  font-size:0.95rem;
+  line-height:1.2;
+}
+
+/* Keep all desktop links on one row */
+.nav .menu{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  flex-wrap:nowrap;
+  gap:16px;
+  margin-left:auto;
+}
+
+.nav .menu > a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  white-space:nowrap;
+  margin:0;
+  font-size:0.9rem;
+  line-height:1;
+  text-decoration:none;
+}
+
+/* Compact RM99 promotional button */
+.nav .menu .promo-nav-button{
+  padding:11px 18px;
+  border-radius:999px;
+  background:linear-gradient(135deg,#f97316,#fb923c);
+  color:#ffffff;
+  font-size:0.88rem;
+  font-weight:800;
+  box-shadow:0 6px 18px rgba(249,115,22,0.35);
+  flex-shrink:0;
+}
+
+.nav .menu .promo-nav-button:hover{
+  color:#ffffff;
+  transform:translateY(-1px);
+  box-shadow:0 9px 24px rgba(249,115,22,0.45);
+}
+
+@media (max-width:1180px){
+
+  .nav .menu{
+    display:none !important;
+  }
+
+  .nav .hamburger{
+    display:flex !important;
+  }
+}
+
+@media (min-width:1181px){
+
+  .nav .hamburger{
+    display:none !important;
+  }
+}
