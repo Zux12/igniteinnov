@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>RM99 Professional Website Starter — IgniteInno Ventures</title>
+<meta name="description" content="Launch your professional website for only RM99 with IgniteInno Ventures. Suitable for businesses, societies, NGOs, conferences, research groups, and community organisations." />
+<link rel="icon" href="/assets/img/logo.png" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<style>
+:root{--blue:#1d4ed8;--navy:#0f172a;--light:#f8fafc;--soft:#eff6ff;--border:#dbeafe;--text:#1f2937;--muted:#64748b;--green:#15803d;--red:#b91c1c;--gold:#f59e0b}
+body{background:#fff;color:var(--text)}
+.promo-hero{position:relative;overflow:hidden;padding:96px 20px 80px;background:radial-gradient(circle at top right,rgba(59,130,246,.18),transparent 32%),linear-gradient(135deg,#fff 0%,#eff6ff 55%,#e2e8f0 100%)}
+.promo-hero-inner{max-width:940px;margin:auto;text-align:center}.promo-badge{display:inline-block;padding:8px 16px;margin-bottom:18px;border-radius:999px;background:var(--navy);color:#fff;font-size:.86rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}.promo-hero h1{margin:0;color:var(--navy);font-size:clamp(2.4rem,6vw,5rem);line-height:1.03}.promo-price{display:block;margin-top:12px;color:var(--blue);font-size:clamp(3.6rem,9vw,7rem);font-weight:900;line-height:1}.promo-price small{display:block;margin-top:8px;color:var(--muted);font-size:1rem;font-weight:600}.promo-subtitle{max-width:760px;margin:24px auto 0;color:#334155;font-size:1.13rem;line-height:1.75}.promo-actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:30px}.promo-btn-primary,.promo-btn-secondary{display:inline-flex;justify-content:center;align-items:center;min-height:50px;padding:13px 24px;border-radius:10px;font-weight:800;text-decoration:none}.promo-btn-primary{background:var(--blue);color:#fff;box-shadow:0 12px 28px rgba(29,78,216,.22)}.promo-btn-secondary{border:1px solid #cbd5e1;background:#fff;color:var(--navy)}
+.promo-section{padding:74px 20px}.promo-section.alt{background:var(--light)}.promo-section.dark-band{background:var(--navy);color:#fff}.promo-container{max-width:1120px;margin:auto}.promo-section-heading{max-width:760px;margin:0 auto 38px;text-align:center}.promo-section-heading h2{margin-bottom:12px;color:var(--navy);font-size:clamp(1.8rem,4vw,2.7rem)}.dark-band .promo-section-heading h2{color:#fff}.promo-section-heading p{color:var(--muted);line-height:1.7}.dark-band .promo-section-heading p{color:#cbd5e1}.promo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}.promo-card,.promo-offer-box{padding:28px;border:1px solid var(--border);border-radius:18px;background:#fff;box-shadow:0 12px 32px rgba(15,23,42,.06)}.promo-card h3,.promo-offer-box h2{color:var(--navy)}.promo-list{margin:0;padding:0;list-style:none}.promo-list li{position:relative;margin:12px 0;padding-left:28px;line-height:1.55}.promo-list.included li:before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:900}.promo-list.excluded li:before{content:"×";position:absolute;left:0;color:var(--red);font-weight:900}.promo-offer-layout{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:start}.promo-highlight{padding:24px;border-left:5px solid var(--gold);border-radius:14px;background:#fffbeb}.promo-audience{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}.promo-audience span{padding:10px 15px;border:1px solid #cbd5e1;border-radius:999px;background:#fff;color:#334155;font-weight:700}.promo-terms{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.promo-term{padding:22px;border:1px solid #334155;border-radius:15px;background:rgba(255,255,255,.05)}.promo-term h3{margin-top:0;color:#fff}.promo-term p{margin-bottom:0;color:#cbd5e1;line-height:1.6}.promo-final{padding:76px 20px;text-align:center;background:linear-gradient(rgba(15,23,42,.94),rgba(15,23,42,.94)),url('/assets/img/banner3.jpg') center/cover;color:#fff}.promo-final h2{color:#fff;font-size:clamp(2rem,5vw,3.2rem)}.promo-final p{max-width:720px;margin:0 auto 28px;color:#dbeafe;line-height:1.7}.promo-note{margin-top:22px;color:var(--muted);font-size:.92rem}
+.promo-info-box{
+  margin-top:28px;
+  text-align:center;
+}
+
+.promo-info-button{
+  width:42px;
+  height:42px;
+  border:2px solid var(--blue);
+  border-radius:50%;
+  background:#ffffff;
+  color:var(--blue);
+  font-size:1.2rem;
+  font-weight:900;
+  font-family:Georgia,serif;
+  cursor:pointer;
+  box-shadow:0 8px 20px rgba(29,78,216,.15);
+}
+
+.promo-info-button:hover{
+  background:var(--soft);
+}
+
+.promo-info-content{
+  display:none;
+  max-width:760px;
+  margin:18px auto 0;
+  padding:28px;
+  border:1px solid var(--border);
+  border-radius:18px;
+  background:#ffffff;
+  text-align:left;
+  box-shadow:0 12px 32px rgba(15,23,42,.08);
+}
+
+.promo-info-content.show{
+  display:block;
+}
+
+.promo-info-content h3{
+  margin-top:0;
+  color:var(--navy);
+}
+
+.promo-info-content h4{
+  margin-top:26px;
+  margin-bottom:8px;
+  color:var(--navy);
+}
+
+.promo-disclaimer{
+  margin-top:24px;
+  padding:18px;
+  border-left:4px solid var(--gold);
+  border-radius:10px;
+  background:#fffbeb;
+  color:#78350f;
+  line-height:1.65;
+}
+
+  
+@media(max-width:900px){.promo-grid,.promo-offer-layout{grid-template-columns:1fr}}@media(max-width:680px){.promo-hero{padding-top:72px}.promo-terms{grid-template-columns:1fr}.promo-card,.promo-offer-box{padding:22px}}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="/index.html#home" class="logo"><img src="/assets/img/logo.png" alt="IgniteInno Ventures logo" /><span>IGNITEINNO VENTURES</span></a>
+    <nav class="menu" aria-label="Primary">
+      <a href="/index.html#about">About</a><a href="/index.html#services">Services</a><a href="/conference.html">Conference Websites</a><a href="/conference-packages.html">Packages & Pricing</a><a href="/index.html#projects">Projects</a><a href="/index.html#contact">Contact</a>
+    </nav>
+    <button id="menuToggle" class="hamburger" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <nav id="mobileMenu" class="mobile-menu" hidden aria-label="Mobile"><a href="/index.html#about">About</a><a href="/index.html#services">Services</a><a href="/conference.html">Conference Websites</a><a href="/conference-packages.html">Packages & Pricing</a><a href="/index.html#projects">Projects</a><a href="/index.html#contact">Contact</a></nav>
+</header>
+<main>
+<section class="promo-hero">
+  <div class="promo-hero-inner">
+    <span class="promo-badge">Limited-Time Launch Promotion</span>
+    <h1>Professional Website Starter <span class="promo-price">RM99<small>Promotional price</small></span></h1>
+    <p class="promo-subtitle">Launch a clean, professional and mobile-friendly website for your business, society, NGO, association, conference, research group, programme or community organisation.</p>
+    <div class="promo-actions">
+      <a class="promo-btn-primary" href="https://wa.me/60193455154?text=Hello%20IgniteInno%20Ventures%2C%0A%0AMy%20name%20is%20%5BYOUR%20NAME%5D%20from%20%5BBUSINESS%20OR%20ORGANISATION%20NAME%5D.%0A%0AI%20am%20interested%20in%20the%20RM99%20Professional%20Website%20Starter%20promotion.%0A%0AMy%20website%20is%20for%3A%0A%5BBUSINESS%20%2F%20SOCIETY%20%2F%20NGO%20%2F%20CONFERENCE%20%2F%20OTHER%5D%0A%0AMy%20question%3A%0A%5BYOUR%20QUESTION%5D" target="_blank" rel="noopener">Get Your Website for RM99</a>
+      <a class="promo-btn-secondary" href="#included">See What Is Included</a>
+    </div>
+  </div>
+</section>
+<section class="promo-section" id="included"><div class="promo-container"><div class="promo-section-heading"><h2>What You Receive</h2><p>A professional starter website designed to help your organisation establish a clear and credible online presence.</p></div><div class="promo-grid">
+<article class="promo-card"><h3>Professional Presentation</h3><ul class="promo-list included"><li>Professionally designed website</li><li>Template-based layout customised to your identity</li><li>Logo and brand colour integration</li><li>Clean and modern visual presentation</li></ul></article>
+<article class="promo-card"><h3>Core Website Content</h3><ul class="promo-list included"><li>Up to 5 content sections</li><li>Home or welcome section</li><li>About section</li><li>Services, activities or objectives section</li><li>Gallery, highlights or featured information</li></ul></article>
+<article class="promo-card"><h3>Contact and Accessibility</h3><ul class="promo-list included"><li>Mobile-responsive layout</li><li>Contact information</li><li>WhatsApp contact button</li><li>Social media links</li><li>Hosted under an IgniteInno subdomain</li></ul></article>
+</div><p class="promo-note" style="text-align:center;">Example subdomain: <strong>yourorganisation.igniteinnov.com</strong></p></div></section>
+<section class="promo-section alt"><div class="promo-container"><div class="promo-section-heading"><h2>Suitable for Many Types of Organisations</h2><p>This promotion is designed for organisations that need a simple and professional online presence.</p></div><div class="promo-audience"><span>Businesses</span><span>Start-ups</span><span>Societies</span><span>Associations</span><span>NGOs</span><span>Research Groups</span><span>Conferences</span><span>Workshops</span><span>Educational Programmes</span><span>Community Groups</span></div></div></section>
+
+  
+<section class="promo-section">
+  <div class="promo-container">
+
+    <div class="promo-offer-box">
+      <h2>Included in the RM99 Promotion</h2>
+
+      <ul class="promo-list included">
+        <li>Template-based professional website design</li>
+        <li>Up to 5 content sections</li>
+        <li>Responsive design for desktop, tablet and mobile</li>
+        <li>Logo and colour-theme integration</li>
+        <li>About, services, activities or objective content</li>
+        <li>Gallery, highlights or featured information section</li>
+        <li>Contact details and WhatsApp button</li>
+        <li>Social media links</li>
+        <li>Hosting under an IgniteInno subdomain</li>
+        <li>Up to 2 revision rounds</li>
+      </ul>
+    </div>
+
+    <div class="promo-info-box">
+
+      <button
+        type="button"
+        class="promo-info-button"
+        id="promoInfoButton"
+        aria-label="View exclusions and promotional disclaimer"
+        aria-expanded="false">
+        i
+      </button>
+
+      <p class="promo-note">
+        Click the information icon to view exclusions and promotional terms.
+      </p>
+
+      <div class="promo-info-content" id="promoInfoContent">
+
+        <h3>Not Included in the RM99 Promotion</h3>
+
+        <ul class="promo-list excluded">
+          <li>Custom domain name</li>
+          <li>Professional email account</li>
+          <li>Database</li>
+          <li>User registration system</li>
+          <li>Login or authentication system</li>
+          <li>Administrative dashboard</li>
+          <li>Payment portal</li>
+          <li>E-commerce functions</li>
+          <li>Online forms with database storage</li>
+          <li>Custom programming or third-party system integration</li>
+        </ul>
+
+        <h4>Promotional Disclaimer</h4>
+
+        <div class="promo-disclaimer">
+          The RM99 promotional price applies only to a template-based starter
+          website using an IgniteInno subdomain. The client must provide all
+          final text, logos, photographs and required information before
+          development begins.
+
+          <br><br>
+
+          The promotion includes up to five content sections and two reasonable
+          revision rounds. Requests outside the agreed starter scope, including
+          additional pages, major design changes, custom functions, databases,
+          registration systems, payment facilities, custom domains or official
+          email accounts, will be quoted separately.
+
+          <br><br>
+
+          Project acceptance is subject to promotional-slot availability,
+          suitability of the requested content and receipt of complete
+          information from the client. IgniteInno Ventures reserves the right
+          to decline content or projects that are unlawful, misleading,
+          offensive or unsuitable.
+
+          <br><br>
+
+          Hosting, maintenance and continued availability under the IgniteInno
+          subdomain are subject to IgniteInno's hosting arrangements and fair-use
+          requirements. The RM99 payment is non-refundable once design or
+          development work has commenced.
+        </div>
+
+        <div class="promo-highlight" style="margin-top:24px;">
+          <strong>Need more functions?</strong>
+          You may upgrade to include a custom domain, professional email,
+          database, registration system, administrative dashboard, payment
+          portal or fully customised development.
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+  
+  <section class="promo-section dark-band"><div class="promo-container"><div class="promo-section-heading"><h2>Promotion Terms</h2><p>These conditions keep the RM99 package affordable and allow us to deliver it efficiently.</p></div><div class="promo-terms">
+<article class="promo-term"><h3>Client-Supplied Content</h3><p>The client must provide all final text, logos, photographs and relevant organisation information.</p></article>
+<article class="promo-term"><h3>Template-Based Design</h3><p>The website will use a professional starter template customised with the client's logo, colours and content.</p></article>
+<article class="promo-term"><h3>Two Revision Rounds</h3><p>Up to two reasonable revision rounds are included after the first draft is presented.</p></article>
+<article class="promo-term"><h3>Limited Promotional Slots</h3><p>The RM99 rate is promotional and may be limited by availability, project scope and submission of complete content.</p></article>
+</div></div></section>
+<section class="promo-final"><div class="promo-container"><h2>Launch Your Professional Website for RM99</h2><p>Give your business, society, project, event or organisation a professional online presence without paying for functions you do not yet need.</p><a class="promo-btn-primary" href="https://wa.me/60193455154?text=Hello%20IgniteInno%20Ventures%2C%0A%0AMy%20name%20is%20%5BYOUR%20NAME%5D%20from%20%5BBUSINESS%20OR%20ORGANISATION%20NAME%5D.%0A%0AI%20am%20interested%20in%20the%20RM99%20Professional%20Website%20Starter%20promotion.%0A%0AMy%20website%20is%20for%3A%0A%5BBUSINESS%20%2F%20SOCIETY%20%2F%20NGO%20%2F%20CONFERENCE%20%2F%20OTHER%5D%0A%0AMy%20question%3A%0A%5BYOUR%20QUESTION%5D" target="_blank" rel="noopener">WhatsApp IgniteInno</a></div></section>
+</main>
+<footer class="footer"><div class="container footer-inner"><div class="brand"><img src="/assets/img/logo.png" alt="IgniteInno Ventures logo" /><span>IGNITEINNO VENTURES</span></div><div class="links"><a href="/index.html#about">About</a><a href="/index.html#services">Services</a><a href="/conference.html">Conference Websites</a><a href="/conference-packages.html">Packages & Pricing</a><a href="/index.html#contact">Contact</a></div><div class="copy">© 2026 IgniteInno Ventures Sdn Bhd. All rights reserved.</div></div></footer>
+<script src="/assets/js/script.js"></script>
+
+
+<script>
+  const promoInfoButton = document.getElementById("promoInfoButton");
+  const promoInfoContent = document.getElementById("promoInfoContent");
+
+  promoInfoButton.addEventListener("click", function () {
+    const isOpen = promoInfoContent.classList.toggle("show");
+
+    promoInfoButton.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    promoInfoButton.textContent = isOpen ? "×" : "i";
+  });
+</script>
+  
+</body>
+</html>
