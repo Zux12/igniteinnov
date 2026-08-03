@@ -417,40 +417,42 @@ body{background:#fff;color:var(--text)}
 <section class="promo-final"><div class="promo-container"><h2>Launch Your Professional Website for RM99</h2><p>Give your business, society, project, event or organisation a professional online presence without paying for functions you do not yet need.</p><a class="promo-btn-primary" href="https://wa.me/60193455154?text=Hello%20IgniteInno%20Ventures%2C%0A%0AMy%20name%20is%20%5BYOUR%20NAME%5D%20from%20%5BBUSINESS%20OR%20ORGANISATION%20NAME%5D.%0A%0AI%20am%20interested%20in%20the%20RM99%20Professional%20Website%20Starter%20promotion.%0A%0AMy%20website%20is%20for%3A%0A%5BBUSINESS%20%2F%20SOCIETY%20%2F%20NGO%20%2F%20CONFERENCE%20%2F%20OTHER%5D%0A%0AMy%20question%3A%0A%5BYOUR%20QUESTION%5D" target="_blank" rel="noopener">WhatsApp IgniteInno</a></div></section>
 </main>
 <footer class="footer"><div class="container footer-inner"><div class="brand"><img src="/assets/img/logo.png" alt="IgniteInno Ventures logo" /><span>IGNITEINNO VENTURES</span></div><div class="links"><a href="/index.html#about">About</a><a href="/index.html#services">Services</a><a href="/conference.html">Conference Websites</a><a href="/conference-packages.html">Packages & Pricing</a><a href="/index.html#contact">Contact</a></div><div class="copy">© 2026 IgniteInno Ventures Sdn Bhd. All rights reserved.</div></div></footer>
-<script src="/assets/js/script.js"></script>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-  /* Mobile navigation */
+  <script>
+(function () {
   const menuButton = document.getElementById("menuToggle");
   const mobileMenu = document.getElementById("mobileMenu");
 
   if (menuButton && mobileMenu) {
-    menuButton.addEventListener("click", function () {
-      const menuIsOpen = !mobileMenu.hasAttribute("hidden");
+    menuButton.addEventListener("click", function (event) {
+      event.preventDefault();
+      event.stopPropagation();
 
-      if (menuIsOpen) {
-        mobileMenu.setAttribute("hidden", "");
-        menuButton.setAttribute("aria-expanded", "false");
-        menuButton.setAttribute("aria-label", "Open menu");
-      } else {
+      const isCurrentlyHidden = mobileMenu.hasAttribute("hidden");
+
+      if (isCurrentlyHidden) {
         mobileMenu.removeAttribute("hidden");
+        mobileMenu.style.display = "flex";
         menuButton.setAttribute("aria-expanded", "true");
         menuButton.setAttribute("aria-label", "Close menu");
+      } else {
+        mobileMenu.setAttribute("hidden", "");
+        mobileMenu.style.display = "none";
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", "Open menu");
       }
     });
 
     mobileMenu.querySelectorAll("a").forEach(function (link) {
       link.addEventListener("click", function () {
         mobileMenu.setAttribute("hidden", "");
+        mobileMenu.style.display = "none";
         menuButton.setAttribute("aria-expanded", "false");
         menuButton.setAttribute("aria-label", "Open menu");
       });
     });
   }
 
-  /* Promotional information button */
   const promoInfoButton = document.getElementById("promoInfoButton");
   const promoInfoContent = document.getElementById("promoInfoContent");
 
@@ -466,8 +468,7 @@ document.addEventListener("DOMContentLoaded", function () {
       promoInfoButton.textContent = isOpen ? "×" : "i";
     });
   }
-
-});
+})();
 </script>
   
 </body>
