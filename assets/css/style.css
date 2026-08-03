@@ -359,3 +359,12 @@ img{max-width:100%;display:block}
     display:none !important;
   }
 }
+.mobile-menu .promo-mobile-link{
+  background:#f97316;
+  color:#ffffff;
+  font-weight:800;
+  border-radius:8px;
+  margin:8px 14px;
+  padding:13px 16px;
+  text-align:center;
+}
