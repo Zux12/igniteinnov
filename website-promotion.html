@@ -75,6 +75,68 @@ body{background:#fff;color:var(--text)}
 
   
 @media(max-width:900px){.promo-grid,.promo-offer-layout{grid-template-columns:1fr}}@media(max-width:680px){.promo-hero{padding-top:72px}.promo-terms{grid-template-columns:1fr}.promo-card,.promo-offer-box{padding:22px}}
+
+
+
+
+.promo-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.promo-showcase-card {
+  overflow: hidden;
+  border: 1px solid #dbeafe;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.promo-showcase-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 42px rgba(15, 23, 42, 0.14);
+}
+
+.promo-showcase-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.promo-showcase-content {
+  padding: 22px;
+}
+
+.promo-showcase-content h3 {
+  margin: 0 0 8px;
+  color: var(--promo-navy);
+}
+
+.promo-showcase-content p {
+  margin: 0;
+  color: var(--promo-muted);
+  line-height: 1.65;
+}
+
+.promo-showcase-note {
+  max-width: 760px;
+  margin: 30px auto 0;
+  padding: 18px 22px;
+  border-left: 4px solid var(--promo-blue);
+  border-radius: 12px;
+  background: var(--promo-soft-blue);
+  color: #334155;
+  line-height: 1.65;
+}
+
+@media (max-width: 760px) {
+  .promo-showcase-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -106,6 +168,108 @@ body{background:#fff;color:var(--text)}
 <article class="promo-card"><h3>Contact and Accessibility</h3><ul class="promo-list included"><li>Mobile-responsive layout</li><li>Contact information</li><li>WhatsApp contact button</li><li>Social media links</li><li>Hosted under an IgniteInno subdomain</li></ul></article>
 </div><p class="promo-note" style="text-align:center;">Example subdomain: <strong>yourorganisation.igniteinnov.com</strong></p></div></section>
 <section class="promo-section alt"><div class="promo-container"><div class="promo-section-heading"><h2>Suitable for Many Types of Organisations</h2><p>This promotion is designed for organisations that need a simple and professional online presence.</p></div><div class="promo-audience"><span>Businesses</span><span>Start-ups</span><span>Societies</span><span>Associations</span><span>NGOs</span><span>Research Groups</span><span>Conferences</span><span>Workshops</span><span>Educational Programmes</span><span>Community Groups</span></div></div></section>
+
+
+<section class="promo-section">
+  <div class="promo-container">
+
+    <div class="promo-section-heading">
+      <h2>Different Styles. Same RM99 Value.</h2>
+      <p>
+        Your website can be styled to suit your organisation, industry, event,
+        audience and preferred visual identity.
+      </p>
+    </div>
+
+    <div class="promo-showcase-grid">
+
+      <article class="promo-showcase-card">
+        <img
+          src="/assets/img/rm99/rm99-society.jpg"
+          alt="Professional website example for a society or association"
+          loading="lazy">
+
+        <div class="promo-showcase-content">
+          <h3>Society and Association Style</h3>
+          <p>
+            A clean and welcoming layout suitable for societies, clubs,
+            associations, educational groups and community organisations.
+          </p>
+        </div>
+      </article>
+
+      <article class="promo-showcase-card">
+        <img
+          src="/assets/img/rm99/rm99-creative-company.jpg"
+          alt="Professional creative business website example"
+          loading="lazy">
+
+        <div class="promo-showcase-content">
+          <h3>Creative Business Style</h3>
+          <p>
+            A modern corporate layout suitable for consultants, agencies,
+            service providers, start-ups and professional businesses.
+          </p>
+        </div>
+      </article>
+
+      <article class="promo-showcase-card">
+        <img
+          src="/assets/img/rm99/rm99-government-conference.jpg"
+          alt="Government and conference website example"
+          loading="lazy">
+
+        <div class="promo-showcase-content">
+          <h3>Government and Conference Style</h3>
+          <p>
+            A structured and official-looking layout for forums, conferences,
+            institutional programmes and government-supported initiatives.
+          </p>
+        </div>
+      </article>
+
+      <article class="promo-showcase-card">
+        <img
+          src="/assets/img/rm99/rm99-ngo.jpg"
+          alt="Professional NGO website example"
+          loading="lazy">
+
+        <div class="promo-showcase-content">
+          <h3>NGO and Community Style</h3>
+          <p>
+            A warm, mission-focused layout suitable for NGOs, foundations,
+            volunteer groups and social-impact organisations.
+          </p>
+        </div>
+      </article>
+
+      <article class="promo-showcase-card">
+        <img
+          src="/assets/img/rm99/rm99-corporate-company.jpg"
+          alt="Professional corporate company website example"
+          loading="lazy">
+
+        <div class="promo-showcase-content">
+          <h3>Corporate Company Style</h3>
+          <p>
+            A polished corporate design suitable for SMEs, consulting firms,
+            engineering companies and professional service providers.
+          </p>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="promo-showcase-note">
+      <strong>Important:</strong>
+      These images are design examples showing possible website styles.
+      The final RM99 website will use a template-based layout customised with
+      the client's logo, colours, text and images. Exact layouts, images and
+      features may vary according to the selected template and supplied content.
+    </div>
+
+  </div>
+</section>  
 
   
 <section class="promo-section">
@@ -189,7 +353,7 @@ body{background:#fff;color:var(--text)}
           Hosting, maintenance and continued availability under the IgniteInno
           subdomain are subject to IgniteInno's hosting arrangements and fair-use
           requirements. The RM99 payment is non-refundable once design or
-          development work has commenced.
+          development work has commenced. This promotional package includes 6 months of website hosting under an IgniteInno subdomain.
         </div>
 
         <div class="promo-highlight" style="margin-top:24px;">
