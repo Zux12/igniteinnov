@@ -425,3 +425,26 @@ img{max-width:100%;display:block}
     width: 100%;
   }
 }
+
+/* ===== FINAL MOBILE MENU FIX ===== */
+
+.mobile-menu[hidden]{
+    display:none !important;
+}
+
+.mobile-menu:not([hidden]){
+    display:flex !important;
+    flex-direction:column !important;
+}
+
+@media (max-width:1180px){
+
+    .menu{
+        display:none !important;
+    }
+
+    .hamburger{
+        display:flex !important;
+    }
+
+}
