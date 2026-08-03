@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Conference Website Packages & Pricing | IgniteInno Ventures</title>
+  <meta name="description" content="Explore IgniteInno Ventures conference website packages, from essential event websites to fully customised conference management platforms." />
+
+  <meta property="og:title" content="Conference Website Packages & Pricing | IgniteInno Ventures" />
+  <meta property="og:description" content="Three scalable conference website packages from RM500 to RM60,000." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://igniteinnov.com/conference-packages.html" />
+  <meta property="og:site_name" content="IgniteInno Ventures" />
+  <meta property="og:image" content="https://igniteinnov.com/assets/img/banner3.jpg" />
+
+  <link rel="icon" href="/assets/img/logo.png" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+  <style>
+    :root {
+      --package-navy: #101d36;
+      --package-navy-soft: #1c2f50;
+      --package-blue: #1769aa;
+      --package-cyan: #29a7c6;
+      --package-gold: #d7a83d;
+      --package-light: #f5f8fc;
+      --package-white: #ffffff;
+      --package-text: #243247;
+      --package-muted: #65738a;
+      --package-border: #dce5ef;
+      --package-shadow: 0 18px 45px rgba(16, 29, 54, 0.10);
+    }
+
+    html { scroll-behavior: smooth; }
+    body { background: var(--package-white); color: var(--package-text); }
+
+    .package-hero {
+      position: relative;
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background:
+        linear-gradient(100deg, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.91) 52%, rgba(16,29,54,0.68) 100%),
+        url('/assets/img/banner3.jpg') center/cover no-repeat;
+    }
+
+    .package-hero::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 8px;
+      background: linear-gradient(90deg, var(--package-blue), var(--package-cyan), var(--package-gold));
+    }
+
+    .package-hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      padding: 90px 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border: 1px solid rgba(23, 105, 170, 0.22);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.88);
+      color: var(--package-blue);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .package-hero h1 {
+      max-width: 730px;
+      margin: 20px 0 18px;
+      color: var(--package-navy);
+      font-size: clamp(2.45rem, 5vw, 4.9rem);
+      line-height: 1.03;
+      letter-spacing: -0.045em;
+    }
+
+    .package-hero p {
+      max-width: 690px;
+      margin: 0 0 28px;
+      color: #44536a;
+      font-size: 1.12rem;
+      line-height: 1.8;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn-dark {
+      background: var(--package-navy);
+      color: #fff !important;
+      border: 1px solid var(--package-navy);
+    }
+
+    .btn-dark:hover { background: var(--package-blue); border-color: var(--package-blue); }
+
+    .pricing-section { padding: 86px 0 96px; background: var(--package-light); }
+    .section-heading { max-width: 780px; margin: 0 auto 48px; text-align: center; }
+    .section-heading h2 { margin-bottom: 14px; color: var(--package-navy); font-size: clamp(2rem, 4vw, 3rem); }
+    .section-heading p { color: var(--package-muted); font-size: 1.05rem; line-height: 1.75; }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .pricing-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      overflow: hidden;
+      border: 1px solid var(--package-border);
+      border-radius: 24px;
+      background: var(--package-white);
+      box-shadow: var(--package-shadow);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .pricing-card:hover { transform: translateY(-7px); box-shadow: 0 24px 55px rgba(16,29,54,.16); }
+
+    .pricing-card.featured {
+      border: 2px solid var(--package-blue);
+      transform: scale(1.025);
+    }
+
+    .pricing-card.featured:hover { transform: scale(1.025) translateY(-7px); }
+
+    .card-ribbon {
+      position: absolute;
+      top: 18px;
+      right: -42px;
+      width: 170px;
+      padding: 8px 0;
+      transform: rotate(38deg);
+      background: var(--package-gold);
+      color: var(--package-navy);
+      text-align: center;
+      font-size: .72rem;
+      font-weight: 900;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .pricing-card-top { padding: 30px 28px 24px; border-bottom: 1px solid var(--package-border); }
+    .tier-label { color: var(--package-blue); font-size: .78rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+    .pricing-card h3 { margin: 9px 0 8px; color: var(--package-navy); font-size: 1.55rem; }
+    .price { margin: 18px 0 8px; color: var(--package-navy); font-size: clamp(1.8rem, 3vw, 2.45rem); font-weight: 900; line-height: 1.1; }
+    .price-note { color: var(--package-muted); font-size: .88rem; }
+
+    .delivery {
+      display: inline-flex;
+      margin-top: 16px;
+      padding: 8px 11px;
+      border-radius: 9px;
+      background: #edf5fb;
+      color: var(--package-blue);
+      font-weight: 800;
+      font-size: .86rem;
+    }
+
+    .pricing-card-body { display: flex; flex: 1; flex-direction: column; padding: 26px 28px 30px; }
+    .recommended { min-height: 48px; margin: 0 0 18px; color: var(--package-muted); line-height: 1.55; }
+    .includes-title { margin: 0 0 14px; color: var(--package-navy); font-weight: 900; }
+
+    .feature-list { display: grid; gap: 11px; margin: 0 0 28px; padding: 0; list-style: none; }
+    .feature-list li { position: relative; padding-left: 25px; color: #3a4960; line-height: 1.45; }
+    .feature-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--package-blue);
+      font-weight: 900;
+    }
+
+    .pricing-card .btn { width: 100%; margin-top: auto; text-align: center; }
+    .featured .pricing-card-top { background: linear-gradient(145deg, #f8fcff, #eef6fc); }
+
+    .comparison-section { padding: 88px 0; background: #fff; }
+    .table-wrap { overflow-x: auto; border: 1px solid var(--package-border); border-radius: 20px; box-shadow: var(--package-shadow); }
+    .comparison-table { width: 100%; min-width: 820px; border-collapse: collapse; background: white; }
+    .comparison-table th, .comparison-table td { padding: 17px 20px; border-bottom: 1px solid var(--package-border); text-align: center; }
+    .comparison-table th:first-child, .comparison-table td:first-child { text-align: left; font-weight: 700; }
+    .comparison-table thead th { background: var(--package-navy); color: white; }
+    .comparison-table thead th:nth-child(3) { background: var(--package-blue); }
+    .yes { color: #16815b; font-weight: 900; }
+    .optional { color: #a46c00; font-weight: 800; }
+    .no { color: #a0aaba; }
+
+    .notice-section { padding: 80px 0; background: linear-gradient(135deg, var(--package-navy), var(--package-navy-soft)); color: white; }
+    .notice-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 46px; align-items: center; }
+    .notice-section h2 { color: white; margin-bottom: 16px; }
+    .notice-section p { color: #d7e2f0; line-height: 1.8; }
+    .notice-box { padding: 26px; border: 1px solid rgba(255,255,255,.16); border-radius: 20px; background: rgba(255,255,255,.07); }
+    .notice-box ul { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px 24px; margin: 0; padding-left: 20px; color: #e5edf7; }
+
+    .cta-section { padding: 85px 0; background: #f7fafc; text-align: center; }
+    .cta-card { padding: 54px 30px; border: 1px solid var(--package-border); border-radius: 28px; background: white; box-shadow: var(--package-shadow); }
+    .cta-card h2 { color: var(--package-navy); }
+    .cta-card p { max-width: 710px; margin: 0 auto 26px; color: var(--package-muted); line-height: 1.75; }
+
+    @media (max-width: 980px) {
+      .pricing-grid { grid-template-columns: 1fr; max-width: 700px; margin: 0 auto; }
+      .pricing-card.featured, .pricing-card.featured:hover { transform: none; }
+      .notice-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 700px) {
+      .package-hero { min-height: auto; background: linear-gradient(160deg, #ffffff 0%, #f0f6fb 68%, #dceaf4 100%); }
+      .package-hero-content { padding: 72px 0; }
+      .hero-actions { flex-direction: column; }
+      .hero-actions .btn { width: 100%; text-align: center; }
+      .pricing-section, .comparison-section, .notice-section, .cta-section { padding: 64px 0; }
+      .notice-box ul { grid-template-columns: 1fr; }
+      .pricing-card-top, .pricing-card-body { padding-left: 22px; padding-right: 22px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="/index.html#home" class="logo">
+      <img src="/assets/img/logo.png" alt="IgniteInno Ventures logo" />
+      <span>IGNITEINNO VENTURES</span>
+    </a>
+
+    <nav class="menu" aria-label="Primary">
+      <a href="/index.html#about">About</a>
+      <a href="/index.html#services">Services</a>
+      <a href="/conference.html">Conference Websites</a>
+      <a href="/conference-packages.html" aria-current="page">Packages & Pricing</a>
+      <a href="/index.html#innovation">Innovation</a>
+      <a href="/index.html#projects">Projects</a>
+      <a href="/index.html#contact">Contact</a>
+    </nav>
+
+    <button id="menuToggle" class="hamburger" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <nav id="mobileMenu" class="mobile-menu" hidden aria-label="Mobile">
+    <a href="/index.html#about">About</a>
+    <a href="/index.html#services">Services</a>
+    <a href="/conference.html">Conference Websites</a>
+    <a href="/conference-packages.html">Packages & Pricing</a>
+    <a href="/index.html#innovation">Innovation</a>
+    <a href="/index.html#projects">Projects</a>
+    <a href="/index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <section class="package-hero">
+    <div class="container">
+      <div class="package-hero-content">
+        <span class="eyebrow">Conference Digital Solutions</span>
+        <h1>Conference Website Packages & Pricing</h1>
+        <p>
+          Scalable digital solutions for workshops, scientific meetings, university conferences,
+          medical congresses, and large professional events. Choose a package based on your event's
+          size, workflow, branding, and management requirements.
+        </p>
+        <div class="hero-actions">
+          <a href="#packages" class="btn btn-dark">Explore Packages</a>
+          <a href="https://wa.me/60193455154?text=Hello%20IgniteInno%20Ventures%2C%0A%0AMy%20name%20is%20%5BYOUR%20NAME%5D%20from%20%5BORGANISATION%20NAME%5D.%0A%0AI%20would%20like%20to%20enquire%20about%20your%20conference%20website%20packages.%0A%0AMy%20question%3A%0A%5BYOUR%20QUESTION%5D" class="btn ghost" target="_blank" rel="noopener">WhatsApp Our Team</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="packages" class="pricing-section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">Three Scalable Tiers</span>
+        <h2>Choose the Right Level for Your Event</h2>
+        <p>Each project is quoted according to the selected features, design complexity, event size, content readiness, and required integrations.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <article class="pricing-card">
+          <div class="pricing-card-top">
+            <div class="tier-label">Tier 1</div>
+            <h3>Conference Website Essentials</h3>
+            <div class="price">RM500 – RM15,000</div>
+            <div class="price-note">Professional event information website</div>
+            <div class="delivery">Delivery: 4–8 weeks</div>
+          </div>
+          <div class="pricing-card-body">
+            <p class="recommended">Recommended for workshops, seminars, student events, faculty programmes, and small conferences.</p>
+            <p class="includes-title">Core features may include:</p>
+            <ul class="feature-list">
+              <li>Mobile-responsive conference website</li>
+              <li>Home and event overview pages</li>
+              <li>About the conference</li>
+              <li>Important dates</li>
+              <li>Programme or schedule page</li>
+              <li>Speaker profiles</li>
+              <li>Committee information</li>
+              <li>Sponsor and exhibitor display</li>
+              <li>Venue and location information</li>
+              <li>Contact details and WhatsApp enquiry link</li>
+              <li>Social media integration</li>
+              <li>Standard website branding</li>
+              <li>Basic technical support</li>
+            </ul>
+            <a class="btn ghost" target="_blank" rel="noopener" href="https://wa.me/60193455154?text=Hello%20IgniteInno%20Ventures%2C%0A%0AMy%20name%20is%20%5BYOUR%20NAME%5D%20from%20%5BORGANISATION%20NAME%5D.%0A%0AI%20am%20interested%20in%20Tier%201%20%E2%80%93%20Conference%20Website%20Essentials.%0A%0AMy%20question%3A%0A%5BYOUR%20QUESTION%5D">Enquire About Tier 1</a>
+          </div>
+        </article>
+
+        <article class="pricing-card featured">
+          <div class="card-ribbon">Most Popular</div>
+          <div class="pricing-card-top">
+            <div class="tier-label">Tier 2</div>
+            <h3>Conference Management Platform</h3>
+            <div class="price">RM15,000 – RM30,000</div>
+            <div class="price-note">Website with participant and abstract management</div>
+            <div class="delivery">Delivery: up to 12 weeks</div>
+          </div>
+          <div class="pricing-card-body">
+            <p class="recommended">Recommended for national conferences, scientific meetings, medical events, and professional societies.</p>
+            <p class="includes-title">Everything in Tier 1, plus:</p>
+            <ul class="feature-list">
+              <li>Customised conference website design</li>
+              <li>Custom domain name</li>
+              <li>Official conference email account</li>
+              <li>Dedicated conference database</li>
+              <li>Online participant registration</li>
+              <li>Abstract submission system</li>
+              <li>Participant database management</li>
+              <li>Administrative dashboard</li>
+              <li>Programme and session management</li>
+              <li>Speaker, committee, and sponsor management</li>
+              <li>Automated email notifications</li>
+              <li>Registration and submission status tracking</li>
+              <li>Website analytics and enhanced security</li>
+              <li>Priority technical support</li>
+              <li>Post-conference website archive</li>
+            </ul>
+            <a class="btn" target="_blank" rel="noopener" href="https://wa.me/60193455154?text=Hello%20IgniteInno%20Ventures%2C%0A%0AMy%20name%20is%20%5BYOUR%20NAME%5D%20from%20%5BORGANISATION%20NAME%5D.%0A%0AI%20am%20interested%20in%20Tier%202%20%E2%80%93%20Conference%20Management%20Platform.%0A%0AMy%20question%3A%0A%5BYOUR%20QUESTION%5D">Enquire About Tier 2</a>
+          </div>
+        </article>
+
+        <article class="pricing-card">
+          <div class="pricing-card-top">
+            <div class="tier-label">Tier 3</div>
+            <h3>Professional Custom Platform</h3>
+            <div class="price">RM30,000 – RM60,000</div>
+            <div class="price-note">Advanced, fully customised event ecosystem</div>
+            <div class="delivery">Delivery: up to 16 weeks</div>
+          </div>
+          <div class="pricing-card-body">
+            <p class="recommended">Recommended for international congresses, multi-track events, government conferences, and large professional meetings.</p>
+            <p class="includes-title">Everything in Tier 2, plus:</p>
+            <ul class="feature-list">
+              <li>Fully bespoke platform development</li>
+              <li>Custom domain and official email accounts</li>
+              <li>Dedicated conference database</li>
+              <li>Complete event branding integration</li>
+              <li>Integrated payment portal</li>
+              <li>Online payment and payment-status tracking</li>
+              <li>Reviewer management and abstract scoring</li>
+              <li>AI-assisted abstract assessment options</li>
+              <li>Automated acceptance and rejection letters</li>
+              <li>Certificate generation</li>
+              <li>QR code attendance management</li>
+              <li>Multi-track programme management</li>
+              <li>Sponsor and exhibitor management portal</li>
+              <li>Multiple administrator roles</li>
+              <li>Real-time reporting and analytics dashboard</li>
+              <li>Cloud deployment and custom integrations</li>
+              <li>Dedicated technical support</li>
+            </ul>
+            <a class="btn btn-dark" target="_blank" rel="noopener" href="https://wa.me/60193455154?text=Hello%20IgniteInno%20Ventures%2C%0A%0AMy%20name%20is%20%5BYOUR%20NAME%5D%20from%20%5BORGANISATION%20NAME%5D.%0A%0AI%20am%20interested%20in%20Tier%203%20%E2%80%93%20Professional%20Custom%20Platform.%0A%0AMy%20question%3A%0A%5BYOUR%20QUESTION%5D">Request Professional Proposal</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="comparison-section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">Package Comparison</span>
+        <h2>Compare the Main Capabilities</h2>
+        <p>The table provides a high-level guide. Final inclusions will be confirmed in the formal proposal and quotation.</p>
+      </div>
+
+      <div class="table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Tier 1</th>
+              <th>Tier 2</th>
+              <th>Tier 3</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Price Range</td><td>RM500–RM15,000</td><td>RM15,000–RM30,000</td><td>RM30,000–RM60,000</td></tr>
+            <tr><td>Delivery Period</td><td>4–8 weeks</td><td>Up to 12 weeks</td><td>Up to 16 weeks</td></tr>
+            <tr><td>Responsive Conference Website</td><td class="yes">Included</td><td class="yes">Included</td><td class="yes">Included</td></tr>
+            <tr><td>Customised Design</td><td>Standard</td><td class="yes">Customised</td><td class="yes">Fully Bespoke</td></tr>
+            <tr><td>Custom Domain</td><td class="no">Not included</td><td class="yes">Included</td><td class="yes">Included</td></tr>
+            <tr><td>Official Conference Email</td><td class="no">Not included</td><td class="yes">Included</td><td class="yes">Included</td></tr>
+            <tr><td>Dedicated Database</td><td class="no">Not included</td><td class="yes">Included</td><td class="yes">Included</td></tr>
+            <tr><td>Online Registration</td><td class="no">Not included</td><td class="yes">Included</td><td class="yes">Included</td></tr>
+            <tr><td>Abstract Submission</td><td class="no">Not included</td><td class="yes">Included</td><td class="yes">Included</td></tr>
+            <tr><td>Administrative Dashboard</td><td class="no">Not included</td><td class="yes">Included</td><td class="yes">Advanced</td></tr>
+            <tr><td>Reviewer Portal</td><td class="no">Not included</td><td class="optional">Optional</td><td class="yes">Included</td></tr>
+            <tr><td>Payment Portal</td><td class="no">Not included</td><td class="no">Not included</td><td class="yes">Included</td></tr>
+            <tr><td>AI-Assisted Assessment</td><td class="no">Not included</td><td class="optional">Optional</td><td class="yes">Available</td></tr>
+            <tr><td>QR Attendance & Certificates</td><td class="no">Not included</td><td class="optional">Optional</td><td class="yes">Included</td></tr>
+            <tr><td>Technical Support</td><td>Basic</td><td>Priority</td><td>Dedicated</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="notice-section">
+    <div class="container notice-grid">
+      <div>
+        <span class="eyebrow">Important Information</span>
+        <h2>Package Prices Are Estimated Ranges</h2>
+        <p>
+          The stated ranges are intended as a guide and do not represent a fixed quotation. A formal proposal will be prepared after we understand your event requirements, workflow, content, timeline, and technical needs.
+        </p>
+      </div>
+      <div class="notice-box">
+        <ul>
+          <li>Number of website pages</li>
+          <li>Selected platform modules</li>
+          <li>Design and branding complexity</li>
+          <li>Registration workflow</li>
+          <li>Abstract and reviewer requirements</li>
+          <li>Payment portal requirements</li>
+          <li>Number of administrative users</li>
+          <li>Hosting and email requirements</li>
+          <li>Delivery schedule</li>
+          <li>Post-event support</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-card">
+        <span class="eyebrow">Tailored to Your Event</span>
+        <h2>Need a Custom Conference Solution?</h2>
+        <p>
+          Tell us your conference name, expected number of participants, event date, required features, and estimated budget. Our team will recommend the most suitable package and prepare a personalised proposal.
+        </p>
+        <a class="btn" target="_blank" rel="noopener" href="https://wa.me/60193455154?text=Hello%20IgniteInno%20Ventures%2C%0A%0AMy%20name%20is%20%5BYOUR%20NAME%5D%20from%20%5BORGANISATION%20NAME%5D.%0A%0AConference%20name%3A%20%5BCONFERENCE%20NAME%5D%0AEvent%20date%3A%20%5BDATE%5D%0AExpected%20participants%3A%20%5BNUMBER%5D%0AEstimated%20budget%3A%20%5BBUDGET%5D%0A%0AMy%20question%3A%0A%5BYOUR%20QUESTION%5D">Request a Custom Proposal</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="brand">
+      <img src="/assets/img/logo.png" alt="IgniteInno Ventures logo" />
+      <span>IGNITEINNO VENTURES</span>
+    </div>
+    <div class="links">
+      <a href="/index.html#about">About</a>
+      <a href="/index.html#services">Services</a>
+      <a href="/conference.html">Conference Websites</a>
+      <a href="/conference-packages.html">Packages</a>
+      <a href="/index.html#contact">Contact</a>
+    </div>
+    <div class="copy">© 2026 IgniteInno Ventures Sdn Bhd. All rights reserved.</div>
+  </div>
+</footer>
+
+<script src="/assets/js/script.js"></script>
+</body>
+</html>
