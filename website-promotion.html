@@ -159,30 +159,217 @@ body{background:#fff;color:var(--text)}
   }
 }
 
+
+/* Same mobile navigation design as index.html */
+@media screen and (max-width: 900px) {
+
+  header.nav {
+    position: relative !important;
+    width: 100% !important;
+  }
+
+  header.nav .nav-inner {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: nowrap !important;
+    width: 100% !important;
+    min-height: 82px !important;
+    padding: 10px 20px !important;
+    box-sizing: border-box !important;
+  }
+
+  header.nav .logo {
+    display: flex !important;
+    align-items: center !important;
+    flex: 0 1 auto !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+  }
+
+  header.nav .logo img {
+    width: 58px !important;
+    height: 58px !important;
+    object-fit: contain !important;
+    flex-shrink: 0 !important;
+  }
+
+  header.nav .logo span {
+    margin-left: 10px !important;
+    font-size: 1rem !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+  }
+
+  header.nav .menu {
+    display: none !important;
+  }
+
+  header.nav .hamburger {
+    position: absolute !important;
+    top: 50% !important;
+    right: 18px !important;
+    transform: translateY(-50%) !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: 48px !important;
+    height: 48px !important;
+    min-width: 48px !important;
+    padding: 10px !important;
+    margin: 0 !important;
+
+    border: 0 !important;
+    background: transparent !important;
+    cursor: pointer !important;
+    z-index: 1002 !important;
+  }
+
+  header.nav .hamburger span {
+    display: block !important;
+    width: 27px !important;
+    height: 3px !important;
+    margin: 3px 0 !important;
+    padding: 0 !important;
+    border-radius: 4px !important;
+    background: #ffffff !important;
+  }
+
+  header.nav .mobile-menu {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1001 !important;
+
+    width: 100% !important;
+    padding: 12px 18px 20px !important;
+    box-sizing: border-box !important;
+
+    background: #0b0f17 !important;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35) !important;
+  }
+
+  header.nav .mobile-menu[hidden] {
+    display: none !important;
+  }
+
+  header.nav .mobile-menu:not([hidden]) {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+  }
+
+  header.nav .mobile-menu a,
+  header.nav .mobile-menu a:link,
+  header.nav .mobile-menu a:visited {
+    display: block !important;
+    width: 100% !important;
+    padding: 13px 14px !important;
+    box-sizing: border-box !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+  }
+
+  header.nav .mobile-menu a:hover,
+  header.nav .mobile-menu a:active {
+    color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+  }
+
+  header.nav .mobile-menu .promo-mobile-link,
+  header.nav .mobile-menu .promo-mobile-link:visited {
+    margin-top: 6px !important;
+    border-radius: 999px !important;
+    background: linear-gradient(135deg, #f59e0b, #f97316) !important;
+    color: #ffffff !important;
+    font-weight: 800 !important;
+    text-align: center !important;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  header.nav .logo span {
+    font-size: 0.88rem !important;
+  }
+
+  header.nav .logo img {
+    width: 52px !important;
+    height: 52px !important;
+  }
+
+  header.nav .nav-inner {
+    padding-right: 76px !important;
+  }
+}
+
+  
 </style>
 </head>
 <body>
+
+
 <header class="nav">
   <div class="container nav-inner">
-    <a href="/index.html#home" class="logo"><img src="/assets/img/logo.png" alt="IgniteInno Ventures logo" /><span>IGNITEINNO VENTURES</span></a>
+
+    <a href="/index.html#home" class="logo">
+      <img src="/assets/img/logo.png" alt="IgniteInno Ventures logo" />
+      <span>IGNITEINNO VENTURES</span>
+    </a>
+
     <nav class="menu" aria-label="Primary">
-      <a href="/index.html#about">About</a><a href="/index.html#services">Services</a>
-      
+      <a href="/index.html#about">About</a>
+      <a href="/index.html#services">Services</a>
+
       <a href="/website-promotion.html" class="promo-nav-button">
-  🔥 RM99 Website Promotion
-</a>
-      
-      <a href="/conference.html">Conference Websites</a><a href="/conference-packages.html">Packages & Pricing</a><a href="/index.html#projects">Projects</a><a href="/index.html#contact">Contact</a>
+        🔥 RM99 Website Promotion
+      </a>
+
+      <a href="/conference.html">Conference Websites</a>
+      <a href="/conference-packages.html">Packages & Pricing</a>
+      <a href="/index.html#projects">Projects</a>
+      <a href="/index.html#contact">Contact</a>
     </nav>
-    <button id="menuToggle" class="hamburger" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false"><span></span><span></span><span></span></button>
+
+    <button
+      id="menuToggle"
+      class="hamburger"
+      aria-label="Open menu"
+      aria-controls="mobileMenu"
+      aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
   </div>
-  <nav id="mobileMenu" class="mobile-menu" hidden aria-label="Mobile"><a href="/index.html#about">About</a><a href="/index.html#services">Services</a>
-  <a href="/website-promotion.html" class="promo-mobile-link">
-  🔥 RM99 Website Promotion
-</a>  
-    
-    <a href="/conference.html">Conference Websites</a><a href="/conference-packages.html">Packages & Pricing</a><a href="/index.html#projects">Projects</a><a href="/index.html#contact">Contact</a></nav>
+
+  <nav
+    id="mobileMenu"
+    class="mobile-menu"
+    hidden
+    aria-label="Mobile">
+
+    <a href="/index.html#about">About</a>
+    <a href="/index.html#services">Services</a>
+
+    <a href="/website-promotion.html" class="promo-mobile-link">
+      🔥 RM99 Website Promotion
+    </a>
+
+    <a href="/conference.html">Conference Websites</a>
+    <a href="/conference-packages.html">Packages & Pricing</a>
+    <a href="/index.html#projects">Projects</a>
+    <a href="/index.html#contact">Contact</a>
+
+  </nav>
 </header>
+  
+  
 <main>
 <section class="promo-hero">
   <div class="promo-hero-inner">
@@ -418,41 +605,10 @@ body{background:#fff;color:var(--text)}
 </main>
 <footer class="footer"><div class="container footer-inner"><div class="brand"><img src="/assets/img/logo.png" alt="IgniteInno Ventures logo" /><span>IGNITEINNO VENTURES</span></div><div class="links"><a href="/index.html#about">About</a><a href="/index.html#services">Services</a><a href="/conference.html">Conference Websites</a><a href="/conference-packages.html">Packages & Pricing</a><a href="/index.html#contact">Contact</a></div><div class="copy">© 2026 IgniteInno Ventures Sdn Bhd. All rights reserved.</div></div></footer>
 
+<script src="/assets/js/script.js"></script>
+
   <script>
-(function () {
-  const menuButton = document.getElementById("menuToggle");
-  const mobileMenu = document.getElementById("mobileMenu");
-
-  if (menuButton && mobileMenu) {
-    menuButton.addEventListener("click", function (event) {
-      event.preventDefault();
-      event.stopPropagation();
-
-      const isCurrentlyHidden = mobileMenu.hasAttribute("hidden");
-
-      if (isCurrentlyHidden) {
-        mobileMenu.removeAttribute("hidden");
-        mobileMenu.style.display = "flex";
-        menuButton.setAttribute("aria-expanded", "true");
-        menuButton.setAttribute("aria-label", "Close menu");
-      } else {
-        mobileMenu.setAttribute("hidden", "");
-        mobileMenu.style.display = "none";
-        menuButton.setAttribute("aria-expanded", "false");
-        menuButton.setAttribute("aria-label", "Open menu");
-      }
-    });
-
-    mobileMenu.querySelectorAll("a").forEach(function (link) {
-      link.addEventListener("click", function () {
-        mobileMenu.setAttribute("hidden", "");
-        mobileMenu.style.display = "none";
-        menuButton.setAttribute("aria-expanded", "false");
-        menuButton.setAttribute("aria-label", "Open menu");
-      });
-    });
-  }
-
+document.addEventListener("DOMContentLoaded", function () {
   const promoInfoButton = document.getElementById("promoInfoButton");
   const promoInfoContent = document.getElementById("promoInfoContent");
 
@@ -468,7 +624,7 @@ body{background:#fff;color:var(--text)}
       promoInfoButton.textContent = isOpen ? "×" : "i";
     });
   }
-})();
+});
 </script>
   
 </body>
