@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1"
@@ -9,86 +10,188 @@
 
   <title>IgniteInno Visitor Analytics</title>
 
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
   <style>
+    :root {
+      --bg: #f4f6fa;
+      --panel: #ffffff;
+      --dark: #0b0f17;
+      --dark2: #111827;
+      --text: #172033;
+      --muted: #64748b;
+      --line: #e5e7eb;
+      --green: #16a34a;
+      --red: #dc2626;
+      --blue: #2563eb;
+      --orange: #ea580c;
+      --purple: #7c3aed;
+      --cyan: #0891b2;
+    }
+
     * {
       box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: #f3f5f9;
-      color: #172033;
+      background: var(--bg);
+      color: var(--text);
     }
 
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    /* =========================
+       HEADER
+    ========================== */
+
     .header {
-      background: #0b0f17;
+      background:
+        radial-gradient(circle at 85% 0%, rgba(37,99,235,.18), transparent 34%),
+        linear-gradient(135deg, #070b12, #111827);
       color: #ffffff;
-      padding: 22px;
+      padding: 24px 0;
+      box-shadow: 0 8px 30px rgba(0,0,0,.18);
     }
 
     .header-inner {
-      width: min(1400px, 94%);
+      width: min(1500px, 94%);
       margin: auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 24px;
+    }
+
+    .header-title {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .header-logo {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      object-fit: contain;
+      background: rgba(255,255,255,.08);
+      padding: 5px;
     }
 
     .header h1 {
       margin: 0;
-      font-size: 24px;
+      font-size: 25px;
     }
 
     .header p {
-      margin: 5px 0 0;
+      margin: 6px 0 0;
       color: #cbd5e1;
+      font-size: 14px;
     }
+
+    .header-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .last-updated {
+      font-size: 12px;
+      color: #94a3b8;
+      text-align: right;
+    }
+
+    /* =========================
+       GENERAL
+    ========================== */
 
     .container {
-      width: min(1400px, 94%);
-      margin: 28px auto;
+      width: min(1500px, 94%);
+      margin: 26px auto 60px;
     }
 
-    .login-card,
+    .dashboard {
+      display: none;
+    }
+
+    .panel,
+    .login-card {
+      background: var(--panel);
+      border-radius: 18px;
+      box-shadow: 0 8px 28px rgba(15,23,42,.06);
+      border: 1px solid #edf0f5;
+    }
+
     .panel {
-      background: #ffffff;
-      border-radius: 16px;
       padding: 22px;
-      box-shadow: 0 8px 26px rgba(0, 0, 0, 0.07);
     }
 
     .login-card {
       max-width: 480px;
-      margin: 60px auto;
+      margin: 70px auto;
+      padding: 30px;
     }
 
     .login-card h2 {
-      margin-top: 0;
+      margin: 0 0 8px;
     }
 
-    input {
-      width: 100%;
-      padding: 13px;
-      border: 1px solid #ccd3df;
-      border-radius: 9px;
-      font-size: 15px;
+    .muted {
+      color: var(--muted);
     }
 
     button {
       border: 0;
-      border-radius: 9px;
-      padding: 12px 18px;
-      background: #0b0f17;
-      color: #ffffff;
+      border-radius: 10px;
+      padding: 11px 17px;
+      background: var(--dark);
+      color: white;
       font-weight: 700;
       cursor: pointer;
+      transition: .15s ease;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+      opacity: .92;
     }
 
     button:disabled {
-      opacity: 0.65;
+      opacity: .55;
       cursor: wait;
+      transform: none;
+    }
+
+    .secondary-btn {
+      background: #eef2f7;
+      color: var(--text);
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 12px 13px;
+      border: 1px solid #ccd3df;
+      border-radius: 10px;
+      background: white;
+      color: var(--text);
+      outline: none;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: #94a3b8;
+      box-shadow: 0 0 0 3px rgba(37,99,235,.08);
     }
 
     .login-card button {
@@ -99,35 +202,329 @@
     .error {
       color: #b42318;
       margin-top: 12px;
+      font-size: 14px;
     }
 
-    .dashboard {
-      display: none;
+    /* =========================
+       FILTER BAR
+    ========================== */
+
+    .filter-bar {
+      background: white;
+      padding: 15px 18px;
+      border-radius: 14px;
+      margin-bottom: 20px;
+      box-shadow: 0 6px 20px rgba(15,23,42,.05);
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
     }
 
-    .cards {
+    .filter-left,
+    .filter-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .filter-label {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    .filter-bar select {
+      width: auto;
+      min-width: 155px;
+    }
+
+    .data-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 4px rgba(22,163,74,.10);
+    }
+
+    /* =========================
+       KPI CARDS
+    ========================== */
+
+    .kpi-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 15px;
       margin-bottom: 20px;
     }
 
-    .card {
-      background: #ffffff;
-      border-radius: 14px;
-      padding: 20px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    .kpi {
+      background: white;
+      border-radius: 16px;
+      padding: 19px;
+      box-shadow: 0 7px 22px rgba(15,23,42,.055);
+      border: 1px solid #edf0f5;
+      position: relative;
+      overflow: hidden;
     }
 
-    .card span {
-      display: block;
-      color: #64748b;
-      font-size: 14px;
+    .kpi::after {
+      content: "";
+      position: absolute;
+      right: -22px;
+      top: -22px;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: rgba(37,99,235,.045);
+    }
+
+    .kpi-label {
+      color: var(--muted);
+      font-size: 13px;
       margin-bottom: 8px;
+      font-weight: 700;
     }
 
-    .card strong {
+    .kpi-value {
       font-size: 30px;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    .kpi-sub {
+      margin-top: 7px;
+      font-size: 12px;
+      color: var(--muted);
+      min-height: 16px;
+    }
+
+    .trend-up {
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    .trend-down {
+      color: var(--red);
+      font-weight: 700;
+    }
+
+    .trend-flat {
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    /* =========================
+       SECTION HEADINGS
+    ========================== */
+
+    .section-heading {
+      margin: 28px 0 13px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 15px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-size: 19px;
+    }
+
+    .section-heading p {
+      margin: 5px 0 0;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* =========================
+       CHARTS
+    ========================== */
+
+    .chart-grid-2 {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .chart-grid-equal {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .chart-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .chart-card {
+      background: white;
+      border-radius: 17px;
+      padding: 20px;
+      box-shadow: 0 7px 22px rgba(15,23,42,.055);
+      border: 1px solid #edf0f5;
+      min-height: 320px;
+    }
+
+    .chart-card h3 {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .chart-card .chart-description {
+      color: var(--muted);
+      font-size: 12px;
+      margin: 5px 0 18px;
+    }
+
+    .chart-wrap {
+      position: relative;
+      height: 250px;
+    }
+
+    .chart-wrap.tall {
+      height: 300px;
+    }
+
+    /* =========================
+       RANKINGS / LISTS
+    ========================== */
+
+    .ranking {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .ranking-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .ranking-name {
+      min-width: 0;
+    }
+
+    .ranking-title {
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .ranking-bar-bg {
+      height: 5px;
+      background: #eef2f7;
+      border-radius: 99px;
+      margin-top: 7px;
+      overflow: hidden;
+    }
+
+    .ranking-bar {
+      height: 100%;
+      background: #334155;
+      border-radius: 99px;
+    }
+
+    .ranking-value {
+      font-size: 13px;
+      font-weight: 800;
+      color: #475569;
+    }
+
+    /* =========================
+       INSIGHTS
+    ========================== */
+
+    .insight-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .insight {
+      background: white;
+      padding: 18px;
+      border-radius: 15px;
+      border: 1px solid #edf0f5;
+      box-shadow: 0 6px 20px rgba(15,23,42,.045);
+    }
+
+    .insight-icon {
+      font-size: 23px;
+      margin-bottom: 10px;
+    }
+
+    .insight-title {
+      font-weight: 800;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .insight-text {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    /* =========================
+       ACTIVITY
+    ========================== */
+
+    .activity-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .activity-row {
+      display: grid;
+      grid-template-columns: 145px 105px 1fr 130px;
+      gap: 14px;
+      padding: 11px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 13px;
+      align-items: center;
+    }
+
+    .activity-row:last-child {
+      border-bottom: none;
+    }
+
+    .activity-event {
+      display: inline-block;
+      width: fit-content;
+      padding: 4px 8px;
+      background: #eef2ff;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    /* =========================
+       TABLE
+    ========================== */
+
+    .records-panel {
+      margin-top: 17px;
     }
 
     .toolbar {
@@ -140,17 +537,20 @@
     }
 
     .toolbar input {
-      max-width: 430px;
+      max-width: 470px;
     }
 
     .table-wrap {
       overflow-x: auto;
+      max-height: 660px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      min-width: 1300px;
+      min-width: 1400px;
     }
 
     th,
@@ -158,7 +558,7 @@
       text-align: left;
       padding: 11px;
       border-bottom: 1px solid #e5e7eb;
-      font-size: 13px;
+      font-size: 12px;
       vertical-align: top;
     }
 
@@ -166,35 +566,72 @@
       background: #f8fafc;
       position: sticky;
       top: 0;
+      z-index: 3;
+      color: #475569;
+    }
+
+    tbody tr:hover {
+      background: #fafcff;
     }
 
     .event {
       display: inline-block;
       border-radius: 999px;
-      padding: 4px 9px;
+      padding: 4px 8px;
       background: #eef2ff;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
     }
 
-    .muted {
-      color: #64748b;
-    }
+    /* =========================
+       RESPONSIVE
+    ========================== */
 
-    @media (max-width: 900px) {
-      .cards {
-        grid-template-columns: repeat(2, 1fr);
+    @media(max-width:1100px) {
+      .kpi-grid {
+        grid-template-columns: repeat(2,1fr);
       }
 
-      .header-inner {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-    }
-
-    @media (max-width: 520px) {
-      .cards {
+      .chart-grid-2,
+      .chart-grid-equal {
         grid-template-columns: 1fr;
+      }
+
+      .chart-grid-3,
+      .insight-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+    }
+
+    @media(max-width:700px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .header-actions {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .kpi-grid,
+      .chart-grid-3,
+      .insight-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .activity-row {
+        grid-template-columns: 1fr;
+        gap: 5px;
+      }
+
+      .filter-left,
+      .filter-right {
+        width: 100%;
+      }
+
+      .filter-bar select {
+        width: 100%;
       }
     }
   </style>
@@ -203,25 +640,56 @@
 <body>
 
 <header class="header">
+
   <div class="header-inner">
-    <div>
-      <h1>IgniteInno Visitor Analytics</h1>
-      <p>Website visitor activity dashboard</p>
+
+    <div class="header-title">
+
+      <img
+        class="header-logo"
+        src="/assets/img/logo.png"
+        alt="IgniteInno"
+        onerror="this.style.display='none'"
+      >
+
+      <div>
+        <h1>IgniteInno Visitor Intelligence</h1>
+
+        <p>
+          Website traffic, behaviour, engagement and visitor analytics
+        </p>
+      </div>
+
     </div>
 
-    <button
-      id="logoutButton"
-      type="button"
-      style="display:none"
-    >
-      Log Out
-    </button>
+    <div class="header-actions">
+
+      <div
+        id="lastUpdated"
+        class="last-updated"
+        style="display:none"
+      ></div>
+
+      <button
+        id="logoutButton"
+        type="button"
+        style="display:none"
+      >
+        Log Out
+      </button>
+
+    </div>
+
   </div>
+
 </header>
 
 <main class="container">
 
+  <!-- LOGIN -->
+
   <section id="loginSection" class="login-card">
+
     <h2>Administrator Access</h2>
 
     <p class="muted">
@@ -235,57 +703,544 @@
       autocomplete="current-password"
     >
 
-    <button id="loginButton" type="button">
-      Open Dashboard
+    <button
+      id="loginButton"
+      type="button"
+    >
+      Open Analytics Dashboard
     </button>
 
-    <div id="loginError" class="error"></div>
+    <div
+      id="loginError"
+      class="error"
+    ></div>
+
   </section>
 
-  <section id="dashboard" class="dashboard">
 
-    <div class="cards">
-      <div class="card">
-        <span>Total Records</span>
-        <strong id="totalRecords">0</strong>
+  <!-- DASHBOARD -->
+
+  <section
+    id="dashboard"
+    class="dashboard"
+  >
+
+    <!-- FILTER -->
+
+    <div class="filter-bar">
+
+      <div class="filter-left">
+
+        <span class="filter-label">
+          Analytics period
+        </span>
+
+        <select id="periodFilter">
+          <option value="all">All available data</option>
+          <option value="today">Today</option>
+          <option value="7">Last 7 days</option>
+          <option value="14">Last 14 days</option>
+          <option value="30">Last 30 days</option>
+          <option value="90">Last 90 days</option>
+        </select>
+
       </div>
 
-      <div class="card">
-        <span>Unique Visitors</span>
-        <strong id="uniqueVisitors">0</strong>
+      <div class="filter-right">
+
+        <div class="data-status">
+          <span class="status-dot"></span>
+          Google Sheets connected
+        </div>
+
+        <button
+          id="refreshButton"
+          type="button"
+        >
+          Refresh Data
+        </button>
+
       </div>
 
-      <div class="card">
-        <span>Page Views</span>
-        <strong id="pageViews">0</strong>
+    </div>
+
+
+    <!-- PRIMARY KPIs -->
+
+    <div class="kpi-grid">
+
+      <div class="kpi">
+        <div class="kpi-label">Unique Visitors</div>
+        <div
+          id="uniqueVisitors"
+          class="kpi-value"
+        >
+          0
+        </div>
+        <div
+          id="visitorTrend"
+          class="kpi-sub"
+        ></div>
       </div>
 
-      <div class="card">
-        <span>Recorded Clicks</span>
-        <strong id="recordedClicks">0</strong>
+
+      <div class="kpi">
+        <div class="kpi-label">Sessions</div>
+        <div
+          id="totalSessions"
+          class="kpi-value"
+        >
+          0
+        </div>
+        <div
+          id="sessionTrend"
+          class="kpi-sub"
+        ></div>
+      </div>
+
+
+      <div class="kpi">
+        <div class="kpi-label">Page Views</div>
+        <div
+          id="pageViews"
+          class="kpi-value"
+        >
+          0
+        </div>
+        <div
+          id="pageViewTrend"
+          class="kpi-sub"
+        ></div>
+      </div>
+
+
+      <div class="kpi">
+        <div class="kpi-label">Clicks</div>
+        <div
+          id="recordedClicks"
+          class="kpi-value"
+        >
+          0
+        </div>
+        <div
+          id="clickTrend"
+          class="kpi-sub"
+        ></div>
+      </div>
+
+
+      <div class="kpi">
+        <div class="kpi-label">Average Session Duration</div>
+        <div
+          id="avgDuration"
+          class="kpi-value"
+        >
+          -
+        </div>
+        <div class="kpi-sub">
+          Based on recorded page exits
+        </div>
+      </div>
+
+
+      <div class="kpi">
+        <div class="kpi-label">Pages / Session</div>
+        <div
+          id="pagesPerSession"
+          class="kpi-value"
+        >
+          0
+        </div>
+        <div class="kpi-sub">
+          Average page depth
+        </div>
+      </div>
+
+
+      <div class="kpi">
+        <div class="kpi-label">Engaged Sessions</div>
+        <div
+          id="engagementRate"
+          class="kpi-value"
+        >
+          0%
+        </div>
+        <div class="kpi-sub">
+          Multiple pages, clicks or ≥30 sec
+        </div>
+      </div>
+
+
+      <div class="kpi">
+        <div class="kpi-label">Returning Visitors</div>
+        <div
+          id="returningRate"
+          class="kpi-value"
+        >
+          0%
+        </div>
+        <div class="kpi-sub">
+          Visitors seen in multiple sessions
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- SHORT TERM KPIs -->
+
+    <div class="kpi-grid">
+
+      <div class="kpi">
+        <div class="kpi-label">Visitors Today</div>
+        <div
+          id="visitorsToday"
+          class="kpi-value"
+        >
+          0
+        </div>
+        <div class="kpi-sub">Unique visitors today</div>
+      </div>
+
+
+      <div class="kpi">
+        <div class="kpi-label">Views Today</div>
+        <div
+          id="viewsToday"
+          class="kpi-value"
+        >
+          0
+        </div>
+        <div class="kpi-sub">Page views today</div>
+      </div>
+
+
+      <div class="kpi">
+        <div class="kpi-label">Visitors — Last 7 Days</div>
+        <div
+          id="visitors7"
+          class="kpi-value"
+        >
+          0
+        </div>
+        <div class="kpi-sub">Unique 7-day audience</div>
+      </div>
+
+
+      <div class="kpi">
+        <div class="kpi-label">Bounce Proxy</div>
+        <div
+          id="bounceRate"
+          class="kpi-value"
+        >
+          0%
+        </div>
+        <div class="kpi-sub">
+          Single-page session without recorded click
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- TRENDS -->
+
+    <div class="section-heading">
+      <div>
+        <h2>Traffic Trends</h2>
+        <p>
+          Visitor and page-view movement over time
+        </p>
       </div>
     </div>
 
+
+    <div class="chart-grid-2">
+
+      <div class="chart-card">
+        <h3>Daily Traffic</h3>
+
+        <div class="chart-description">
+          Unique visitors and page views during the last 14 days
+        </div>
+
+        <div class="chart-wrap tall">
+          <canvas id="dailyTrafficChart"></canvas>
+        </div>
+      </div>
+
+
+      <div class="chart-card">
+        <h3>Device Mix</h3>
+
+        <div class="chart-description">
+          Desktop, mobile and tablet usage
+        </div>
+
+        <div class="chart-wrap tall">
+          <canvas id="deviceChart"></canvas>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="chart-grid-equal">
+
+      <div class="chart-card">
+        <h3>Traffic by Hour</h3>
+
+        <div class="chart-description">
+          When visitors are most active
+        </div>
+
+        <div class="chart-wrap">
+          <canvas id="hourlyChart"></canvas>
+        </div>
+      </div>
+
+
+      <div class="chart-card">
+        <h3>Traffic Sources</h3>
+
+        <div class="chart-description">
+          How visitors reach IgniteInno
+        </div>
+
+        <div class="chart-wrap">
+          <canvas id="sourceChart"></canvas>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- CONTENT PERFORMANCE -->
+
+    <div class="section-heading">
+      <div>
+        <h2>Content Performance</h2>
+        <p>
+          Pages and website actions attracting the most interest
+        </p>
+      </div>
+    </div>
+
+
+    <div class="chart-grid-equal">
+
+      <div class="chart-card">
+        <h3>Most Visited Pages</h3>
+
+        <div class="chart-description">
+          Ranked using recorded page views
+        </div>
+
+        <div class="chart-wrap tall">
+          <canvas id="pagesChart"></canvas>
+        </div>
+      </div>
+
+
+      <div class="chart-card">
+
+        <h3>Most Clicked Actions</h3>
+
+        <div class="chart-description">
+          Links and buttons receiving the most interaction
+        </div>
+
+        <div
+          id="topClicksList"
+          class="ranking"
+        ></div>
+
+      </div>
+
+    </div>
+
+
+    <!-- TECHNOLOGY -->
+
+    <div class="section-heading">
+      <div>
+        <h2>Visitor Technology</h2>
+        <p>
+          Browsers, operating systems and audience environment
+        </p>
+      </div>
+    </div>
+
+
+    <div class="chart-grid-3">
+
+      <div class="chart-card">
+
+        <h3>Browsers</h3>
+
+        <div class="chart-description">
+          Browser distribution
+        </div>
+
+        <div
+          id="browserList"
+          class="ranking"
+        ></div>
+
+      </div>
+
+
+      <div class="chart-card">
+
+        <h3>Operating Systems</h3>
+
+        <div class="chart-description">
+          Visitor operating-system distribution
+        </div>
+
+        <div
+          id="osList"
+          class="ranking"
+        ></div>
+
+      </div>
+
+
+      <div class="chart-card">
+
+        <h3>Languages</h3>
+
+        <div class="chart-description">
+          Browser language settings
+        </div>
+
+        <div
+          id="languageList"
+          class="ranking"
+        ></div>
+
+      </div>
+
+    </div>
+
+
+    <div class="chart-grid-equal">
+
+      <div class="chart-card">
+
+        <h3>Timezones</h3>
+
+        <div class="chart-description">
+          Approximate audience region based on browser timezone
+        </div>
+
+        <div
+          id="timezoneList"
+          class="ranking"
+        ></div>
+
+      </div>
+
+
+      <div class="chart-card">
+
+        <h3>Screen Resolutions</h3>
+
+        <div class="chart-description">
+          Most common screen sizes
+        </div>
+
+        <div
+          id="screenList"
+          class="ranking"
+        ></div>
+
+      </div>
+
+    </div>
+
+
+    <!-- AUTOMATED INSIGHTS -->
+
+    <div class="section-heading">
+      <div>
+        <h2>Analytics Insights</h2>
+        <p>
+          Automatically generated observations from current visitor data
+        </p>
+      </div>
+    </div>
+
+
+    <div
+      id="insightGrid"
+      class="insight-grid"
+    ></div>
+
+
+    <!-- RECENT ACTIVITY -->
+
+    <div class="section-heading">
+      <div>
+        <h2>Recent Activity</h2>
+        <p>
+          Latest website events
+        </p>
+      </div>
+    </div>
+
+
     <div class="panel">
+
+      <div
+        id="recentActivity"
+        class="activity-list"
+      ></div>
+
+    </div>
+
+
+    <!-- RAW RECORDS -->
+
+    <div class="section-heading">
+      <div>
+        <h2>Detailed Visitor Records</h2>
+        <p>
+          Complete underlying analytics records
+        </p>
+      </div>
+    </div>
+
+
+    <div class="panel records-panel">
+
       <div class="toolbar">
+
         <input
           id="searchInput"
           type="search"
           placeholder="Search visitor, page, device, referrer or click"
         >
 
-        <button id="refreshButton" type="button">
-          Refresh Records
-        </button>
+        <div class="muted">
+          <span id="recordCount">0</span>
+          records displayed
+        </div>
+
       </div>
 
+
       <div class="table-wrap">
+
         <table>
+
           <thead>
+
             <tr>
               <th>Date and Time</th>
               <th>Event</th>
               <th>Visitor</th>
+              <th>Session</th>
               <th>Page</th>
               <th>Device</th>
               <th>Referrer</th>
@@ -295,307 +1250,2794 @@
               <th>Duration</th>
               <th>Clicked Element</th>
             </tr>
+
           </thead>
 
           <tbody id="visitorTableBody"></tbody>
+
         </table>
+
       </div>
+
     </div>
 
   </section>
 
 </main>
 
+
 <script>
-  const APPS_SCRIPT_URL =
-    "https://script.google.com/macros/s/AKfycbzJzI8TvsjnYVvLXZW49wpJJaaGhakDQPdtTBw6IRaeJ8z0N5slDuirPoZF4Ky6KFZ8nw/exec";
 
-  const loginSection = document.getElementById("loginSection");
-  const dashboard = document.getElementById("dashboard");
-  const loginButton = document.getElementById("loginButton");
-  const logoutButton = document.getElementById("logoutButton");
-  const refreshButton = document.getElementById("refreshButton");
-  const adminPasswordInput =
-    document.getElementById("adminPassword");
-  const loginError = document.getElementById("loginError");
-  const searchInput = document.getElementById("searchInput");
-  const visitorTableBody =
-    document.getElementById("visitorTableBody");
+const APPS_SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfycbzJzI8TvsjnYVvLXZW49wpJJaaGhakDQPdtTBw6IRaeJ8z0N5slDuirPoZF4Ky6KFZ8nw/exec";
 
-  let visitorRecords = [];
-  let currentPassword = "";
 
-  function escapeHtml(value) {
-    return String(value || "")
-      .replaceAll("&", "&amp;")
-      .replaceAll("<", "&lt;")
-      .replaceAll(">", "&gt;")
-      .replaceAll('"', "&quot;")
-      .replaceAll("'", "&#039;");
+/* ==============================================
+   ELEMENTS
+============================================== */
+
+const loginSection =
+  document.getElementById("loginSection");
+
+const dashboard =
+  document.getElementById("dashboard");
+
+const loginButton =
+  document.getElementById("loginButton");
+
+const logoutButton =
+  document.getElementById("logoutButton");
+
+const refreshButton =
+  document.getElementById("refreshButton");
+
+const adminPasswordInput =
+  document.getElementById("adminPassword");
+
+const loginError =
+  document.getElementById("loginError");
+
+const searchInput =
+  document.getElementById("searchInput");
+
+const visitorTableBody =
+  document.getElementById("visitorTableBody");
+
+const periodFilter =
+  document.getElementById("periodFilter");
+
+let visitorRecords = [];
+let analyticsRecords = [];
+let currentPassword = "";
+
+let charts = {};
+
+
+/* ==============================================
+   UTILITIES
+============================================== */
+
+function escapeHtml(value) {
+
+  return String(value || "")
+
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
+
+function parseDate(value) {
+
+  if (!value) {
+    return null;
   }
 
-  function formatDate(value) {
-    if (!value) return "-";
+  const date = new Date(value);
 
-    const date = new Date(value);
+  if (Number.isNaN(date.getTime())) {
+    return null;
+  }
 
-    if (Number.isNaN(date.getTime())) {
-      return String(value);
+  return date;
+}
+
+
+function formatDate(value) {
+
+  const date = parseDate(value);
+
+  if (!date) {
+    return value || "-";
+  }
+
+  return date.toLocaleString();
+}
+
+
+function formatShortDate(date) {
+
+  return date.toLocaleDateString(
+    undefined,
+    {
+      month: "short",
+      day: "numeric"
+    }
+  );
+}
+
+
+function formatDuration(seconds) {
+
+  seconds = Number(seconds || 0);
+
+  if (!seconds) {
+    return "-";
+  }
+
+  if (seconds < 60) {
+    return Math.round(seconds) + " sec";
+  }
+
+  const minutes =
+    Math.floor(seconds / 60);
+
+  const remaining =
+    Math.round(seconds % 60);
+
+  if (minutes < 60) {
+    return minutes + "m " + remaining + "s";
+  }
+
+  const hours =
+    Math.floor(minutes / 60);
+
+  const mins =
+    minutes % 60;
+
+  return hours + "h " + mins + "m";
+}
+
+
+function percent(value) {
+
+  if (!Number.isFinite(value)) {
+    return "0%";
+  }
+
+  return value.toFixed(1) + "%";
+}
+
+
+function uniqueCount(records, field) {
+
+  return new Set(
+    records
+      .map(function(record) {
+        return record[field];
+      })
+      .filter(Boolean)
+  ).size;
+}
+
+
+function countBy(records, getter) {
+
+  const map = {};
+
+  records.forEach(function(record) {
+
+    const key =
+      typeof getter === "function"
+        ? getter(record)
+        : record[getter];
+
+    const normalized =
+      key || "Unknown";
+
+    map[normalized] =
+      (map[normalized] || 0) + 1;
+
+  });
+
+  return map;
+}
+
+
+function sortedEntries(object) {
+
+  return Object.entries(object)
+    .sort(function(a, b) {
+      return b[1] - a[1];
+    });
+}
+
+
+function getPageViews(records) {
+
+  return records.filter(function(record) {
+    return record.eventType === "page_view";
+  });
+}
+
+
+function getClicks(records) {
+
+  return records.filter(function(record) {
+    return record.eventType === "click";
+  });
+}
+
+
+function isSameDay(date1, date2) {
+
+  return (
+    date1.getFullYear() === date2.getFullYear() &&
+    date1.getMonth() === date2.getMonth() &&
+    date1.getDate() === date2.getDate()
+  );
+}
+
+
+/* ==============================================
+   FILTER PERIOD
+============================================== */
+
+function filterByPeriod(records) {
+
+  const period =
+    periodFilter.value;
+
+  if (period === "all") {
+    return [...records];
+  }
+
+  const now =
+    new Date();
+
+  if (period === "today") {
+
+    return records.filter(function(record) {
+
+      const date =
+        parseDate(record.timestamp);
+
+      return date &&
+        isSameDay(date, now);
+    });
+
+  }
+
+  const days =
+    Number(period);
+
+  const threshold =
+    new Date();
+
+  threshold.setDate(
+    threshold.getDate() - days
+  );
+
+  return records.filter(function(record) {
+
+    const date =
+      parseDate(record.timestamp);
+
+    return date &&
+      date >= threshold;
+  });
+}
+
+
+/* ==============================================
+   USER AGENT ANALYSIS
+============================================== */
+
+function getBrowser(userAgent) {
+
+  const ua =
+    String(userAgent || "");
+
+  if (/Edg\//i.test(ua)) {
+    return "Microsoft Edge";
+  }
+
+  if (/OPR\//i.test(ua)) {
+    return "Opera";
+  }
+
+  if (/Chrome\//i.test(ua) &&
+      !/Edg\//i.test(ua)) {
+    return "Chrome";
+  }
+
+  if (/Firefox\//i.test(ua)) {
+    return "Firefox";
+  }
+
+  if (/Safari\//i.test(ua) &&
+      !/Chrome\//i.test(ua)) {
+    return "Safari";
+  }
+
+  return "Other";
+}
+
+
+function getOperatingSystem(userAgent) {
+
+  const ua =
+    String(userAgent || "");
+
+  if (/iPhone|iPad|iPod/i.test(ua)) {
+    return "iOS / iPadOS";
+  }
+
+  if (/Android/i.test(ua)) {
+    return "Android";
+  }
+
+  if (/Windows/i.test(ua)) {
+    return "Windows";
+  }
+
+  if (/Macintosh|Mac OS X/i.test(ua)) {
+    return "macOS";
+  }
+
+  if (/Linux/i.test(ua)) {
+    return "Linux";
+  }
+
+  return "Other";
+}
+
+
+/* ==============================================
+   TRAFFIC SOURCES
+============================================== */
+
+function getTrafficSource(referrer) {
+
+  const ref =
+    String(referrer || "")
+      .toLowerCase();
+
+  if (
+    !ref ||
+    ref === "direct"
+  ) {
+    return "Direct";
+  }
+
+  if (
+    ref.includes("google.")
+  ) {
+    return "Google";
+  }
+
+  if (
+    ref.includes("bing.")
+  ) {
+    return "Bing";
+  }
+
+  if (
+    ref.includes("facebook.") ||
+    ref.includes("fb.")
+  ) {
+    return "Facebook";
+  }
+
+  if (
+    ref.includes("linkedin.")
+  ) {
+    return "LinkedIn";
+  }
+
+  if (
+    ref.includes("instagram.")
+  ) {
+    return "Instagram";
+  }
+
+  if (
+    ref.includes("tiktok.")
+  ) {
+    return "TikTok";
+  }
+
+  if (
+    ref.includes("wa.me") ||
+    ref.includes("whatsapp")
+  ) {
+    return "WhatsApp";
+  }
+
+  if (
+    ref.includes("igniteinnov.com")
+  ) {
+    return "Internal";
+  }
+
+  return "Other Website";
+}
+
+
+/* ==============================================
+   CLICK CLEANUP
+============================================== */
+
+function cleanClickName(value) {
+
+  const text =
+    String(value || "");
+
+  if (!text) {
+    return "Unknown";
+  }
+
+  const parts =
+    text.split("|");
+
+  if (
+    parts.length >= 2 &&
+    parts[1].trim()
+  ) {
+    return parts[1].trim();
+  }
+
+  return text
+    .replace(/^A[^|]*\|?/i, "")
+    .replace(/^BUTTON[^|]*\|?/i, "")
+    .trim()
+    .slice(0, 80);
+}
+
+
+/* ==============================================
+   SESSION ANALYSIS
+============================================== */
+
+function buildSessions(records) {
+
+  const sessions = {};
+
+  records.forEach(function(record) {
+
+    const id =
+      record.sessionId ||
+      "UNKNOWN-" + record.visitorId;
+
+    if (!sessions[id]) {
+
+      sessions[id] = {
+        id: id,
+        visitorId: record.visitorId,
+        pageViews: 0,
+        clicks: 0,
+        duration: 0,
+        events: 0
+      };
+
     }
 
-    return date.toLocaleString();
+    const session =
+      sessions[id];
+
+    session.events++;
+
+    if (
+      record.eventType === "page_view"
+    ) {
+      session.pageViews++;
+    }
+
+    if (
+      record.eventType === "click"
+    ) {
+      session.clicks++;
+    }
+
+    if (
+      record.eventType === "page_exit"
+    ) {
+
+      const duration =
+        Number(record.durationSeconds || 0);
+
+      if (
+        duration > session.duration
+      ) {
+        session.duration = duration;
+      }
+
+    }
+
+  });
+
+  return Object.values(sessions);
+}
+
+
+/* ==============================================
+   TRENDS
+============================================== */
+
+function recordsBetween(
+  records,
+  start,
+  end
+) {
+
+  return records.filter(function(record) {
+
+    const date =
+      parseDate(record.timestamp);
+
+    return (
+      date &&
+      date >= start &&
+      date < end
+    );
+  });
+}
+
+
+function calculateTrend(
+  current,
+  previous
+) {
+
+  if (
+    previous === 0 &&
+    current === 0
+  ) {
+    return {
+      value: 0,
+      text: "No change",
+      className: "trend-flat"
+    };
   }
 
-  function updateSummary(records) {
-    document.getElementById("totalRecords").textContent =
-      records.length;
+  if (
+    previous === 0
+  ) {
+    return {
+      value: 100,
+      text: "↑ New activity",
+      className: "trend-up"
+    };
+  }
 
-    const uniqueVisitorIds = new Set(
-      records
-        .map(function (record) {
-          return record.visitorId;
-        })
-        .filter(Boolean)
+  const difference =
+    ((current - previous) /
+      previous) * 100;
+
+  if (difference > 0) {
+
+    return {
+      value: difference,
+      text:
+        "↑ " +
+        Math.abs(difference)
+          .toFixed(1) +
+        "% vs previous 7 days",
+      className: "trend-up"
+    };
+
+  }
+
+  if (difference < 0) {
+
+    return {
+      value: difference,
+      text:
+        "↓ " +
+        Math.abs(difference)
+          .toFixed(1) +
+        "% vs previous 7 days",
+      className: "trend-down"
+    };
+
+  }
+
+  return {
+    value: 0,
+    text:
+      "No change vs previous 7 days",
+    className: "trend-flat"
+  };
+}
+
+
+function setTrend(
+  elementId,
+  trend
+) {
+
+  const element =
+    document.getElementById(
+      elementId
     );
 
-    document.getElementById("uniqueVisitors").textContent =
-      uniqueVisitorIds.size;
+  element.textContent =
+    trend.text;
 
-    document.getElementById("pageViews").textContent =
-      records.filter(function (record) {
-        return record.eventType === "page_view";
-      }).length;
+  element.className =
+    "kpi-sub " +
+    trend.className;
+}
 
-    document.getElementById("recordedClicks").textContent =
-      records.filter(function (record) {
-        return record.eventType === "click";
-      }).length;
-  }
 
-  function renderTable(records) {
-    if (!records.length) {
-      visitorTableBody.innerHTML = `
-        <tr>
-          <td colspan="11">
-            No visitor records found.
-          </td>
-        </tr>
-      `;
-      return;
+/* ==============================================
+   SUMMARY
+============================================== */
+
+function updateSummary(records) {
+
+  const pageViews =
+    getPageViews(records);
+
+  const clicks =
+    getClicks(records);
+
+  const sessions =
+    buildSessions(records);
+
+  const visitors =
+    uniqueCount(
+      records,
+      "visitorId"
+    );
+
+  const totalSessions =
+    sessions.length;
+
+
+  document
+    .getElementById(
+      "uniqueVisitors"
+    )
+    .textContent =
+      visitors;
+
+
+  document
+    .getElementById(
+      "totalSessions"
+    )
+    .textContent =
+      totalSessions;
+
+
+  document
+    .getElementById(
+      "pageViews"
+    )
+    .textContent =
+      pageViews.length;
+
+
+  document
+    .getElementById(
+      "recordedClicks"
+    )
+    .textContent =
+      clicks.length;
+
+
+  /* Duration */
+
+  const durationSessions =
+    sessions.filter(function(session) {
+      return session.duration > 0;
+    });
+
+  const avgDuration =
+    durationSessions.length
+      ? durationSessions.reduce(
+          function(sum, session) {
+            return sum +
+              session.duration;
+          },
+          0
+        ) /
+        durationSessions.length
+      : 0;
+
+  document
+    .getElementById(
+      "avgDuration"
+    )
+    .textContent =
+      formatDuration(
+        avgDuration
+      );
+
+
+  /* Pages / Session */
+
+  const pagesPerSession =
+    totalSessions
+      ? pageViews.length /
+        totalSessions
+      : 0;
+
+  document
+    .getElementById(
+      "pagesPerSession"
+    )
+    .textContent =
+      pagesPerSession
+        .toFixed(2);
+
+
+  /* Engagement */
+
+  const engagedSessions =
+    sessions.filter(
+      function(session) {
+
+        return (
+          session.pageViews > 1 ||
+          session.clicks > 0 ||
+          session.duration >= 30
+        );
+
+      }
+    ).length;
+
+  const engagementRate =
+    totalSessions
+      ? engagedSessions /
+        totalSessions *
+        100
+      : 0;
+
+  document
+    .getElementById(
+      "engagementRate"
+    )
+    .textContent =
+      percent(
+        engagementRate
+      );
+
+
+  /* Bounce proxy */
+
+  const bounced =
+    sessions.filter(
+      function(session) {
+
+        return (
+          session.pageViews <= 1 &&
+          session.clicks === 0
+        );
+
+      }
+    ).length;
+
+  const bounceRate =
+    totalSessions
+      ? bounced /
+        totalSessions *
+        100
+      : 0;
+
+  document
+    .getElementById(
+      "bounceRate"
+    )
+    .textContent =
+      percent(
+        bounceRate
+      );
+
+
+  /* Returning Visitors */
+
+  const visitorSessions = {};
+
+  sessions.forEach(
+    function(session) {
+
+      const visitor =
+        session.visitorId;
+
+      if (!visitor) {
+        return;
+      }
+
+      if (!visitorSessions[visitor]) {
+        visitorSessions[visitor] =
+          new Set();
+      }
+
+      visitorSessions[visitor]
+        .add(
+          session.id
+        );
+
     }
+  );
 
-    visitorTableBody.innerHTML = records
-      .map(function (record) {
-        return `
-          <tr>
-            <td>${escapeHtml(formatDate(record.timestamp))}</td>
+  const returningVisitors =
+    Object.values(
+      visitorSessions
+    )
+    .filter(
+      function(set) {
+        return set.size > 1;
+      }
+    )
+    .length;
 
-            <td>
-              <span class="event">
-                ${escapeHtml(record.eventType)}
-              </span>
-            </td>
+  const returningRate =
+    visitors
+      ? returningVisitors /
+        visitors *
+        100
+      : 0;
 
-            <td>
-              ${escapeHtml(record.visitorId)}
-            </td>
+  document
+    .getElementById(
+      "returningRate"
+    )
+    .textContent =
+      percent(
+        returningRate
+      );
 
-            <td>
-              <strong>${escapeHtml(record.page)}</strong><br>
-              <span class="muted">
-                ${escapeHtml(record.pageTitle)}
-              </span>
-            </td>
 
-            <td>
-              <strong>${escapeHtml(record.device)}</strong><br>
-              <span class="muted">
-                ${escapeHtml(record.browserDetails)}
-              </span>
-            </td>
+  /* Today */
 
-            <td>${escapeHtml(record.referrer)}</td>
-            <td>${escapeHtml(record.language)}</td>
-            <td>${escapeHtml(record.screenSize)}</td>
-            <td>${escapeHtml(record.timezone)}</td>
+  const now =
+    new Date();
 
-            <td>
-              ${
-                record.durationSeconds
-                  ? escapeHtml(record.durationSeconds) + " seconds"
-                  : "-"
-              }
-            </td>
+  const todayRecords =
+    records.filter(
+      function(record) {
 
-            <td>${escapeHtml(record.clickedElement)}</td>
-          </tr>
-        `;
-      })
-      .join("");
+        const date =
+          parseDate(
+            record.timestamp
+          );
+
+        return date &&
+          isSameDay(
+            date,
+            now
+          );
+
+      }
+    );
+
+  document
+    .getElementById(
+      "visitorsToday"
+    )
+    .textContent =
+      uniqueCount(
+        todayRecords,
+        "visitorId"
+      );
+
+  document
+    .getElementById(
+      "viewsToday"
+    )
+    .textContent =
+      getPageViews(
+        todayRecords
+      ).length;
+
+
+  /* Last 7 days */
+
+  const sevenDaysAgo =
+    new Date();
+
+  sevenDaysAgo.setDate(
+    sevenDaysAgo.getDate() - 7
+  );
+
+  const last7 =
+    records.filter(
+      function(record) {
+
+        const date =
+          parseDate(
+            record.timestamp
+          );
+
+        return date &&
+          date >=
+            sevenDaysAgo;
+
+      }
+    );
+
+  document
+    .getElementById(
+      "visitors7"
+    )
+    .textContent =
+      uniqueCount(
+        last7,
+        "visitorId"
+      );
+
+
+  /* Trend comparison */
+
+  const currentEnd =
+    new Date();
+
+  const currentStart =
+    new Date();
+
+  currentStart.setDate(
+    currentStart.getDate() - 7
+  );
+
+  const previousStart =
+    new Date(
+      currentStart
+    );
+
+  previousStart.setDate(
+    previousStart.getDate() - 7
+  );
+
+  const currentRecords =
+    recordsBetween(
+      visitorRecords,
+      currentStart,
+      currentEnd
+    );
+
+  const previousRecords =
+    recordsBetween(
+      visitorRecords,
+      previousStart,
+      currentStart
+    );
+
+  setTrend(
+    "visitorTrend",
+    calculateTrend(
+      uniqueCount(
+        currentRecords,
+        "visitorId"
+      ),
+      uniqueCount(
+        previousRecords,
+        "visitorId"
+      )
+    )
+  );
+
+  setTrend(
+    "sessionTrend",
+    calculateTrend(
+      uniqueCount(
+        currentRecords,
+        "sessionId"
+      ),
+      uniqueCount(
+        previousRecords,
+        "sessionId"
+      )
+    )
+  );
+
+  setTrend(
+    "pageViewTrend",
+    calculateTrend(
+      getPageViews(
+        currentRecords
+      ).length,
+      getPageViews(
+        previousRecords
+      ).length
+    )
+  );
+
+  setTrend(
+    "clickTrend",
+    calculateTrend(
+      getClicks(
+        currentRecords
+      ).length,
+      getClicks(
+        previousRecords
+      ).length
+    )
+  );
+
+}
+
+
+/* ==============================================
+   CHART MANAGEMENT
+============================================== */
+
+function destroyChart(name) {
+
+  if (charts[name]) {
+
+    charts[name].destroy();
+
+    delete charts[name];
+  }
+}
+
+
+/* ==============================================
+   DAILY TRAFFIC CHART
+============================================== */
+
+function renderDailyTraffic(records) {
+
+  destroyChart(
+    "daily"
+  );
+
+  const labels = [];
+  const visitorValues = [];
+  const pageViewValues = [];
+
+  for (
+    let i = 13;
+    i >= 0;
+    i--
+  ) {
+
+    const day =
+      new Date();
+
+    day.setHours(
+      0,
+      0,
+      0,
+      0
+    );
+
+    day.setDate(
+      day.getDate() - i
+    );
+
+    const nextDay =
+      new Date(day);
+
+    nextDay.setDate(
+      nextDay.getDate() + 1
+    );
+
+    const dayRecords =
+      recordsBetween(
+        visitorRecords,
+        day,
+        nextDay
+      );
+
+    labels.push(
+      formatShortDate(day)
+    );
+
+    visitorValues.push(
+      uniqueCount(
+        dayRecords,
+        "visitorId"
+      )
+    );
+
+    pageViewValues.push(
+      getPageViews(
+        dayRecords
+      ).length
+    );
+
   }
 
-  function loadRecordsWithJsonp(password) {
-    return new Promise(function (resolve, reject) {
+
+  const ctx =
+    document
+      .getElementById(
+        "dailyTrafficChart"
+      );
+
+  charts.daily =
+    new Chart(
+      ctx,
+      {
+        type: "line",
+
+        data: {
+          labels: labels,
+
+          datasets: [
+            {
+              label:
+                "Unique Visitors",
+              data:
+                visitorValues,
+              borderWidth: 3,
+              tension: .35,
+              fill: false
+            },
+            {
+              label:
+                "Page Views",
+              data:
+                pageViewValues,
+              borderWidth: 2,
+              tension: .35,
+              fill: false
+            }
+          ]
+        },
+
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+
+          interaction: {
+            intersect: false,
+            mode: "index"
+          },
+
+          plugins: {
+            legend: {
+              position: "bottom"
+            }
+          },
+
+          scales: {
+            y: {
+              beginAtZero: true,
+              ticks: {
+                precision: 0
+              }
+            },
+            x: {
+              grid: {
+                display: false
+              }
+            }
+          }
+        }
+      }
+    );
+}
+
+
+/* ==============================================
+   DEVICE CHART
+============================================== */
+
+function renderDeviceChart(records) {
+
+  destroyChart(
+    "device"
+  );
+
+  const pageViews =
+    getPageViews(records);
+
+  const counts =
+    countBy(
+      pageViews,
+      "device"
+    );
+
+  const entries =
+    sortedEntries(
+      counts
+    );
+
+  charts.device =
+    new Chart(
+      document.getElementById(
+        "deviceChart"
+      ),
+      {
+        type: "doughnut",
+
+        data: {
+          labels:
+            entries.map(
+              function(item) {
+                return item[0];
+              }
+            ),
+
+          datasets: [
+            {
+              data:
+                entries.map(
+                  function(item) {
+                    return item[1];
+                  }
+                )
+            }
+          ]
+        },
+
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+
+          plugins: {
+            legend: {
+              position: "bottom"
+            }
+          },
+
+          cutout: "65%"
+        }
+      }
+    );
+}
+
+
+/* ==============================================
+   HOURLY CHART
+============================================== */
+
+function renderHourlyChart(records) {
+
+  destroyChart(
+    "hourly"
+  );
+
+  const hours =
+    Array(24)
+      .fill(0);
+
+  getPageViews(records)
+    .forEach(
+      function(record) {
+
+        const date =
+          parseDate(
+            record.timestamp
+          );
+
+        if (date) {
+          hours[
+            date.getHours()
+          ]++;
+        }
+
+      }
+    );
+
+  const labels =
+    hours.map(
+      function(_, hour) {
+
+        return (
+          hour
+            .toString()
+            .padStart(2, "0") +
+          ":00"
+        );
+
+      }
+    );
+
+
+  charts.hourly =
+    new Chart(
+      document.getElementById(
+        "hourlyChart"
+      ),
+      {
+        type: "bar",
+
+        data: {
+          labels: labels,
+
+          datasets: [
+            {
+              label: "Page Views",
+              data: hours,
+              borderRadius: 5
+            }
+          ]
+        },
+
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+
+          plugins: {
+            legend: {
+              display: false
+            }
+          },
+
+          scales: {
+            y: {
+              beginAtZero: true,
+              ticks: {
+                precision: 0
+              }
+            },
+            x: {
+              grid: {
+                display: false
+              }
+            }
+          }
+        }
+      }
+    );
+}
+
+
+/* ==============================================
+   SOURCES
+============================================== */
+
+function renderSourceChart(records) {
+
+  destroyChart(
+    "source"
+  );
+
+  const pageViews =
+    getPageViews(records);
+
+  const counts =
+    countBy(
+      pageViews,
+      function(record) {
+
+        return getTrafficSource(
+          record.referrer
+        );
+
+      }
+    );
+
+  const entries =
+    sortedEntries(
+      counts
+    );
+
+
+  charts.source =
+    new Chart(
+      document.getElementById(
+        "sourceChart"
+      ),
+      {
+        type: "bar",
+
+        data: {
+          labels:
+            entries.map(
+              function(item) {
+                return item[0];
+              }
+            ),
+
+          datasets: [
+            {
+              label:
+                "Page Views",
+              data:
+                entries.map(
+                  function(item) {
+                    return item[1];
+                  }
+                ),
+              borderRadius: 6
+            }
+          ]
+        },
+
+        options: {
+          indexAxis: "y",
+          responsive: true,
+          maintainAspectRatio: false,
+
+          plugins: {
+            legend: {
+              display: false
+            }
+          },
+
+          scales: {
+            x: {
+              beginAtZero: true,
+              ticks: {
+                precision: 0
+              }
+            },
+            y: {
+              grid: {
+                display: false
+              }
+            }
+          }
+        }
+      }
+    );
+}
+
+
+/* ==============================================
+   TOP PAGES
+============================================== */
+
+function nicePageName(page) {
+
+  if (
+    !page ||
+    page === "/" ||
+    page === "/index.html"
+  ) {
+    return "Home";
+  }
+
+  return page
+    .split("?")[0]
+    .replace(/^\/+/, "")
+    .replace(/\.html$/i, "")
+    .replace(/[-_]/g, " ")
+    .replace(
+      /\b\w/g,
+      function(letter) {
+        return letter.toUpperCase();
+      }
+    );
+}
+
+
+function renderPagesChart(records) {
+
+  destroyChart(
+    "pages"
+  );
+
+  const counts =
+    countBy(
+      getPageViews(records),
+      function(record) {
+
+        return nicePageName(
+          record.page
+        );
+
+      }
+    );
+
+  const entries =
+    sortedEntries(counts)
+      .slice(0, 10)
+      .reverse();
+
+
+  charts.pages =
+    new Chart(
+      document.getElementById(
+        "pagesChart"
+      ),
+      {
+        type: "bar",
+
+        data: {
+          labels:
+            entries.map(
+              function(item) {
+                return item[0];
+              }
+            ),
+
+          datasets: [
+            {
+              label:
+                "Page Views",
+              data:
+                entries.map(
+                  function(item) {
+                    return item[1];
+                  }
+                ),
+              borderRadius: 7
+            }
+          ]
+        },
+
+        options: {
+          indexAxis: "y",
+          responsive: true,
+          maintainAspectRatio: false,
+
+          plugins: {
+            legend: {
+              display: false
+            }
+          },
+
+          scales: {
+            x: {
+              beginAtZero: true,
+              ticks: {
+                precision: 0
+              }
+            },
+            y: {
+              grid: {
+                display: false
+              }
+            }
+          }
+        }
+      }
+    );
+}
+
+
+/* ==============================================
+   RANKINGS
+============================================== */
+
+function renderRanking(
+  elementId,
+  entries,
+  limit
+) {
+
+  const element =
+    document.getElementById(
+      elementId
+    );
+
+  const items =
+    entries.slice(
+      0,
+      limit || 8
+    );
+
+  if (!items.length) {
+
+    element.innerHTML =
+      '<div class="muted">No data available yet.</div>';
+
+    return;
+  }
+
+  const max =
+    items[0][1] || 1;
+
+  element.innerHTML =
+    items
+      .map(
+        function(item) {
+
+          const width =
+            Math.max(
+              4,
+              item[1] /
+              max *
+              100
+            );
+
+          return `
+            <div class="ranking-item">
+
+              <div class="ranking-name">
+
+                <div class="ranking-title">
+                  ${escapeHtml(item[0])}
+                </div>
+
+                <div class="ranking-bar-bg">
+                  <div
+                    class="ranking-bar"
+                    style="width:${width}%"
+                  ></div>
+                </div>
+
+              </div>
+
+              <div class="ranking-value">
+                ${item[1]}
+              </div>
+
+            </div>
+          `;
+
+        }
+      )
+      .join("");
+}
+
+
+/* ==============================================
+   TECHNOLOGY & CLICK RANKINGS
+============================================== */
+
+function renderRankings(records) {
+
+  const pageViews =
+    getPageViews(records);
+
+  /* Clicks */
+
+  const clickCounts =
+    countBy(
+      getClicks(records),
+      function(record) {
+
+        return cleanClickName(
+          record.clickedElement
+        );
+
+      }
+    );
+
+  renderRanking(
+    "topClicksList",
+    sortedEntries(
+      clickCounts
+    ),
+    10
+  );
+
+
+  /* Browsers */
+
+  const browserCounts =
+    countBy(
+      pageViews,
+      function(record) {
+
+        return getBrowser(
+          record.browserDetails
+        );
+
+      }
+    );
+
+  renderRanking(
+    "browserList",
+    sortedEntries(
+      browserCounts
+    ),
+    8
+  );
+
+
+  /* OS */
+
+  const osCounts =
+    countBy(
+      pageViews,
+      function(record) {
+
+        return getOperatingSystem(
+          record.browserDetails
+        );
+
+      }
+    );
+
+  renderRanking(
+    "osList",
+    sortedEntries(
+      osCounts
+    ),
+    8
+  );
+
+
+  /* Languages */
+
+  const languageCounts =
+    countBy(
+      pageViews,
+      "language"
+    );
+
+  renderRanking(
+    "languageList",
+    sortedEntries(
+      languageCounts
+    ),
+    8
+  );
+
+
+  /* Timezones */
+
+  const timezoneCounts =
+    countBy(
+      pageViews,
+      "timezone"
+    );
+
+  renderRanking(
+    "timezoneList",
+    sortedEntries(
+      timezoneCounts
+    ),
+    10
+  );
+
+
+  /* Screens */
+
+  const screenCounts =
+    countBy(
+      pageViews,
+      "screenSize"
+    );
+
+  renderRanking(
+    "screenList",
+    sortedEntries(
+      screenCounts
+    ),
+    10
+  );
+
+}
+
+
+/* ==============================================
+   AUTOMATED INSIGHTS
+============================================== */
+
+function renderInsights(records) {
+
+  const insights = [];
+
+  const pageViews =
+    getPageViews(records);
+
+  const clicks =
+    getClicks(records);
+
+
+  /* Top Page */
+
+  const pages =
+    sortedEntries(
+      countBy(
+        pageViews,
+        function(record) {
+          return nicePageName(
+            record.page
+          );
+        }
+      )
+    );
+
+  if (pages.length) {
+
+    insights.push({
+      icon: "🔥",
+      title:
+        "Most Popular Page",
+      text:
+        pages[0][0] +
+        " currently leads with " +
+        pages[0][1] +
+        " recorded page view" +
+        (
+          pages[0][1] === 1
+            ? "."
+            : "s."
+        )
+    });
+
+  }
+
+
+  /* Best Hour */
+
+  const hourCounts = {};
+
+  pageViews.forEach(
+    function(record) {
+
+      const date =
+        parseDate(
+          record.timestamp
+        );
+
+      if (!date) {
+        return;
+      }
+
+      const hour =
+        date.getHours();
+
+      hourCounts[hour] =
+        (hourCounts[hour] || 0)
+        + 1;
+
+    }
+  );
+
+  const hours =
+    sortedEntries(
+      hourCounts
+    );
+
+  if (hours.length) {
+
+    const h =
+      Number(hours[0][0]);
+
+    const start =
+      String(h)
+        .padStart(2, "0") +
+      ":00";
+
+    const end =
+      String(
+        (h + 1) % 24
+      )
+      .padStart(2, "0") +
+      ":00";
+
+    insights.push({
+      icon: "⏰",
+      title:
+        "Peak Visiting Hour",
+      text:
+        "The highest recorded traffic occurs between " +
+        start +
+        " and " +
+        end +
+        "."
+    });
+
+  }
+
+
+  /* Device */
+
+  const devices =
+    sortedEntries(
+      countBy(
+        pageViews,
+        "device"
+      )
+    );
+
+  if (devices.length) {
+
+    const total =
+      pageViews.length || 1;
+
+    const share =
+      devices[0][1] /
+      total *
+      100;
+
+    insights.push({
+      icon: "📱",
+      title:
+        "Dominant Device",
+      text:
+        devices[0][0] +
+        " accounts for approximately " +
+        share.toFixed(1) +
+        "% of recorded page views."
+    });
+
+  }
+
+
+  /* Source */
+
+  const sources =
+    sortedEntries(
+      countBy(
+        pageViews,
+        function(record) {
+
+          return getTrafficSource(
+            record.referrer
+          );
+
+        }
+      )
+    );
+
+  if (sources.length) {
+
+    insights.push({
+      icon: "🧭",
+      title:
+        "Leading Traffic Source",
+      text:
+        sources[0][0] +
+        " is currently the largest recorded traffic source."
+    });
+
+  }
+
+
+  /* Click */
+
+  const topClicks =
+    sortedEntries(
+      countBy(
+        clicks,
+        function(record) {
+
+          return cleanClickName(
+            record.clickedElement
+          );
+
+        }
+      )
+    );
+
+  if (topClicks.length) {
+
+    insights.push({
+      icon: "🖱️",
+      title:
+        "Top Visitor Action",
+      text:
+        '"' +
+        topClicks[0][0] +
+        '" is currently the most frequently recorded click.'
+    });
+
+  }
+
+
+  /* Engagement */
+
+  const sessions =
+    buildSessions(records);
+
+  const engaged =
+    sessions.filter(
+      function(session) {
+
+        return (
+          session.pageViews > 1 ||
+          session.clicks > 0 ||
+          session.duration >= 30
+        );
+
+      }
+    ).length;
+
+  if (sessions.length) {
+
+    const rate =
+      engaged /
+      sessions.length *
+      100;
+
+    insights.push({
+      icon: "⚡",
+      title:
+        "Visitor Engagement",
+      text:
+        rate.toFixed(1) +
+        "% of recorded sessions meet the current engagement criteria."
+    });
+
+  }
+
+
+  const grid =
+    document.getElementById(
+      "insightGrid"
+    );
+
+  if (!insights.length) {
+
+    grid.innerHTML =
+      '<div class="muted">More visitor data is required before insights can be generated.</div>';
+
+    return;
+  }
+
+  grid.innerHTML =
+    insights
+      .slice(0, 6)
+      .map(
+        function(insight) {
+
+          return `
+            <div class="insight">
+
+              <div class="insight-icon">
+                ${insight.icon}
+              </div>
+
+              <div class="insight-title">
+                ${escapeHtml(insight.title)}
+              </div>
+
+              <div class="insight-text">
+                ${escapeHtml(insight.text)}
+              </div>
+
+            </div>
+          `;
+
+        }
+      )
+      .join("");
+}
+
+
+/* ==============================================
+   RECENT ACTIVITY
+============================================== */
+
+function renderRecentActivity(records) {
+
+  const container =
+    document.getElementById(
+      "recentActivity"
+    );
+
+  const recent =
+    [...records]
+      .sort(
+        function(a,b) {
+
+          return (
+            (parseDate(b.timestamp)?.getTime() || 0) -
+            (parseDate(a.timestamp)?.getTime() || 0)
+          );
+
+        }
+      )
+      .slice(0, 15);
+
+  if (!recent.length) {
+
+    container.innerHTML =
+      '<div class="muted">No recent activity.</div>';
+
+    return;
+  }
+
+  container.innerHTML =
+    recent
+      .map(
+        function(record) {
+
+          let description =
+            nicePageName(
+              record.page
+            );
+
+          if (
+            record.eventType === "click" &&
+            record.clickedElement
+          ) {
+
+            description =
+              cleanClickName(
+                record.clickedElement
+              );
+
+          }
+
+          return `
+            <div class="activity-row">
+
+              <div>
+                ${escapeHtml(
+                  formatDate(
+                    record.timestamp
+                  )
+                )}
+              </div>
+
+              <div>
+                <span class="activity-event">
+                  ${escapeHtml(
+                    record.eventType
+                  )}
+                </span>
+              </div>
+
+              <div>
+                <strong>
+                  ${escapeHtml(description)}
+                </strong>
+              </div>
+
+              <div class="muted">
+                ${escapeHtml(
+                  record.device || "-"
+                )}
+              </div>
+
+            </div>
+          `;
+
+        }
+      )
+      .join("");
+}
+
+
+/* ==============================================
+   TABLE
+============================================== */
+
+function renderTable(records) {
+
+  document
+    .getElementById(
+      "recordCount"
+    )
+    .textContent =
+      records.length;
+
+  if (!records.length) {
+
+    visitorTableBody.innerHTML = `
+      <tr>
+        <td colspan="12">
+          No visitor records found.
+        </td>
+      </tr>
+    `;
+
+    return;
+  }
+
+
+  visitorTableBody.innerHTML =
+    records
+      .map(
+        function(record) {
+
+          return `
+            <tr>
+
+              <td>
+                ${escapeHtml(
+                  formatDate(
+                    record.timestamp
+                  )
+                )}
+              </td>
+
+              <td>
+                <span class="event">
+                  ${escapeHtml(
+                    record.eventType
+                  )}
+                </span>
+              </td>
+
+              <td>
+                ${escapeHtml(
+                  record.visitorId
+                )}
+              </td>
+
+              <td>
+                ${escapeHtml(
+                  record.sessionId
+                )}
+              </td>
+
+              <td>
+
+                <strong>
+                  ${escapeHtml(
+                    record.page
+                  )}
+                </strong>
+
+                <br>
+
+                <span class="muted">
+                  ${escapeHtml(
+                    record.pageTitle
+                  )}
+                </span>
+
+              </td>
+
+              <td>
+
+                <strong>
+                  ${escapeHtml(
+                    record.device
+                  )}
+                </strong>
+
+                <br>
+
+                <span class="muted">
+                  ${escapeHtml(
+                    getBrowser(
+                      record.browserDetails
+                    )
+                  )}
+                  /
+                  ${escapeHtml(
+                    getOperatingSystem(
+                      record.browserDetails
+                    )
+                  )}
+                </span>
+
+              </td>
+
+              <td>
+                ${escapeHtml(
+                  record.referrer
+                )}
+              </td>
+
+              <td>
+                ${escapeHtml(
+                  record.language
+                )}
+              </td>
+
+              <td>
+                ${escapeHtml(
+                  record.screenSize
+                )}
+              </td>
+
+              <td>
+                ${escapeHtml(
+                  record.timezone
+                )}
+              </td>
+
+              <td>
+                ${escapeHtml(
+                  formatDuration(
+                    record.durationSeconds
+                  )
+                )}
+              </td>
+
+              <td>
+                ${escapeHtml(
+                  record.clickedElement
+                )}
+              </td>
+
+            </tr>
+          `;
+
+        }
+      )
+      .join("");
+}
+
+
+/* ==============================================
+   DASHBOARD RENDER
+============================================== */
+
+function renderDashboard() {
+
+  analyticsRecords =
+    filterByPeriod(
+      visitorRecords
+    );
+
+  updateSummary(
+    analyticsRecords
+  );
+
+  renderDailyTraffic(
+    analyticsRecords
+  );
+
+  renderDeviceChart(
+    analyticsRecords
+  );
+
+  renderHourlyChart(
+    analyticsRecords
+  );
+
+  renderSourceChart(
+    analyticsRecords
+  );
+
+  renderPagesChart(
+    analyticsRecords
+  );
+
+  renderRankings(
+    analyticsRecords
+  );
+
+  renderInsights(
+    analyticsRecords
+  );
+
+  renderRecentActivity(
+    analyticsRecords
+  );
+
+  applyTableSearch();
+
+}
+
+
+/* ==============================================
+   JSONP DATA LOADING
+============================================== */
+
+function loadRecordsWithJsonp(
+  password
+) {
+
+  return new Promise(
+    function(resolve, reject) {
+
       const callbackName =
         "igniteVisitorCallback_" +
         Date.now() +
         "_" +
-        Math.random().toString(36).slice(2);
+        Math.random()
+          .toString(36)
+          .slice(2);
 
-      const script = document.createElement("script");
 
-      const timeout = setTimeout(function () {
-        cleanup();
-        reject(new Error("The request timed out."));
-      }, 15000);
+      const script =
+        document.createElement(
+          "script"
+        );
+
+
+      const timeout =
+        setTimeout(
+          function() {
+
+            cleanup();
+
+            reject(
+              new Error(
+                "The request timed out."
+              )
+            );
+
+          },
+          15000
+        );
+
 
       function cleanup() {
-        clearTimeout(timeout);
 
-        if (script.parentNode) {
-          script.parentNode.removeChild(script);
+        clearTimeout(
+          timeout
+        );
+
+        if (
+          script.parentNode
+        ) {
+          script
+            .parentNode
+            .removeChild(
+              script
+            );
         }
 
         try {
-          delete window[callbackName];
-        } catch (error) {
-          window[callbackName] = undefined;
+
+          delete window[
+            callbackName
+          ];
+
+        } catch(error) {
+
+          window[
+            callbackName
+          ] = undefined;
         }
+
       }
 
-      window[callbackName] = function (data) {
-        cleanup();
 
-        if (!data || data.success !== true) {
-          reject(
-            new Error(
-              data && data.message
-                ? data.message
-                : "Unable to load visitor records."
-            )
+      window[
+        callbackName
+      ] =
+        function(data) {
+
+          cleanup();
+
+          if (
+            !data ||
+            data.success !== true
+          ) {
+
+            reject(
+              new Error(
+                data &&
+                data.message
+                  ? data.message
+                  : "Unable to load visitor records."
+              )
+            );
+
+            return;
+          }
+
+          resolve(
+            data.records || []
           );
-          return;
-        }
 
-        resolve(data.records || []);
-      };
+        };
+
 
       const query =
         "?action=list" +
         "&password=" +
-        encodeURIComponent(password) +
+        encodeURIComponent(
+          password
+        ) +
         "&callback=" +
-        encodeURIComponent(callbackName) +
+        encodeURIComponent(
+          callbackName
+        ) +
         "&t=" +
         Date.now();
 
-      script.src = APPS_SCRIPT_URL + query;
 
-      script.onerror = function () {
-        cleanup();
-        reject(new Error("Unable to contact the analytics service."));
-      };
+      script.src =
+        APPS_SCRIPT_URL +
+        query;
 
-      document.body.appendChild(script);
-    });
-  }
 
-  async function loadVisitorRecords() {
-    visitorRecords =
-      await loadRecordsWithJsonp(currentPassword);
+      script.onerror =
+        function() {
 
-    updateSummary(visitorRecords);
-    renderTable(visitorRecords);
-  }
+          cleanup();
 
-  loginButton.addEventListener("click", async function () {
-    const suppliedPassword =
-      adminPasswordInput.value.trim();
+          reject(
+            new Error(
+              "Unable to contact the analytics service."
+            )
+          );
 
-    if (!suppliedPassword) {
-      loginError.textContent =
-        "Please enter the administrator password.";
-      return;
+        };
+
+
+      document.body
+        .appendChild(
+          script
+        );
+
     }
+  );
+}
 
-    currentPassword = suppliedPassword;
-    loginError.textContent = "";
-    loginButton.disabled = true;
-    loginButton.textContent = "Opening...";
 
-    try {
-      await loadVisitorRecords();
+/* ==============================================
+   LOAD DATA
+============================================== */
 
-      loginSection.style.display = "none";
-      dashboard.style.display = "block";
-      logoutButton.style.display = "inline-block";
-    } catch (error) {
-      currentPassword = "";
-      loginError.textContent =
-        error.message === "Unauthorized."
-          ? "Incorrect administrator password."
-          : "The visitor records could not be loaded.";
-    } finally {
-      loginButton.disabled = false;
-      loginButton.textContent = "Open Dashboard";
-    }
-  });
+async function loadVisitorRecords() {
 
-  adminPasswordInput.addEventListener(
-    "keydown",
-    function (event) {
-      if (event.key === "Enter") {
-        loginButton.click();
-      }
+  visitorRecords =
+    await loadRecordsWithJsonp(
+      currentPassword
+    );
+
+
+  visitorRecords.sort(
+    function(a,b) {
+
+      return (
+        (parseDate(b.timestamp)?.getTime() || 0) -
+        (parseDate(a.timestamp)?.getTime() || 0)
+      );
+
     }
   );
 
-  refreshButton.addEventListener("click", async function () {
-    refreshButton.disabled = true;
-    refreshButton.textContent = "Refreshing...";
 
-    try {
-      await loadVisitorRecords();
-    } catch (error) {
-      alert("The visitor records could not be refreshed.");
-    } finally {
-      refreshButton.disabled = false;
-      refreshButton.textContent = "Refresh Records";
+  renderDashboard();
+
+
+  const now =
+    new Date();
+
+  const lastUpdated =
+    document.getElementById(
+      "lastUpdated"
+    );
+
+  lastUpdated.style.display =
+    "block";
+
+  lastUpdated.innerHTML =
+    "Last refreshed<br><strong>" +
+    escapeHtml(
+      now.toLocaleTimeString()
+    ) +
+    "</strong>";
+}
+
+
+/* ==============================================
+   LOGIN
+============================================== */
+
+loginButton
+  .addEventListener(
+    "click",
+    async function() {
+
+      const suppliedPassword =
+        adminPasswordInput
+          .value
+          .trim();
+
+
+      if (!suppliedPassword) {
+
+        loginError.textContent =
+          "Please enter the administrator password.";
+
+        return;
+      }
+
+
+      currentPassword =
+        suppliedPassword;
+
+      loginError.textContent =
+        "";
+
+      loginButton.disabled =
+        true;
+
+      loginButton.textContent =
+        "Loading Analytics...";
+
+
+      try {
+
+        await loadVisitorRecords();
+
+        loginSection.style.display =
+          "none";
+
+        dashboard.style.display =
+          "block";
+
+        logoutButton.style.display =
+          "inline-block";
+
+      }
+
+      catch(error) {
+
+        currentPassword =
+          "";
+
+        loginError.textContent =
+          error.message ===
+          "Unauthorized."
+            ? "Incorrect administrator password."
+            : "The visitor records could not be loaded.";
+
+      }
+
+      finally {
+
+        loginButton.disabled =
+          false;
+
+        loginButton.textContent =
+          "Open Analytics Dashboard";
+      }
+
     }
-  });
+  );
 
-  logoutButton.addEventListener("click", function () {
-    currentPassword = "";
-    visitorRecords = [];
-    adminPasswordInput.value = "";
 
-    dashboard.style.display = "none";
-    loginSection.style.display = "block";
-    logoutButton.style.display = "none";
-  });
+adminPasswordInput
+  .addEventListener(
+    "keydown",
+    function(event) {
 
-  searchInput.addEventListener("input", function () {
-    const searchText = searchInput.value
+      if (
+        event.key ===
+        "Enter"
+      ) {
+
+        loginButton.click();
+
+      }
+
+    }
+  );
+
+
+/* ==============================================
+   REFRESH
+============================================== */
+
+refreshButton
+  .addEventListener(
+    "click",
+    async function() {
+
+      refreshButton.disabled =
+        true;
+
+      refreshButton.textContent =
+        "Refreshing...";
+
+
+      try {
+
+        await loadVisitorRecords();
+
+      }
+
+      catch(error) {
+
+        alert(
+          "The visitor records could not be refreshed."
+        );
+
+      }
+
+      finally {
+
+        refreshButton.disabled =
+          false;
+
+        refreshButton.textContent =
+          "Refresh Data";
+      }
+
+    }
+  );
+
+
+/* ==============================================
+   PERIOD FILTER
+============================================== */
+
+periodFilter
+  .addEventListener(
+    "change",
+    function() {
+
+      renderDashboard();
+
+    }
+  );
+
+
+/* ==============================================
+   LOGOUT
+============================================== */
+
+logoutButton
+  .addEventListener(
+    "click",
+    function() {
+
+      currentPassword =
+        "";
+
+      visitorRecords =
+        [];
+
+      analyticsRecords =
+        [];
+
+      adminPasswordInput.value =
+        "";
+
+      Object.keys(charts)
+        .forEach(
+          function(name) {
+            destroyChart(name);
+          }
+        );
+
+      dashboard.style.display =
+        "none";
+
+      loginSection.style.display =
+        "block";
+
+      logoutButton.style.display =
+        "none";
+
+      document
+        .getElementById(
+          "lastUpdated"
+        )
+        .style.display =
+          "none";
+    }
+  );
+
+
+/* ==============================================
+   SEARCH
+============================================== */
+
+function applyTableSearch() {
+
+  const searchText =
+    searchInput.value
       .trim()
       .toLowerCase();
 
-    if (!searchText) {
-      renderTable(visitorRecords);
-      return;
-    }
 
-    const filteredRecords = visitorRecords.filter(
-      function (record) {
-        return Object.values(record).some(function (value) {
-          return String(value || "")
-            .toLowerCase()
-            .includes(searchText);
-        });
-      }
+  if (!searchText) {
+
+    renderTable(
+      analyticsRecords
     );
 
-    renderTable(filteredRecords);
-  });
+    return;
+  }
+
+
+  const filtered =
+    analyticsRecords
+      .filter(
+        function(record) {
+
+          return Object
+            .values(record)
+            .some(
+              function(value) {
+
+                return String(
+                  value || ""
+                )
+                .toLowerCase()
+                .includes(
+                  searchText
+                );
+
+              }
+            );
+
+        }
+      );
+
+
+  renderTable(
+    filtered
+  );
+}
+
+
+searchInput
+  .addEventListener(
+    "input",
+    applyTableSearch
+  );
+
 </script>
 
 </body>
