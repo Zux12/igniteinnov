@@ -745,13 +745,79 @@ partners.
     <div>
       <h2>Contact Us</h2>
 <p>Have a question, collaboration idea, or need a conference website? Reach out—we’d love to assist.</p>
-      <form id="contactForm" class="contact-form">
-        <label>Name<input type="text" id="name" required aria-label="Your name"></label>
-        <label>Email<input type="email" id="email" required aria-label="Your email"></label>
-        <label>Message<textarea id="message" rows="5" required aria-label="Your message"></textarea></label>
-        <button type="submit" class="btn">Send Email</button>
-        <p class="hint">Your message will open in your email app addressed to <strong>info@igniteinnov.com</strong>.</p>
-      </form>
+<form id="contactForm" class="contact-form">
+
+  <label>
+    Name
+    <input
+      type="text"
+      id="name"
+      required
+      autocomplete="name"
+      aria-label="Your name">
+  </label>
+
+  <label>
+    Company / Organisation
+    <input
+      type="text"
+      id="company"
+      autocomplete="organization"
+      aria-label="Company or organisation">
+  </label>
+
+  <label>
+    Email
+    <input
+      type="email"
+      id="email"
+      required
+      autocomplete="email"
+      aria-label="Your email">
+  </label>
+
+  <label>
+    Phone / WhatsApp
+    <input
+      type="tel"
+      id="phone"
+      autocomplete="tel"
+      aria-label="Phone or WhatsApp number">
+  </label>
+
+  <label>
+    I'm interested in
+    <select id="service" aria-label="Service interested in">
+      <option value="">Select a service</option>
+      <option value="AI Solutions">AI Solutions</option>
+      <option value="Custom Software Development">Custom Software Development</option>
+      <option value="Data Analytics & Dashboards">Data Analytics & Dashboards</option>
+      <option value="Website Development">Website Development</option>
+      <option value="Conference & Event Platform">Conference & Event Platform</option>
+      <option value="Engineering & Technology">Engineering & Technology</option>
+      <option value="Collaboration / Research">Collaboration / Research</option>
+      <option value="Other">Other</option>
+    </select>
+  </label>
+
+  <label>
+    Tell us about your requirement
+    <textarea
+      id="message"
+      rows="5"
+      required
+      aria-label="Your message"></textarea>
+  </label>
+
+  <button type="submit" class="btn" id="contactSubmitButton">
+    Send Enquiry
+  </button>
+
+  <p id="contactStatus" class="hint" aria-live="polite">
+    Your enquiry will be sent directly to IgniteInno Ventures.
+  </p>
+
+</form>
       <div style="margin-top:20px;">
   <a class="btn ghost" href="/certificates.html">Learn About Contributor Certificates</a>
 </div>
