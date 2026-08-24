@@ -307,6 +307,85 @@ body{background:#fff;color:var(--text)}
   }
 }
 
+
+/* RM99 Google Ads Lead Form */
+
+.promo-lead-box {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 34px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+}
+
+.promo-lead-box .contact-form {
+  display: grid;
+  gap: 18px;
+}
+
+.promo-lead-box label {
+  display: grid;
+  gap: 7px;
+  color: var(--navy);
+  font-weight: 700;
+}
+
+.promo-lead-box input,
+.promo-lead-box textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #0f172a;
+  font: inherit;
+}
+
+.promo-lead-box input:focus,
+.promo-lead-box textarea:focus {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.12);
+}
+
+.promo-lead-box textarea {
+  resize: vertical;
+}
+
+.promo-lead-box button[disabled] {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.promo-whatsapp-option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+  padding-top: 25px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.promo-whatsapp-option span {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .promo-lead-box {
+    padding: 24px 18px;
+  }
+
+  .promo-lead-box .promo-btn-primary,
+  .promo-whatsapp-option .promo-btn-secondary {
+    width: 100%;
+  }
+}
   
 </style>
 </head>
@@ -377,7 +456,10 @@ body{background:#fff;color:var(--text)}
     <h1>Professional Website Starter <span class="promo-price">RM99<small>Promotional price until 1 Sept 2026</small></span></h1>
     <p class="promo-subtitle">Launch a clean, professional and mobile-friendly website for your business, society, NGO, association, conference, research group, programme or community organisation.</p>
     <div class="promo-actions">
-      <a class="promo-btn-primary" href="https://wa.me/60193455154?text=Hello%20IgniteInno%20Ventures%2C%0A%0AMy%20name%20is%20%5BYOUR%20NAME%5D%20from%20%5BBUSINESS%20OR%20ORGANISATION%20NAME%5D.%0A%0AI%20am%20interested%20in%20the%20RM99%20Professional%20Website%20Starter%20promotion.%0A%0AMy%20website%20is%20for%3A%0A%5BBUSINESS%20%2F%20SOCIETY%20%2F%20NGO%20%2F%20CONFERENCE%20%2F%20OTHER%5D%0A%0AMy%20question%3A%0A%5BYOUR%20QUESTION%5D" target="_blank" rel="noopener">Get Your Website for RM99</a>
+<a class="promo-btn-primary" href="#rm99-enquiry">
+  Get Your Website for RM99
+</a>
+      
       <a class="promo-btn-secondary" href="#included">See What Is Included</a>
 
 <a class="promo-btn-dark"
@@ -594,6 +676,109 @@ body{background:#fff;color:var(--text)}
 
   </div>
 </section>
+
+
+<section class="promo-section alt" id="rm99-enquiry">
+  <div class="promo-container">
+
+    <div class="promo-section-heading">
+      <h2>Get Your Professional Website for RM99</h2>
+      <p>
+        Tell us a little about your website requirement.
+        Your enquiry will be sent directly to IgniteInno Ventures.
+      </p>
+    </div>
+
+    <div class="promo-lead-box">
+
+      <form id="igniteLeadForm" class="contact-form">
+
+        <input
+          type="hidden"
+          id="service"
+          value="RM99 Professional Website Starter">
+
+        <label>
+          Name
+          <input
+            type="text"
+            id="name"
+            required
+            autocomplete="name"
+            aria-label="Your name">
+        </label>
+
+        <label>
+          Business / Organisation
+          <input
+            type="text"
+            id="company"
+            autocomplete="organization"
+            aria-label="Business or organisation">
+        </label>
+
+        <label>
+          Email
+          <input
+            type="email"
+            id="email"
+            required
+            autocomplete="email"
+            aria-label="Your email">
+        </label>
+
+        <label>
+          Phone / WhatsApp
+          <input
+            type="tel"
+            id="phone"
+            autocomplete="tel"
+            aria-label="Phone or WhatsApp number">
+        </label>
+
+        <label>
+          Tell us about the website you need
+          <textarea
+            id="message"
+            rows="5"
+            required
+            placeholder="Example: Website for my consulting business with Home, About, Services, Gallery and Contact sections."
+            aria-label="Your website requirement"></textarea>
+        </label>
+
+        <button
+          type="submit"
+          class="promo-btn-primary"
+          id="contactSubmitButton">
+          Send RM99 Enquiry
+        </button>
+
+        <p id="contactStatus" class="promo-note" aria-live="polite">
+          Your enquiry will be sent directly to IgniteInno Ventures.
+        </p>
+
+      </form>
+
+
+      <div class="promo-whatsapp-option">
+
+        <span>Prefer WhatsApp?</span>
+
+        <a
+          class="promo-btn-secondary"
+          href="https://wa.me/60193455154?text=Hello%20IgniteInno%20Ventures%2C%0A%0AI%20am%20interested%20in%20the%20RM99%20Professional%20Website%20Starter."
+          target="_blank"
+          rel="noopener">
+          Chat With Us on WhatsApp
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
   
   <section class="promo-section dark-band"><div class="promo-container"><div class="promo-section-heading"><h2>Promotion Terms</h2><p>These conditions keep the RM99 package affordable and allow us to deliver it efficiently.</p></div><div class="promo-terms">
 <article class="promo-term"><h3>Client-Supplied Content</h3><p>The client must provide all final text, logos, photographs and relevant organisation information.</p></article>
@@ -601,12 +786,18 @@ body{background:#fff;color:var(--text)}
 <article class="promo-term"><h3>Two Revision Rounds</h3><p>Up to two reasonable revision rounds are included after the first draft is presented.</p></article>
 <article class="promo-term"><h3>Limited Promotional Slots</h3><p>The RM99 rate is promotional and may be limited by availability, project scope and submission of complete content.</p></article>
 </div></div></section>
-<section class="promo-final"><div class="promo-container"><h2>Launch Your Professional Website for RM99</h2><p>Give your business, society, project, event or organisation a professional online presence without paying for functions you do not yet need.</p><a class="promo-btn-primary" href="https://wa.me/60193455154?text=Hello%20IgniteInno%20Ventures%2C%0A%0AMy%20name%20is%20%5BYOUR%20NAME%5D%20from%20%5BBUSINESS%20OR%20ORGANISATION%20NAME%5D.%0A%0AI%20am%20interested%20in%20the%20RM99%20Professional%20Website%20Starter%20promotion.%0A%0AMy%20website%20is%20for%3A%0A%5BBUSINESS%20%2F%20SOCIETY%20%2F%20NGO%20%2F%20CONFERENCE%20%2F%20OTHER%5D%0A%0AMy%20question%3A%0A%5BYOUR%20QUESTION%5D" target="_blank" rel="noopener">WhatsApp IgniteInno</a></div></section>
+<section class="promo-final"><div class="promo-container"><h2>Launch Your Professional Website for RM99</h2><p>Give your business, society, project, event or organisation a professional online presence without paying for functions you do not yet need.</p>
+<a class="promo-btn-primary" href="#rm99-enquiry">
+  Get Started for RM99
+</a>
+</div></section>
 </main>
 <footer class="footer"><div class="container footer-inner"><div class="brand"><img src="/assets/img/logo.png" alt="IgniteInno Ventures logo" /><span>IGNITEINNO VENTURES</span></div><div class="links"><a href="/index.html#about">About</a><a href="/index.html#services">Services</a><a href="/conference.html">Conference Websites</a><a href="/conference-packages.html">Packages & Pricing</a><a href="/index.html#contact">Contact</a></div><div class="copy">© 2026 IgniteInno Ventures Sdn Bhd. All rights reserved.</div></div></footer>
 
 <script src="/assets/js/script.js"></script>
-
+<script src="/assets/js/visitor-tracker.js"></script>
+<script src="/assets/js/contact-form.js"></script>
+  
   <script>
 document.addEventListener("DOMContentLoaded", function () {
   const promoInfoButton = document.getElementById("promoInfoButton");
