@@ -178,6 +178,54 @@ header.nav .mobile-menu[hidden] {
   }
 }
 </style>
+
+
+  <style>
+.custom-ai-floating {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 9999;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 14px 24px;
+  border-radius: 999px;
+
+  background: linear-gradient(135deg, #111827, #1e3a8a);
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.25);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.custom-ai-floating:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.35);
+  background: linear-gradient(135deg, #1e3a8a, #2563eb);
+}
+
+@media screen and (max-width: 600px) {
+  .custom-ai-floating {
+    right: 16px;
+    bottom: 18px;
+    padding: 12px 18px;
+    font-size: 13px;
+  }
+}
+</style>
+
+  
 </head>
 <body>
 <!-- NAV -->
@@ -753,6 +801,13 @@ partners.
   </div>
 </footer>
 
+
+
+  <!-- FLOATING CUSTOM AI BUTTON -->
+<a href="/custom-ai.html" class="custom-ai-floating">
+  Build Your Custom AI
+</a>
+  
 <script src="/assets/js/script.js"></script>
   <script src="/assets/js/visitor-tracker.js"></script>
 
