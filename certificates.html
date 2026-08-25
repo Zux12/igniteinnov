@@ -581,5 +581,46 @@
 </footer>
 
 <script src="/assets/js/script.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const revealItems = document.querySelectorAll(".reveal");
+
+  if ("IntersectionObserver" in window) {
+
+    const revealObserver = new IntersectionObserver(
+      function (entries, observer) {
+
+        entries.forEach(function (entry) {
+
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.12
+      }
+    );
+
+    revealItems.forEach(function (item) {
+      revealObserver.observe(item);
+    });
+
+  } else {
+
+    revealItems.forEach(function (item) {
+      item.classList.add("visible");
+    });
+
+  }
+
+});
+</script>
+
 </body>
 </html>
