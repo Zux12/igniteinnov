@@ -29,10 +29,478 @@
       margin:0 auto;
       padding:0 20px;
     }
+
+
+    .xavora-nav{
+  position:sticky;
+  top:0;
+  z-index:1000;
+
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(14px);
+
+  border-bottom:1px solid #e5e9f2;
+}
+
+.xavora-nav-inner{
+  min-height:76px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:30px;
+}
+
+.xavora-brand{
+  display:flex;
+  align-items:center;
+
+  gap:11px;
+
+  color:#172033;
+
+  font-weight:800;
+  text-decoration:none;
+}
+
+.xavora-brand img{
+  width:42px;
+  height:42px;
+  object-fit:contain;
+}
+
+.xavora-menu{
+  display:flex;
+  align-items:center;
+
+  gap:26px;
+}
+
+.xavora-menu a{
+  color:#445067;
+
+  text-decoration:none;
+
+  font-size:.92rem;
+  font-weight:650;
+
+  transition:color .2s ease;
+}
+
+.xavora-menu a:hover{
+  color:#2563eb;
+}
+
+@media(max-width:800px){
+
+  .xavora-menu{
+    display:none;
+  }
+
+  .xavora-brand span{
+    font-size:.9rem;
+  }
+
+}
+
+/* =====================================
+   XAVORA HERO
+   ===================================== */
+
+.xavora-hero{
+  position:relative;
+
+  padding:110px 0 100px;
+
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(37,99,235,.12),
+      transparent 28%
+    ),
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #f3f6fb 100%
+    );
+
+  overflow:hidden;
+}
+
+.xavora-hero-grid{
+  display:grid;
+
+  grid-template-columns:1.05fr .95fr;
+
+  align-items:center;
+
+  gap:70px;
+}
+
+.xavora-kicker{
+  margin-bottom:14px;
+
+  color:#2563eb;
+
+  font-size:.76rem;
+  font-weight:850;
+
+  letter-spacing:.18em;
+}
+
+.xavora-hero h1{
+  margin:0;
+
+  color:#111827;
+
+  font-size:4.5rem;
+  line-height:1;
+
+  letter-spacing:-.04em;
+}
+
+.xavora-hero h2{
+  margin:13px 0 22px;
+
+  color:#43506a;
+
+  font-size:1.55rem;
+
+  font-weight:650;
+}
+
+.xavora-hero-lead{
+  max-width:650px;
+
+  margin:0;
+
+  color:#5c667a;
+
+  font-size:1.12rem;
+  line-height:1.75;
+}
+
+.xavora-actions{
+  display:flex;
+  flex-wrap:wrap;
+
+  gap:14px;
+
+  margin-top:32px;
+}
+
+.xavora-primary-btn,
+.xavora-secondary-btn{
+  display:inline-flex;
+
+  align-items:center;
+  justify-content:center;
+
+  padding:13px 22px;
+
+  border-radius:999px;
+
+  font-weight:750;
+
+  text-decoration:none;
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+.xavora-primary-btn{
+  background:#172033;
+
+  color:#ffffff;
+
+  box-shadow:
+    0 12px 28px rgba(23,32,51,.18);
+}
+
+.xavora-secondary-btn{
+  background:#ffffff;
+
+  color:#172033;
+
+  border:1px solid #d9deea;
+}
+
+.xavora-primary-btn:hover,
+.xavora-secondary-btn:hover{
+  transform:translateY(-2px);
+}
+
+
+/* Hero Technology Visual */
+
+.xavora-hero-visual{
+  position:relative;
+
+  min-height:470px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+}
+
+.xavora-core{
+  position:relative;
+  z-index:3;
+
+  width:280px;
+  height:280px;
+
+  display:flex;
+  flex-direction:column;
+
+  align-items:center;
+  justify-content:center;
+
+  text-align:center;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle at 40% 30%,
+      #2f4f89,
+      #172033 62%
+    );
+
+  color:#ffffff;
+
+  box-shadow:
+    0 35px 80px rgba(23,32,51,.25);
+}
+
+.xavora-core-label{
+  font-size:.65rem;
+
+  color:#b9c6df;
+
+  font-weight:800;
+
+  letter-spacing:.15em;
+}
+
+.xavora-core-name{
+  margin:9px 0;
+
+  font-size:2.8rem;
+  font-weight:850;
+}
+
+.xavora-core-powered{
+  font-size:.67rem;
+
+  color:#a9b8d4;
+
+  letter-spacing:.1em;
+}
+
+
+.xavora-orbit{
+  position:absolute;
+
+  z-index:4;
+
+  min-width:105px;
+
+  padding:11px 16px;
+
+  border-radius:999px;
+
+  background:#ffffff;
+
+  border:1px solid #e0e5ef;
+
+  box-shadow:
+    0 12px 30px rgba(17,24,39,.10);
+
+  color:#34405a;
+
+  text-align:center;
+
+  font-size:.82rem;
+
+  font-weight:750;
+}
+
+.orbit-one{
+  top:45px;
+  left:65px;
+}
+
+.orbit-two{
+  top:105px;
+  right:40px;
+}
+
+.orbit-three{
+  bottom:85px;
+  left:35px;
+}
+
+.orbit-four{
+  bottom:45px;
+  right:55px;
+}
+
+
+@media(max-width:900px){
+
+  .xavora-hero{
+    padding:80px 0;
+  }
+
+  .xavora-hero-grid{
+    grid-template-columns:1fr;
+
+    gap:30px;
+  }
+
+  .xavora-hero h1{
+    font-size:3.5rem;
+  }
+
+  .xavora-hero-visual{
+    min-height:420px;
+  }
+
+}
+
+
+@media(max-width:520px){
+
+  .xavora-hero h1{
+    font-size:3rem;
+  }
+
+  .xavora-core{
+    width:230px;
+    height:230px;
+  }
+
+  .xavora-core-name{
+    font-size:2.25rem;
+  }
+
+  .xavora-orbit{
+    min-width:90px;
+
+    padding:9px 12px;
+
+    font-size:.72rem;
+  }
+
+}    
   </style>
 </head>
 
 <body class="xavora-page">
 
+<header class="xavora-nav">
+  <div class="xavora-container xavora-nav-inner">
+
+    <a href="/index.html" class="xavora-brand">
+      <img src="/assets/img/logo.png" alt="IgniteInno Ventures logo">
+      <span>IGNITEINNO VENTURES</span>
+    </a>
+
+    <nav class="xavora-menu">
+      <a href="/index.html">Home</a>
+      <a href="/index.html#technology">Technology</a>
+      <a href="/index.html#services">Services</a>
+      <a href="/index.html#projects">Projects</a>
+      <a href="/index.html#contact">Contact</a>
+    </nav>
+
+  </div>
+</header>
+
+
+<section class="xavora-hero">
+
+  <div class="xavora-container xavora-hero-grid">
+
+    <div class="xavora-hero-content">
+
+      <div class="xavora-kicker">
+        IGNITEINNO PROPRIETARY TECHNOLOGY
+      </div>
+
+      <h1>
+        XAVORA™
+      </h1>
+
+      <h2>
+        Enterprise Intelligence Platform
+      </h2>
+
+      <p class="xavora-hero-lead">
+        A unified intelligence platform designed to connect enterprise data,
+        analytics, workflows, automation, and artificial intelligence —
+        transforming fragmented information into actionable intelligence.
+      </p>
+
+      <div class="xavora-actions">
+
+        <a href="#capabilities" class="xavora-primary-btn">
+          Explore the Platform
+        </a>
+
+        <a href="/index.html#contact" class="xavora-secondary-btn">
+          Discuss an Implementation
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="xavora-hero-visual">
+
+      <div class="xavora-core">
+
+        <div class="xavora-core-label">
+          ENTERPRISE INTELLIGENCE
+        </div>
+
+        <div class="xavora-core-name">
+          XAVORA™
+        </div>
+
+        <div class="xavora-core-powered">
+          POWERED BY VORA ENGINE™
+        </div>
+
+      </div>
+
+      <div class="xavora-orbit orbit-one">
+        Data
+      </div>
+
+      <div class="xavora-orbit orbit-two">
+        AI
+      </div>
+
+      <div class="xavora-orbit orbit-three">
+        Analytics
+      </div>
+
+      <div class="xavora-orbit orbit-four">
+        Automation
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+  
 </body>
 </html>
