@@ -225,10 +225,415 @@ header.nav .mobile-menu[hidden] {
 }
 </style>
 
+<style>
+/* =========================================
+   IGNITE HOMEPAGE — LIGHT / DARK HYBRID
+   Safe homepage-only visual override
+   ========================================= */
+
+
+/* -----------------------------------------
+   GLOBAL PAGE
+   ----------------------------------------- */
+
+.home-light-theme {
+  background: #f8fafc;
+  color: #172033;
+}
+
+
+/* -----------------------------------------
+   STANDARD SECTIONS
+   ----------------------------------------- */
+
+.home-light-theme .section {
+  background: #ffffff;
+  color: #172033;
+}
+
+.home-light-theme .section.alt {
+  background: #f3f6fa;
+}
+
+
+/* -----------------------------------------
+   HEADINGS
+   ----------------------------------------- */
+
+.home-light-theme .section h2,
+.home-light-theme .section h3,
+.home-light-theme .section h4 {
+  color: #111827;
+}
+
+.home-light-theme .section p {
+  color: #4b5563;
+}
+
+
+/* -----------------------------------------
+   ABOUT SECTION
+   ----------------------------------------- */
+
+.home-light-theme #about {
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #f8fafc 60%,
+      #eef4ff 100%
+    );
+}
+
+
+/* -----------------------------------------
+   TECHNOLOGY SECTION
+   Keep this section premium / dark
+   ----------------------------------------- */
+
+.home-light-theme #technology {
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(37, 99, 235, 0.18),
+      transparent 34%
+    ),
+    linear-gradient(
+      135deg,
+      #07111f 0%,
+      #0b1729 50%,
+      #111c31 100%
+    );
+
+  color: #ffffff;
+}
+
+.home-light-theme #technology h2,
+.home-light-theme #technology h3 {
+  color: #ffffff;
+}
+
+.home-light-theme #technology p {
+  color: #cbd5e1;
+}
+
+.home-light-theme #technology .technology-eyebrow {
+  color: #60a5fa;
+}
+
+
+/* -----------------------------------------
+   TECHNOLOGY CARDS
+   ----------------------------------------- */
+
+.home-light-theme #technology .technology-card {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,0.09),
+      rgba(255,255,255,0.035)
+    );
+
+  border: 1px solid rgba(255,255,255,0.14);
+
+  box-shadow:
+    0 20px 45px rgba(0,0,0,0.22);
+}
+
+.home-light-theme #technology .technology-card p {
+  color: #cbd5e1;
+}
+
+.home-light-theme #technology .technology-label {
+  color: #93c5fd;
+}
+
+.home-light-theme #technology .technology-tagline {
+  color: #e2e8f0;
+}
+
+
+/* -----------------------------------------
+   TECHNOLOGY CAPABILITY PILLS
+   ----------------------------------------- */
+
+.home-light-theme #technology .technology-capabilities span {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: #dbeafe;
+}
+
+
+/* -----------------------------------------
+   TECHNOLOGY LINKS
+   ----------------------------------------- */
+
+.home-light-theme #technology .technology-link {
+  color: #60a5fa;
+}
+
+
+/* -----------------------------------------
+   ARCHITECTURE STRIP
+   ----------------------------------------- */
+
+.home-light-theme #technology .technology-architecture {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: #ffffff;
+}
+
+
+/* -----------------------------------------
+   SERVICE / PROJECT CARDS
+   ----------------------------------------- */
+
+.home-light-theme .section:not(#technology) .card {
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+
+  box-shadow:
+    0 8px 28px rgba(15, 23, 42, 0.06);
+
+  color: #172033;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.home-light-theme .section:not(#technology) .card:hover {
+  transform: translateY(-5px);
+
+  border-color: #bfdbfe;
+
+  box-shadow:
+    0 18px 38px rgba(15, 23, 42, 0.10);
+}
+
+.home-light-theme .section:not(#technology) .card h4 {
+  color: #111827;
+}
+
+.home-light-theme .section:not(#technology) .card p {
+  color: #5b6473;
+}
+
+
+/* -----------------------------------------
+   SERVICES
+   ----------------------------------------- */
+
+.home-light-theme #services {
+  background: #f5f7fb;
+}
+
+
+/* -----------------------------------------
+   CONFERENCE
+   ----------------------------------------- */
+
+.home-light-theme #conference {
+  background: #ffffff;
+}
+
+
+/* -----------------------------------------
+   INNOVATION
+   ----------------------------------------- */
+
+.home-light-theme #innovation {
+  background:
+    linear-gradient(
+      135deg,
+      #f8fafc 0%,
+      #ffffff 55%,
+      #edf4ff 100%
+    );
+}
+
+
+/* -----------------------------------------
+   PROJECTS
+   ----------------------------------------- */
+
+.home-light-theme #projects {
+  background: #f3f6fa;
+}
+
+
+/* -----------------------------------------
+   TEAM
+   ----------------------------------------- */
+
+.home-light-theme #team {
+  background: #ffffff;
+}
+
+
+/* -----------------------------------------
+   CONTACT
+   ----------------------------------------- */
+
+.home-light-theme #contact {
+  background:
+    linear-gradient(
+      135deg,
+      #f3f6fa 0%,
+      #eef4fb 100%
+    );
+}
+
+
+/* -----------------------------------------
+   CONTACT FORM
+   ----------------------------------------- */
+
+.home-light-theme .contact-form {
+  color: #172033;
+}
+
+.home-light-theme .contact-form label {
+  color: #334155;
+}
+
+.home-light-theme .contact-form input,
+.home-light-theme .contact-form select,
+.home-light-theme .contact-form textarea {
+  background: #ffffff;
+
+  color: #172033;
+
+  border: 1px solid #cbd5e1;
+
+  box-shadow:
+    0 2px 8px rgba(15,23,42,0.03);
+}
+
+.home-light-theme .contact-form input:focus,
+.home-light-theme .contact-form select:focus,
+.home-light-theme .contact-form textarea:focus {
+  border-color: #3b82f6;
+
+  outline: none;
+
+  box-shadow:
+    0 0 0 3px rgba(59,130,246,0.12);
+}
+
+
+/* -----------------------------------------
+   CONTACT DETAILS
+   ----------------------------------------- */
+
+.home-light-theme .contact-details {
+  color: #475569;
+}
+
+.home-light-theme .contact-details a {
+  color: #2563eb;
+}
+
+
+/* -----------------------------------------
+   DIVIDERS
+   ----------------------------------------- */
+
+.home-light-theme .divider {
+  border-color: #dbe3ec;
+}
+
+
+/* -----------------------------------------
+   HINT / LIST TEXT
+   ----------------------------------------- */
+
+.home-light-theme .section:not(#technology) .hint {
+  color: #64748b;
+}
+
+
+/* -----------------------------------------
+   IMAGES
+   Give images a cleaner corporate look
+   ----------------------------------------- */
+
+.home-light-theme .section .rounded {
+  box-shadow:
+    0 16px 38px rgba(15,23,42,0.10);
+}
+
+
+/* -----------------------------------------
+   HERO
+   Keep hero dark because image/text designed
+   for white typography
+   ----------------------------------------- */
+
+.home-light-theme .hero {
+  color: #ffffff;
+}
+
+.home-light-theme .hero h1,
+.home-light-theme .hero p {
+  color: #ffffff;
+}
+
+
+/* -----------------------------------------
+   NAVIGATION
+   Keep dark premium navigation
+   ----------------------------------------- */
+
+.home-light-theme header.nav {
+  background:
+    rgba(7, 15, 28, 0.96);
+}
+
+
+/* -----------------------------------------
+   FOOTER
+   Keep dark
+   ----------------------------------------- */
+
+.home-light-theme .footer {
+  background: #07111f;
+  color: #cbd5e1;
+}
+
+.home-light-theme .footer a {
+  color: #cbd5e1;
+}
+
+.home-light-theme .footer a:hover {
+  color: #ffffff;
+}
+
+
+/* -----------------------------------------
+   MOBILE
+   ----------------------------------------- */
+
+@media screen and (max-width: 900px) {
+
+  .home-light-theme #technology {
+    background:
+      linear-gradient(
+        160deg,
+        #07111f,
+        #111c31
+      );
+  }
+
+}
+</style>  
   
 </head>
-<body>
-<!-- NAV -->
+<body class="home-light-theme">
+  
+  <!-- NAV -->
 <header class="nav">
   <div class="container nav-inner">
     <a href="#home" class="logo">
