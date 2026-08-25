@@ -3031,3 +3031,491 @@
   }
 
 }
+
+
+/* =====================================================
+   VORA + XAVORA TECHNOLOGY ARCHITECTURE
+   ===================================================== */
+
+.vora-architecture-section{
+  padding:110px 0;
+
+  background:#ffffff;
+
+  overflow:hidden;
+}
+
+
+.vora-architecture-wrapper{
+  position:relative;
+
+  max-width:820px;
+
+  margin:60px auto 0;
+}
+
+
+/* =====================================================
+   STACK LAYERS
+   ===================================================== */
+
+.architecture-stack-layer{
+  position:relative;
+
+  z-index:3;
+
+  padding:32px 38px;
+
+  border-radius:22px;
+
+  text-align:center;
+
+  box-shadow:
+    0 16px 40px rgba(17,24,39,.07);
+}
+
+
+.architecture-layer-label{
+  margin-bottom:8px;
+
+  color:#8390a5;
+
+  font-size:.63rem;
+
+  font-weight:850;
+
+  letter-spacing:.16em;
+}
+
+
+.architecture-stack-layer h3{
+  margin:0;
+
+  font-size:1.8rem;
+
+  line-height:1.2;
+}
+
+
+.architecture-stack-layer p{
+  max-width:620px;
+
+  margin:12px auto 0;
+
+  line-height:1.65;
+
+  font-size:.88rem;
+}
+
+
+/* =====================================================
+   APPLICATION LAYER
+   ===================================================== */
+
+.architecture-app-layer{
+  border:1px solid #dce4ef;
+
+  background:#f7f9fc;
+
+  color:#172033;
+}
+
+
+.architecture-layer-items{
+  display:flex;
+
+  justify-content:center;
+
+  flex-wrap:wrap;
+
+  gap:8px;
+
+  margin-top:20px;
+}
+
+
+.architecture-layer-items span{
+  padding:7px 11px;
+
+  border:1px solid #dde4ed;
+
+  border-radius:999px;
+
+  background:#ffffff;
+
+  color:#5c687c;
+
+  font-size:.7rem;
+
+  font-weight:700;
+}
+
+
+/* =====================================================
+   XAVORA LAYER
+   ===================================================== */
+
+.architecture-xavora-layer{
+  border:1px solid #cfdbea;
+
+  background:
+    linear-gradient(
+      145deg,
+      #edf3fb,
+      #ffffff
+    );
+
+  color:#172033;
+
+  box-shadow:
+    0 18px 45px rgba(49,95,159,.10);
+}
+
+
+.architecture-xavora-layer h3{
+  color:#244d85;
+
+  font-size:2.3rem;
+}
+
+
+.architecture-xavora-layer p{
+  color:#68768b;
+}
+
+
+/* =====================================================
+   VORA ENGINE LAYER
+   ===================================================== */
+
+.architecture-vora-layer{
+  overflow:hidden;
+
+  padding:42px 40px;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(69,112,180,.35),
+      transparent 55%
+    ),
+    #172033;
+
+  color:#ffffff;
+
+  box-shadow:
+    0 25px 65px rgba(23,32,51,.22);
+}
+
+
+.architecture-vora-layer .architecture-layer-label{
+  position:relative;
+
+  z-index:2;
+
+  color:#9fb1cd;
+}
+
+
+.architecture-vora-layer h3{
+  position:relative;
+
+  z-index:2;
+
+  color:#ffffff;
+
+  font-size:2.45rem;
+}
+
+
+.architecture-vora-layer p{
+  position:relative;
+
+  z-index:2;
+
+  color:#c6d2e2;
+}
+
+
+.architecture-vora-glow{
+  position:absolute;
+
+  width:430px;
+  height:230px;
+
+  left:50%;
+  top:50%;
+
+  transform:translate(-50%,-50%);
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(59,130,246,.24),
+      transparent 68%
+    );
+
+  animation:
+    architectureVoraGlow 4s ease-in-out infinite;
+
+  pointer-events:none;
+}
+
+
+/* =====================================================
+   FOUNDATION
+   ===================================================== */
+
+.architecture-foundation-layer{
+  border:1px solid #dfe5ee;
+
+  background:#f3f6fa;
+}
+
+
+.architecture-foundation-items{
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  flex-wrap:wrap;
+
+  gap:10px;
+}
+
+
+.architecture-foundation-items span{
+  padding:9px 15px;
+
+  border-radius:10px;
+
+  background:#e4ebf4;
+
+  color:#4d5c73;
+
+  font-size:.7rem;
+
+  font-weight:850;
+
+  letter-spacing:.08em;
+}
+
+
+/* =====================================================
+   ARCHITECTURE INTELLIGENCE FLOW
+   ===================================================== */
+
+.architecture-stack-flow{
+  position:relative;
+
+  width:40px;
+  height:70px;
+
+  margin:0 auto;
+
+  overflow:hidden;
+}
+
+
+.architecture-stack-line{
+  position:absolute;
+
+  top:0;
+  bottom:0;
+
+  left:50%;
+
+  width:2px;
+
+  transform:translateX(-50%);
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(37,99,235,.15),
+      rgba(37,99,235,.65),
+      rgba(37,99,235,.15)
+    );
+}
+
+
+/* Intelligence particle travelling UP */
+
+.architecture-stack-particle{
+  position:absolute;
+
+  left:50%;
+  bottom:-10px;
+
+  width:9px;
+  height:9px;
+
+  transform:translateX(-50%);
+
+  border-radius:50%;
+
+  background:#2563eb;
+
+  box-shadow:
+    0 0 10px rgba(37,99,235,.9),
+    0 0 22px rgba(37,99,235,.55);
+
+  animation:
+    architectureFlowUp 2.8s linear infinite;
+}
+
+
+/* Different timing for each connector */
+
+.architecture-stack-flow:nth-of-type(2)
+.architecture-stack-particle{
+  animation-delay:-.6s;
+}
+
+
+.architecture-stack-flow:nth-of-type(4)
+.architecture-stack-particle{
+  animation-delay:-1.2s;
+}
+
+
+.architecture-stack-flow:nth-of-type(6)
+.architecture-stack-particle{
+  animation-delay:-1.8s;
+}
+
+
+/* =====================================================
+   ARCHITECTURE ANIMATIONS
+   ===================================================== */
+
+@keyframes architectureFlowUp{
+
+  0%{
+    bottom:-10px;
+    opacity:0;
+  }
+
+  15%{
+    opacity:1;
+  }
+
+  85%{
+    opacity:1;
+  }
+
+  100%{
+    bottom:100%;
+    opacity:0;
+  }
+
+}
+
+
+@keyframes architectureVoraGlow{
+
+  0%,
+  100%{
+    opacity:.45;
+
+    transform:
+      translate(-50%,-50%)
+      scale(.95);
+  }
+
+  50%{
+    opacity:1;
+
+    transform:
+      translate(-50%,-50%)
+      scale(1.12);
+  }
+
+}
+
+
+/* =====================================================
+   ARCHITECTURE SUMMARY
+   ===================================================== */
+
+.architecture-summary{
+  max-width:720px;
+
+  margin:48px auto 0;
+
+  text-align:center;
+}
+
+
+.architecture-summary strong{
+  display:block;
+
+  margin-bottom:8px;
+
+  color:#172033;
+
+  font-size:1.05rem;
+}
+
+
+.architecture-summary p{
+  margin:0;
+
+  color:#738095;
+
+  font-size:.9rem;
+
+  line-height:1.7;
+}
+
+
+/* =====================================================
+   ARCHITECTURE RESPONSIVE
+   ===================================================== */
+
+@media(max-width:600px){
+
+  .vora-architecture-section{
+    padding:75px 0;
+  }
+
+
+  .architecture-stack-layer{
+    padding:27px 20px;
+
+    border-radius:18px;
+  }
+
+
+  .architecture-vora-layer{
+    padding:35px 22px;
+  }
+
+
+  .architecture-vora-layer h3{
+    font-size:2rem;
+  }
+
+
+  .architecture-xavora-layer h3{
+    font-size:1.9rem;
+  }
+
+
+  .architecture-stack-flow{
+    height:55px;
+  }
+
+}
+
+@media(prefers-reduced-motion:reduce){
+
+  .architecture-stack-particle,
+  .architecture-vora-glow{
+    animation:none;
+  }
+
+}
