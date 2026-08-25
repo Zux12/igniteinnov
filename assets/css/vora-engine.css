@@ -861,10 +861,16 @@
 
   border-radius:50%;
 
-  border:1px solid rgba(49,95,159,.16);
+  border:2px solid rgba(37,99,235,.85);
+
+  box-shadow:
+    0 0 12px rgba(37,99,235,.75),
+    0 0 28px rgba(37,99,235,.45);
 
   animation:
     voraProcessRing 3s ease-out infinite;
+
+  pointer-events:none;
 }
 
 
@@ -1048,17 +1054,36 @@
 
   0%{
     transform:scale(.92);
-    opacity:.7;
+
+    opacity:1;
+
+    border-color:rgba(37,99,235,.95);
+
+    box-shadow:
+      0 0 10px rgba(37,99,235,.85),
+      0 0 25px rgba(37,99,235,.60);
   }
 
-  70%{
-    transform:scale(1.15);
-    opacity:.15;
+  50%{
+    opacity:.75;
+
+    border-color:rgba(59,130,246,.80);
+
+    box-shadow:
+      0 0 18px rgba(37,99,235,.75),
+      0 0 45px rgba(59,130,246,.50);
   }
 
   100%{
-    transform:scale(1.25);
+    transform:scale(1.35);
+
     opacity:0;
+
+    border-color:rgba(96,165,250,.25);
+
+    box-shadow:
+      0 0 30px rgba(37,99,235,.25),
+      0 0 65px rgba(59,130,246,.10);
   }
 
 }
