@@ -449,3 +449,308 @@ img{max-width:100%;display:block}
 
 }
 
+/* =====================================================
+   IGNITE PROPRIETARY TECHNOLOGY
+   XAVORA + VORA ENGINE
+   ===================================================== */
+
+.technology-section{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(37,99,235,.16),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(249,115,22,.10),
+      transparent 35%
+    ),
+    #090c12;
+}
+
+
+/* Heading */
+
+.technology-heading{
+  max-width:760px;
+  margin:0 auto 48px;
+  text-align:center;
+}
+
+.technology-eyebrow{
+  display:inline-block;
+  margin-bottom:12px;
+
+  color:#60a5fa;
+
+  font-size:.78rem;
+  font-weight:800;
+  letter-spacing:.18em;
+}
+
+.technology-heading h2{
+  margin-bottom:14px;
+  font-size:2.5rem;
+}
+
+.technology-heading p{
+  margin:0;
+  color:#aab5ca;
+  font-size:1.05rem;
+}
+
+
+/* Technology Grid */
+
+.technology-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:26px;
+}
+
+
+/* Cards */
+
+.technology-card{
+  position:relative;
+
+  padding:36px;
+
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:24px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.055),
+      rgba(255,255,255,.015)
+    );
+
+  box-shadow:
+    0 30px 70px rgba(0,0,0,.28);
+
+  overflow:hidden;
+
+  transition:
+    transform .3s ease,
+    border-color .3s ease,
+    box-shadow .3s ease;
+}
+
+.technology-card:hover{
+  transform:translateY(-6px);
+
+  border-color:
+    rgba(96,165,250,.4);
+
+  box-shadow:
+    0 35px 80px rgba(0,0,0,.4);
+}
+
+
+/* Accent Glow */
+
+.xavora-card::before,
+.vora-card::before{
+  content:"";
+
+  position:absolute;
+  width:260px;
+  height:260px;
+
+  border-radius:50%;
+
+  filter:blur(80px);
+
+  opacity:.15;
+
+  pointer-events:none;
+}
+
+.xavora-card::before{
+  background:#2563eb;
+  right:-100px;
+  top:-100px;
+}
+
+.vora-card::before{
+  background:#f97316;
+  left:-100px;
+  bottom:-100px;
+}
+
+
+/* Labels */
+
+.technology-label{
+  position:relative;
+
+  margin-bottom:18px;
+
+  color:#8da2c8;
+
+  font-size:.72rem;
+  font-weight:800;
+  letter-spacing:.14em;
+}
+
+
+/* Product Name */
+
+.technology-card h3{
+  position:relative;
+
+  margin:0;
+
+  font-size:2.5rem;
+  line-height:1.1;
+
+  letter-spacing:.02em;
+}
+
+
+/* Tagline */
+
+.technology-tagline{
+  position:relative;
+
+  margin:10px 0 18px !important;
+
+  color:#ffffff !important;
+
+  font-size:1.05rem;
+
+  font-weight:700;
+}
+
+
+/* Main Description */
+
+.technology-card > p:not(.technology-tagline){
+  position:relative;
+  color:#b9c3d6;
+}
+
+
+/* Capabilities */
+
+.technology-capabilities{
+  position:relative;
+
+  display:flex;
+  flex-wrap:wrap;
+
+  gap:8px;
+
+  margin:24px 0;
+}
+
+.technology-capabilities span{
+  padding:7px 11px;
+
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:999px;
+
+  background:rgba(255,255,255,.035);
+
+  color:#c9d2e3;
+
+  font-size:.76rem;
+}
+
+
+/* Explore Links */
+
+.technology-link{
+  position:relative;
+
+  display:inline-block;
+
+  margin-top:5px;
+
+  color:#ffffff;
+
+  font-weight:750;
+
+  text-decoration:none;
+
+  transition:
+    transform .2s ease,
+    color .2s ease;
+}
+
+.technology-link:hover{
+  color:#60a5fa;
+  transform:translateX(4px);
+}
+
+
+/* Architecture Line */
+
+.technology-architecture{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  flex-wrap:wrap;
+
+  gap:18px;
+
+  margin-top:42px;
+
+  color:#ffffff;
+
+  font-weight:800;
+
+  letter-spacing:.05em;
+}
+
+.architecture-arrow{
+  color:#66758f;
+
+  font-size:.7rem;
+
+  letter-spacing:.15em;
+}
+
+
+/* Mobile */
+
+@media (max-width:800px){
+
+  .technology-grid{
+    grid-template-columns:1fr;
+  }
+
+  .technology-heading h2{
+    font-size:2rem;
+  }
+
+  .technology-card{
+    padding:27px 23px;
+  }
+
+  .technology-card h3{
+    font-size:2rem;
+  }
+
+}
+
+
+/* Small Phones */
+
+@media (max-width:480px){
+
+  .technology-heading{
+    margin-bottom:32px;
+  }
+
+  .technology-architecture{
+    gap:10px;
+    font-size:.82rem;
+  }
+
+}
