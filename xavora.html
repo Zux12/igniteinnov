@@ -1301,6 +1301,8 @@
     0 30px 75px rgba(23,32,51,.28);
 
   color:#ffffff;
+
+  animation:xavoraCorePulse 5s ease-in-out infinite;
 }
 
 
@@ -1435,7 +1437,92 @@
   color:#172033;
 }
     
-    
+
+@keyframes xavoraCorePulse{
+
+  0%,
+  100%{
+    box-shadow:
+      0 30px 75px rgba(23,32,51,.28);
+  }
+
+  50%{
+    box-shadow:
+      0 35px 90px rgba(49,95,159,.38);
+  }
+
+}
+
+/* =====================================
+   WHY XAVORA RESPONSIVE
+   ===================================== */
+
+@media(max-width:950px){
+
+  .xavora-difference-visual{
+    grid-template-columns:1fr;
+
+    gap:35px;
+  }
+
+
+  .difference-column-label{
+    text-align:center;
+  }
+
+
+  .difference-centre{
+    min-height:280px;
+  }
+
+
+  .difference-flow{
+    display:none;
+  }
+
+
+  .difference-source:hover,
+  .difference-result:hover{
+    transform:translateY(-3px);
+  }
+
+}
+
+
+@media(max-width:560px){
+
+  .xavora-difference-section{
+    padding:75px 0;
+  }
+
+
+  .difference-xavora-core{
+    width:200px;
+    height:200px;
+  }
+
+
+  .difference-core-name{
+    font-size:2rem;
+  }
+
+
+  .difference-source,
+  .difference-result{
+    padding:15px;
+  }
+
+}    
+
+
+@media (prefers-reduced-motion: reduce){
+
+  .difference-flow span,
+  .difference-xavora-core{
+    animation:none;
+  }
+
+}    
   </style>
 </head>
 
