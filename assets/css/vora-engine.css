@@ -1,1 +1,613 @@
+/* =====================================================
+   VORA ENGINE
+   Dedicated Page Styles
+   ===================================================== */
 
+:root{
+  --vora-bg:#f5f7fb;
+  --vora-white:#ffffff;
+  --vora-dark:#111827;
+  --vora-navy:#172033;
+  --vora-blue:#315f9f;
+  --vora-blue-light:#7ea6df;
+  --vora-text:#172033;
+  --vora-muted:#667085;
+  --vora-border:#dfe5ef;
+}
+
+
+/* =====================================
+   BASE
+   ===================================== */
+
+.vora-page{
+  margin:0;
+  background:var(--vora-bg);
+  color:var(--vora-text);
+}
+
+.vora-container{
+  max-width:1180px;
+  margin:0 auto;
+  padding:0 20px;
+}
+
+
+/* =====================================
+   NAVIGATION
+   ===================================== */
+
+.vora-nav{
+  position:sticky;
+  top:0;
+  z-index:1000;
+
+  background:rgba(255,255,255,.93);
+
+  backdrop-filter:blur(14px);
+
+  border-bottom:1px solid #e4e8ef;
+}
+
+.vora-nav-inner{
+  min-height:76px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:30px;
+}
+
+.vora-brand{
+  display:flex;
+  align-items:center;
+
+  gap:11px;
+
+  color:#172033;
+
+  font-weight:800;
+  text-decoration:none;
+}
+
+.vora-brand img{
+  width:42px;
+  height:42px;
+  object-fit:contain;
+}
+
+.vora-menu{
+  display:flex;
+  align-items:center;
+
+  gap:25px;
+}
+
+.vora-menu a{
+  color:#455168;
+
+  text-decoration:none;
+
+  font-size:.92rem;
+  font-weight:650;
+
+  transition:color .2s ease;
+}
+
+.vora-menu a:hover{
+  color:#2563eb;
+}
+
+
+/* =====================================
+   HERO
+   ===================================== */
+
+.vora-hero{
+  position:relative;
+
+  padding:115px 0 110px;
+
+  overflow:hidden;
+
+  background:
+    radial-gradient(
+      circle at 78% 35%,
+      rgba(49,95,159,.14),
+      transparent 30%
+    ),
+    linear-gradient(
+      180deg,
+      #ffffff,
+      #f2f5fa
+    );
+}
+
+.vora-hero-grid{
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:70px;
+
+  align-items:center;
+}
+
+.vora-kicker{
+  margin-bottom:14px;
+
+  color:#315f9f;
+
+  font-size:.75rem;
+  font-weight:850;
+
+  letter-spacing:.18em;
+}
+
+.vora-hero h1{
+  margin:0;
+
+  color:#111827;
+
+  font-size:4.3rem;
+
+  line-height:1;
+
+  letter-spacing:-.04em;
+}
+
+.vora-hero h2{
+  margin:14px 0 22px;
+
+  color:#4e5b70;
+
+  font-size:1.55rem;
+
+  font-weight:650;
+}
+
+.vora-hero-lead{
+  max-width:650px;
+
+  margin:0;
+
+  color:#657086;
+
+  font-size:1.1rem;
+
+  line-height:1.75;
+}
+
+
+/* =====================================
+   HERO BUTTONS
+   ===================================== */
+
+.vora-hero-actions{
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:13px;
+
+  margin-top:32px;
+}
+
+.vora-primary-btn,
+.vora-secondary-btn{
+  display:inline-flex;
+
+  align-items:center;
+  justify-content:center;
+
+  padding:13px 22px;
+
+  border-radius:999px;
+
+  text-decoration:none;
+
+  font-weight:750;
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+.vora-primary-btn{
+  background:#172033;
+
+  color:#ffffff;
+
+  box-shadow:
+    0 12px 28px rgba(23,32,51,.18);
+}
+
+.vora-secondary-btn{
+  background:#ffffff;
+
+  color:#172033;
+
+  border:1px solid #d8dee8;
+}
+
+.vora-primary-btn:hover,
+.vora-secondary-btn:hover{
+  transform:translateY(-2px);
+}
+
+
+/* =====================================
+   ENGINE VISUAL
+   ===================================== */
+
+.vora-engine-visual{
+  position:relative;
+
+  min-height:500px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+}
+
+
+/* CORE */
+
+.vora-core{
+  position:relative;
+
+  z-index:10;
+
+  width:240px;
+  height:240px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+  justify-content:center;
+
+  text-align:center;
+
+  border-radius:50%;
+
+  color:#ffffff;
+
+  background:
+    radial-gradient(
+      circle at 35% 27%,
+      #4c75b1,
+      #172033 64%
+    );
+
+  box-shadow:
+    0 30px 80px rgba(23,32,51,.28);
+
+  animation:
+    voraCorePulse 4.5s ease-in-out infinite;
+}
+
+.vora-core-small{
+  color:#b8c6da;
+
+  font-size:.59rem;
+
+  font-weight:850;
+
+  letter-spacing:.13em;
+}
+
+.vora-core-name{
+  margin:10px 0;
+
+  font-size:3.1rem;
+
+  font-weight:900;
+
+  letter-spacing:.02em;
+}
+
+.vora-core-divider{
+  width:45px;
+  height:1px;
+
+  margin-bottom:10px;
+
+  background:rgba(255,255,255,.35);
+}
+
+.vora-core-text{
+  color:#aebdd3;
+
+  font-size:.56rem;
+
+  font-weight:750;
+
+  letter-spacing:.1em;
+}
+
+
+/* =====================================
+   ROTATING INTELLIGENCE RINGS
+   ===================================== */
+
+.vora-ring{
+  position:absolute;
+
+  border-radius:50%;
+
+  pointer-events:none;
+}
+
+.vora-ring-one{
+  width:315px;
+  height:315px;
+
+  border:1px solid rgba(49,95,159,.30);
+
+  animation:
+    voraRotate 18s linear infinite;
+}
+
+.vora-ring-two{
+  width:385px;
+  height:385px;
+
+  border:1px dashed rgba(49,95,159,.25);
+
+  animation:
+    voraRotateReverse 25s linear infinite;
+}
+
+.vora-ring-three{
+  width:455px;
+  height:455px;
+
+  border:1px solid rgba(49,95,159,.12);
+
+  animation:
+    voraRotate 34s linear infinite;
+}
+
+
+/* Small indicators on rings */
+
+.vora-ring-one::before,
+.vora-ring-two::before,
+.vora-ring-three::before{
+  content:"";
+
+  position:absolute;
+
+  width:9px;
+  height:9px;
+
+  top:-5px;
+  left:50%;
+
+  transform:translateX(-50%);
+
+  border-radius:50%;
+
+  background:#315f9f;
+
+  box-shadow:
+    0 0 12px rgba(49,95,159,.65);
+}
+
+
+/* =====================================
+   FLOATING PARTICLES
+   ===================================== */
+
+.vora-particle{
+  position:absolute;
+
+  z-index:5;
+
+  width:7px;
+  height:7px;
+
+  border-radius:50%;
+
+  background:#4779bd;
+
+  box-shadow:
+    0 0 12px rgba(71,121,189,.65);
+
+  animation:
+    voraParticleFloat 6s ease-in-out infinite;
+}
+
+.particle-one{
+  top:90px;
+  left:70px;
+
+  animation-duration:5.4s;
+}
+
+.particle-two{
+  top:125px;
+  right:55px;
+
+  animation-duration:7s;
+  animation-delay:-2s;
+}
+
+.particle-three{
+  bottom:110px;
+  left:50px;
+
+  animation-duration:6.2s;
+  animation-delay:-3s;
+}
+
+.particle-four{
+  bottom:70px;
+  right:80px;
+
+  animation-duration:7.4s;
+  animation-delay:-1s;
+}
+
+
+/* =====================================
+   ANIMATIONS
+   ===================================== */
+
+@keyframes voraRotate{
+
+  from{
+    transform:rotate(0deg);
+  }
+
+  to{
+    transform:rotate(360deg);
+  }
+
+}
+
+
+@keyframes voraRotateReverse{
+
+  from{
+    transform:rotate(360deg);
+  }
+
+  to{
+    transform:rotate(0deg);
+  }
+
+}
+
+
+@keyframes voraCorePulse{
+
+  0%,
+  100%{
+    box-shadow:
+      0 30px 80px rgba(23,32,51,.28),
+      0 0 30px rgba(49,95,159,.12);
+  }
+
+  50%{
+    box-shadow:
+      0 35px 95px rgba(23,32,51,.34),
+      0 0 65px rgba(49,95,159,.32);
+  }
+
+}
+
+
+@keyframes voraParticleFloat{
+
+  0%,
+  100%{
+    transform:
+      translate(0,0);
+
+    opacity:.55;
+  }
+
+  25%{
+    transform:
+      translate(7px,-12px);
+
+    opacity:1;
+  }
+
+  50%{
+    transform:
+      translate(-5px,-18px);
+
+    opacity:.75;
+  }
+
+  75%{
+    transform:
+      translate(9px,-7px);
+
+    opacity:1;
+  }
+
+}
+
+
+/* =====================================
+   RESPONSIVE
+   ===================================== */
+
+@media(max-width:900px){
+
+  .vora-hero{
+    padding:80px 0;
+  }
+
+  .vora-hero-grid{
+    grid-template-columns:1fr;
+
+    gap:25px;
+  }
+
+  .vora-hero h1{
+    font-size:3.4rem;
+  }
+
+  .vora-engine-visual{
+    min-height:470px;
+  }
+
+}
+
+
+@media(max-width:560px){
+
+  .vora-hero h1{
+    font-size:2.8rem;
+  }
+
+  .vora-menu{
+    display:none;
+  }
+
+  .vora-core{
+    width:205px;
+    height:205px;
+  }
+
+  .vora-core-name{
+    font-size:2.5rem;
+  }
+
+  .vora-ring-one{
+    width:270px;
+    height:270px;
+  }
+
+  .vora-ring-two{
+    width:325px;
+    height:325px;
+  }
+
+  .vora-ring-three{
+    width:380px;
+    height:380px;
+  }
+
+}
+
+
+/* Accessibility */
+
+@media(prefers-reduced-motion:reduce){
+
+  .vora-core,
+  .vora-ring,
+  .vora-particle{
+    animation:none;
+  }
+
+}
