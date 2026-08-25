@@ -327,28 +327,77 @@
   font-size:.82rem;
 
   font-weight:750;
+
+  /* Gentle floating movement */
+  animation: xavoraFloat 5s ease-in-out infinite;
+
+  will-change: transform;
 }
 
 .orbit-one{
   top:45px;
   left:65px;
+
+  animation-duration:5.2s;
+  animation-delay:0s;
 }
 
 .orbit-two{
   top:105px;
   right:40px;
+
+  animation-duration:6.4s;
+  animation-delay:-1.4s;
 }
 
 .orbit-three{
   bottom:85px;
   left:35px;
+
+  animation-duration:5.8s;
+  animation-delay:-2.2s;
 }
 
 .orbit-four{
   bottom:45px;
   right:55px;
+
+  animation-duration:6.8s;
+  animation-delay:-3s;
 }
 
+
+@keyframes xavoraFloat{
+
+  0%{
+    transform:translateY(0px) translateX(0px);
+  }
+
+  25%{
+    transform:translateY(-6px) translateX(2px);
+  }
+
+  50%{
+    transform:translateY(-10px) translateX(-2px);
+  }
+
+  75%{
+    transform:translateY(-4px) translateX(3px);
+  }
+
+  100%{
+    transform:translateY(0px) translateX(0px);
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce){
+
+  .xavora-orbit{
+    animation:none;
+  }
+
+}
 
 @media(max-width:900px){
 
