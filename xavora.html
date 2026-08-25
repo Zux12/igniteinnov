@@ -999,6 +999,124 @@
 }
 
 
+/* =====================================
+   XAVORA INDUSTRIES
+   ===================================== */
+
+.xavora-industries-section{
+  padding:105px 0;
+
+  background:#f5f7fb;
+}
+
+.xavora-industries-grid{
+  display:grid;
+
+  grid-template-columns:repeat(4,1fr);
+
+  gap:20px;
+}
+
+.xavora-industry-card{
+  position:relative;
+
+  padding:28px;
+
+  min-height:265px;
+
+  border:1px solid #e0e5ee;
+
+  border-radius:20px;
+
+  background:#ffffff;
+
+  box-shadow:
+    0 12px 32px rgba(17,24,39,.05);
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    border-color .25s ease;
+}
+
+.xavora-industry-card:hover{
+  transform:translateY(-5px);
+
+  border-color:#c9d5e8;
+
+  box-shadow:
+    0 20px 45px rgba(17,24,39,.09);
+}
+
+.xavora-industry-icon{
+  margin-bottom:22px;
+
+  font-size:1.8rem;
+}
+
+.xavora-industry-card h3{
+  margin:0 0 11px;
+
+  color:#172033;
+
+  font-size:1.2rem;
+}
+
+.xavora-industry-card p{
+  margin:0;
+
+  color:#667085;
+
+  line-height:1.7;
+
+  font-size:.94rem;
+}
+
+
+/* Highlight custom deployment */
+
+.xavora-industry-highlight{
+  background:#172033;
+
+  border-color:#172033;
+}
+
+.xavora-industry-highlight h3{
+  color:#ffffff;
+}
+
+.xavora-industry-highlight p{
+  color:#cbd4e3;
+}
+
+
+/* Responsive */
+
+@media(max-width:1000px){
+
+  .xavora-industries-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+@media(max-width:560px){
+
+  .xavora-industries-section{
+    padding:75px 0;
+  }
+
+  .xavora-industries-grid{
+    grid-template-columns:1fr;
+  }
+
+  .xavora-industry-card{
+    min-height:auto;
+  }
+
+}
+
+
     
     
   </style>
@@ -1398,6 +1516,136 @@
         </div>
 
       </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- XAVORA INDUSTRIES & DEPLOYMENT -->
+<section class="xavora-industries-section">
+
+  <div class="xavora-container">
+
+    <div class="xavora-section-heading">
+
+      <div class="xavora-section-kicker">
+        INDUSTRIES & DEPLOYMENT
+      </div>
+
+      <h2>
+        Built to Adapt Across Industries
+      </h2>
+
+      <p>
+        XAVORA™ can be configured for different operational environments,
+        allowing organisations to deploy intelligent digital systems without
+        rebuilding the technology foundation from the ground up.
+      </p>
+
+    </div>
+
+
+    <div class="xavora-industries-grid">
+
+      <article class="xavora-industry-card">
+        <div class="xavora-industry-icon">🏥</div>
+
+        <h3>Healthcare</h3>
+
+        <p>
+          Hospital intelligence, operational dashboards, clinical support,
+          resource monitoring, analytics, workflow automation, and digital health platforms.
+        </p>
+      </article>
+
+
+      <article class="xavora-industry-card">
+        <div class="xavora-industry-icon">🎓</div>
+
+        <h3>Universities & Education</h3>
+
+        <p>
+          Accreditation intelligence, academic readiness, research analytics,
+          faculty information systems, performance monitoring, and institutional dashboards.
+        </p>
+      </article>
+
+
+      <article class="xavora-industry-card">
+        <div class="xavora-industry-icon">🏛️</div>
+
+        <h3>Government</h3>
+
+        <p>
+          Integrated monitoring, policy intelligence, programme dashboards,
+          public-sector analytics, reporting, and decision-support systems.
+        </p>
+      </article>
+
+
+      <article class="xavora-industry-card">
+        <div class="xavora-industry-icon">🏢</div>
+
+        <h3>Enterprise</h3>
+
+        <p>
+          Management dashboards, enterprise analytics, workflow intelligence,
+          cross-department visibility, performance monitoring, and AI-assisted decisions.
+        </p>
+      </article>
+
+
+      <article class="xavora-industry-card">
+        <div class="xavora-industry-icon">⚙️</div>
+
+        <h3>Industry & Engineering</h3>
+
+        <p>
+          Operational intelligence, equipment monitoring, engineering analytics,
+          predictive insight, industrial dashboards, and technical decision support.
+        </p>
+      </article>
+
+
+      <article class="xavora-industry-card">
+        <div class="xavora-industry-icon">🌆</div>
+
+        <h3>Smart Cities</h3>
+
+        <p>
+          Multi-agency data integration, city dashboards, infrastructure monitoring,
+          public-service intelligence, alerts, analytics, and strategic planning.
+        </p>
+      </article>
+
+
+      <article class="xavora-industry-card">
+        <div class="xavora-industry-icon">🌐</div>
+
+        <h3>Events & Conferences</h3>
+
+        <p>
+          Registration systems, participant intelligence, payment integration,
+          programme management, analytics, AI assistance, and event operations.
+        </p>
+      </article>
+
+
+      <article class="xavora-industry-card xavora-industry-highlight">
+
+        <div class="xavora-industry-icon">✦</div>
+
+        <h3>Custom Deployment</h3>
+
+        <p>
+          XAVORA™ can be adapted for specialised organisational requirements,
+          combining selected platform capabilities into a purpose-built solution.
+        </p>
+
+      </article>
 
     </div>
 
