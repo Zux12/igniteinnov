@@ -926,6 +926,144 @@
 }
 
 /* =====================================================
+   PROCESS DATA FLOW
+   ===================================================== */
+
+.vora-process-flow{
+  position:relative;
+
+  height:30px;
+
+  overflow:visible;
+}
+
+
+.process-flow-line{
+  position:absolute;
+
+  top:50%;
+  left:0;
+  right:0;
+
+  height:2px;
+
+  transform:translateY(-50%);
+
+  background:linear-gradient(
+    90deg,
+    rgba(49,95,159,.08),
+    rgba(49,95,159,.50),
+    rgba(49,95,159,.08)
+  );
+
+  border-radius:999px;
+}
+
+
+/* Moving information particles */
+
+.vora-process-flow > span{
+  position:absolute;
+
+  top:50%;
+  left:-4px;
+
+  width:7px;
+  height:7px;
+
+  transform:translateY(-50%);
+
+  border-radius:50%;
+
+  background:#3b78c4;
+
+  box-shadow:
+    0 0 8px rgba(59,120,196,.85),
+    0 0 17px rgba(59,120,196,.45);
+
+  animation:voraPipelineFlow 2.2s linear infinite;
+}
+
+
+.vora-process-flow > span:nth-of-type(2){
+  animation-delay:-.72s;
+}
+
+
+.vora-process-flow > span:nth-of-type(3){
+  animation-delay:-1.44s;
+}
+
+
+/* Moving data */
+
+@keyframes voraPipelineFlow{
+
+  0%{
+    left:-4px;
+    opacity:0;
+  }
+
+  15%{
+    opacity:1;
+  }
+
+  85%{
+    opacity:1;
+  }
+
+  100%{
+    left:calc(100% - 3px);
+    opacity:0;
+  }
+
+}
+
+
+/* =====================================================
+   VORA PROCESSING ANIMATION
+   ===================================================== */
+
+@keyframes voraProcessPulse{
+
+  0%,
+  100%{
+    box-shadow:
+      0 25px 60px rgba(23,32,51,.28),
+      0 0 20px rgba(49,95,159,.12);
+  }
+
+  50%{
+    box-shadow:
+      0 30px 75px rgba(23,32,51,.36),
+      0 0 55px rgba(49,95,159,.42);
+  }
+
+}
+
+
+/* Expanding intelligence pulse */
+
+@keyframes voraProcessRing{
+
+  0%{
+    transform:scale(.92);
+    opacity:.7;
+  }
+
+  70%{
+    transform:scale(1.15);
+    opacity:.15;
+  }
+
+  100%{
+    transform:scale(1.25);
+    opacity:0;
+  }
+
+}
+
+/* =====================================================
    PROCESS SUMMARY
    ===================================================== */
 
