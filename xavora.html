@@ -1453,6 +1453,133 @@
 
 }
 
+
+/* =====================================
+   XAVORA DATA FLOW ANIMATION
+   ===================================== */
+
+.difference-flow{
+  position:absolute;
+  top:50%;
+
+  width:125px;
+  height:3px;
+
+  overflow:visible;
+
+  background:linear-gradient(
+    90deg,
+    rgba(49,95,159,.05),
+    rgba(49,95,159,.45),
+    rgba(49,95,159,.05)
+  );
+
+  border-radius:999px;
+  z-index:2;
+}
+
+
+/* Left side flowing INTO XAVORA */
+
+.flow-left{
+  right:calc(50% + 105px);
+  transform:translateY(-50%);
+}
+
+
+/* Right side flowing OUT from XAVORA */
+
+.flow-right{
+  left:calc(50% + 105px);
+  transform:translateY(-50%);
+}
+
+
+/* Moving blue particles */
+
+.difference-flow span{
+  position:absolute;
+
+  top:50%;
+  left:-8px;
+
+  width:8px;
+  height:8px;
+
+  border-radius:50%;
+
+  background:#2563eb;
+
+  box-shadow:
+    0 0 8px rgba(37,99,235,.8),
+    0 0 18px rgba(37,99,235,.45);
+
+  transform:translateY(-50%);
+
+  animation:xavoraDataFlow 2.5s linear infinite;
+}
+
+
+.difference-flow span:nth-child(2){
+  animation-delay:-0.8s;
+}
+
+
+.difference-flow span:nth-child(3){
+  animation-delay:-1.6s;
+}
+
+
+/* Data travelling through XAVORA */
+
+@keyframes xavoraDataFlow{
+
+  0%{
+    left:-8px;
+    opacity:0;
+  }
+
+  15%{
+    opacity:1;
+  }
+
+  85%{
+    opacity:1;
+  }
+
+  100%{
+    left:100%;
+    opacity:0;
+  }
+
+}
+
+
+/* =====================================
+   XAVORA CORE PULSE
+   ===================================== */
+
+.difference-xavora-core{
+  animation:xavoraCorePulse 5s ease-in-out infinite;
+}
+
+
+@keyframes xavoraCorePulse{
+
+  0%,
+  100%{
+    box-shadow:
+      0 30px 75px rgba(23,32,51,.28);
+  }
+
+  50%{
+    box-shadow:
+      0 35px 90px rgba(49,95,159,.45);
+  }
+
+}
+
+
 /* =====================================
    WHY XAVORA RESPONSIVE
    ===================================== */
@@ -1461,7 +1588,6 @@
 
   .xavora-difference-visual{
     grid-template-columns:1fr;
-
     gap:35px;
   }
 
@@ -1476,6 +1602,7 @@
   }
 
 
+  /* Hide horizontal data flow on mobile */
   .difference-flow{
     display:none;
   }
@@ -1512,8 +1639,12 @@
     padding:15px;
   }
 
-}    
+}
 
+
+/* =====================================
+   REDUCED MOTION ACCESSIBILITY
+   ===================================== */
 
 @media (prefers-reduced-motion: reduce){
 
@@ -1522,7 +1653,10 @@
     animation:none;
   }
 
-}    
+}
+
+    
+
   </style>
 </head>
 
