@@ -611,3 +611,454 @@
   }
 
 }
+
+/* =====================================================
+   HOW VORA ENGINE WORKS
+   ===================================================== */
+
+.vora-process-section{
+  padding:110px 0;
+
+  background:#ffffff;
+
+  overflow:hidden;
+}
+
+
+/* Heading */
+
+.vora-section-heading{
+  max-width:800px;
+
+  margin:0 auto 65px;
+
+  text-align:center;
+}
+
+.vora-section-kicker{
+  margin-bottom:12px;
+
+  color:#315f9f;
+
+  font-size:.74rem;
+
+  font-weight:850;
+
+  letter-spacing:.18em;
+}
+
+.vora-section-heading h2{
+  margin:0 0 18px;
+
+  color:#172033;
+
+  font-size:2.65rem;
+
+  line-height:1.2;
+
+  letter-spacing:-.03em;
+}
+
+.vora-section-heading p{
+  margin:0;
+
+  color:#667085;
+
+  font-size:1.04rem;
+
+  line-height:1.75;
+}
+
+
+/* =====================================================
+   PIPELINE
+   ===================================================== */
+
+.vora-process-pipeline{
+  display:grid;
+
+  grid-template-columns:
+    minmax(135px,1fr)
+    45px
+    minmax(135px,1fr)
+    45px
+    minmax(135px,1fr)
+    45px
+    175px
+    45px
+    minmax(135px,1fr)
+    45px
+    minmax(135px,1fr);
+
+  align-items:center;
+
+  gap:0;
+
+  margin-top:55px;
+}
+
+
+/* =====================================================
+   PROCESS STAGES
+   ===================================================== */
+
+.vora-process-stage{
+  position:relative;
+
+  min-height:245px;
+
+  padding:23px 18px;
+
+  border:1px solid #e0e6ef;
+
+  border-radius:18px;
+
+  background:#f8faff;
+
+  box-shadow:
+    0 12px 30px rgba(17,24,39,.05);
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    border-color .25s ease;
+}
+
+.vora-process-stage:hover{
+  transform:translateY(-5px);
+
+  border-color:#c9d7eb;
+
+  box-shadow:
+    0 18px 40px rgba(17,24,39,.09);
+}
+
+
+.process-stage-number{
+  margin-bottom:18px;
+
+  color:#9aa9bf;
+
+  font-size:.66rem;
+
+  font-weight:850;
+
+  letter-spacing:.12em;
+}
+
+
+.process-stage-icon{
+  width:48px;
+  height:48px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  margin-bottom:19px;
+
+  border-radius:13px;
+
+  background:#e7edf6;
+
+  color:#365c91;
+
+  font-size:.66rem;
+
+  font-weight:900;
+
+  letter-spacing:.05em;
+
+  transition:
+    background .3s ease,
+    color .3s ease,
+    box-shadow .3s ease;
+}
+
+
+.vora-process-stage:hover .process-stage-icon{
+  background:#315f9f;
+
+  color:#ffffff;
+
+  box-shadow:
+    0 8px 20px rgba(49,95,159,.22);
+}
+
+
+.vora-process-stage h3{
+  margin:0 0 10px;
+
+  color:#172033;
+
+  font-size:1.07rem;
+}
+
+
+.vora-process-stage p{
+  margin:0;
+
+  color:#718096;
+
+  font-size:.82rem;
+
+  line-height:1.65;
+}
+
+
+/* Outputs slightly different */
+
+.vora-process-output{
+  background:#f3f7fc;
+}
+
+
+/* =====================================================
+   VORA PROCESS ENGINE
+   ===================================================== */
+
+.vora-process-engine{
+  position:relative;
+
+  z-index:5;
+
+  width:175px;
+  height:175px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+  justify-content:center;
+
+  text-align:center;
+
+  border-radius:50%;
+
+  color:#ffffff;
+
+  background:
+    radial-gradient(
+      circle at 35% 25%,
+      #4d76b2,
+      #172033 65%
+    );
+
+  box-shadow:
+    0 25px 60px rgba(23,32,51,.28);
+
+  animation:
+    voraProcessPulse 4s ease-in-out infinite;
+}
+
+
+.process-engine-glow{
+  position:absolute;
+
+  inset:-20px;
+
+  border-radius:50%;
+
+  border:1px solid rgba(49,95,159,.16);
+
+  animation:
+    voraProcessRing 3s ease-out infinite;
+}
+
+
+.process-engine-small{
+  position:relative;
+
+  z-index:2;
+
+  color:#b6c5da;
+
+  font-size:.52rem;
+
+  font-weight:850;
+
+  letter-spacing:.12em;
+}
+
+
+.process-engine-name{
+  position:relative;
+
+  z-index:2;
+
+  margin:7px 0;
+
+  font-size:2.2rem;
+
+  font-weight:900;
+}
+
+
+.process-engine-line{
+  position:relative;
+
+  z-index:2;
+
+  width:35px;
+
+  height:1px;
+
+  margin-bottom:7px;
+
+  background:rgba(255,255,255,.32);
+}
+
+
+.process-engine-text{
+  position:relative;
+
+  z-index:2;
+
+  color:#aebed6;
+
+  font-size:.56rem;
+
+  font-weight:800;
+
+  letter-spacing:.13em;
+}
+
+/* =====================================================
+   PROCESS SUMMARY
+   ===================================================== */
+
+.vora-process-summary{
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  flex-wrap:wrap;
+
+  gap:14px;
+
+  margin-top:55px;
+
+  color:#43516a;
+
+  font-size:.75rem;
+
+  font-weight:850;
+
+  letter-spacing:.1em;
+}
+
+
+.process-summary-arrow{
+  color:#9ba8ba;
+
+  font-size:1rem;
+}
+
+/* =====================================================
+   PROCESS RESPONSIVE
+   ===================================================== */
+
+@media(max-width:1100px){
+
+  .vora-process-pipeline{
+    grid-template-columns:
+      1fr
+      38px
+      1fr
+      38px
+      1fr;
+
+    row-gap:35px;
+  }
+
+
+  /* Hide the large horizontal engine arrangement
+     and allow elements to wrap naturally */
+
+  .vora-process-engine{
+    grid-column:2 / 5;
+
+    justify-self:center;
+
+    margin:20px 0;
+  }
+
+}
+
+
+@media(max-width:800px){
+
+  .vora-process-pipeline{
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+  }
+
+
+  .vora-process-stage{
+    width:100%;
+
+    min-height:auto;
+  }
+
+
+  .vora-process-engine{
+    margin:25px auto;
+  }
+
+
+  /* Horizontal flows don't make sense
+     when stacked vertically */
+
+  .vora-process-flow{
+    width:2px;
+    height:40px;
+
+    margin:0 auto;
+
+    background:#c9d5e6;
+  }
+
+
+  .process-flow-line,
+  .vora-process-flow > span{
+    display:none;
+  }
+
+}
+
+
+@media(max-width:560px){
+
+  .vora-process-section{
+    padding:75px 0;
+  }
+
+
+  .vora-section-heading h2{
+    font-size:2rem;
+  }
+
+
+  .vora-process-summary{
+    gap:8px;
+
+    font-size:.64rem;
+  }
+
+}
+
+@media(prefers-reduced-motion:reduce){
+
+  .vora-process-flow > span,
+  .vora-process-engine,
+  .process-engine-glow{
+    animation:none;
+  }
+
+}
