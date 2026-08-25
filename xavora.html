@@ -596,7 +596,122 @@
     min-height:auto;
   }
 
-}    
+}  
+
+
+/* =====================================
+   XAVORA PLATFORM CAPABILITIES
+   ===================================== */
+
+.xavora-capabilities-section{
+  padding:100px 0;
+
+  background:#eef2f7;
+}
+
+.xavora-capabilities-grid{
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:22px;
+}
+
+.xavora-capability-card{
+  position:relative;
+
+  padding:30px;
+
+  min-height:255px;
+
+  border-radius:20px;
+
+  background:#172033;
+
+  color:#ffffff;
+
+  box-shadow:
+    0 18px 45px rgba(17,24,39,.10);
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease;
+}
+
+.xavora-capability-card:hover{
+  transform:translateY(-6px);
+
+  box-shadow:
+    0 25px 55px rgba(17,24,39,.17);
+}
+
+.xavora-capability-icon{
+  width:44px;
+  height:44px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  margin-bottom:28px;
+
+  border-radius:50%;
+
+  background:#ffffff;
+
+  color:#172033;
+
+  font-size:.75rem;
+
+  font-weight:850;
+}
+
+.xavora-capability-card h3{
+  margin:0 0 12px;
+
+  color:#ffffff;
+
+  font-size:1.3rem;
+}
+
+.xavora-capability-card p{
+  margin:0;
+
+  color:#cbd4e3;
+
+  line-height:1.7;
+}
+
+
+/* Responsive */
+
+@media(max-width:950px){
+
+  .xavora-capabilities-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+@media(max-width:560px){
+
+  .xavora-capabilities-section{
+    padding:75px 0;
+  }
+
+  .xavora-capabilities-grid{
+    grid-template-columns:1fr;
+  }
+
+  .xavora-capability-card{
+    min-height:auto;
+  }
+
+}
+
+
+    
   </style>
 </head>
 
@@ -789,6 +904,121 @@
 
 </section>
 
+
+
+<!-- XAVORA PLATFORM CAPABILITIES -->
+<section class="xavora-capabilities-section">
+
+  <div class="xavora-container">
+
+    <div class="xavora-section-heading">
+
+      <div class="xavora-section-kicker">
+        PLATFORM CAPABILITIES
+      </div>
+
+      <h2>
+        One Platform. Multiple Intelligence Layers.
+      </h2>
+
+      <p>
+        XAVORA™ is designed as a modular enterprise platform that can adapt to
+        different organisations, industries, and operational environments.
+      </p>
+
+    </div>
+
+
+    <div class="xavora-capabilities-grid">
+
+      <article class="xavora-capability-card">
+
+        <div class="xavora-capability-icon">01</div>
+
+        <h3>Data Integration</h3>
+
+        <p>
+          Connect information from databases, spreadsheets, APIs,
+          operational systems, enterprise applications, and external data sources.
+        </p>
+
+      </article>
+
+
+      <article class="xavora-capability-card">
+
+        <div class="xavora-capability-icon">02</div>
+
+        <h3>AI Analytics</h3>
+
+        <p>
+          Apply artificial intelligence and analytical models to identify
+          patterns, correlations, anomalies, risks, and emerging opportunities.
+        </p>
+
+      </article>
+
+
+      <article class="xavora-capability-card">
+
+        <div class="xavora-capability-icon">03</div>
+
+        <h3>Intelligent Dashboards</h3>
+
+        <p>
+          Present complex organisational information through clear,
+          interactive dashboards designed for operational and strategic decision-making.
+        </p>
+
+      </article>
+
+
+      <article class="xavora-capability-card">
+
+        <div class="xavora-capability-icon">04</div>
+
+        <h3>Workflow Automation</h3>
+
+        <p>
+          Automate repetitive processes, approvals, alerts, notifications,
+          and information flows across organisational functions.
+        </p>
+
+      </article>
+
+
+      <article class="xavora-capability-card">
+
+        <div class="xavora-capability-icon">05</div>
+
+        <h3>Decision Intelligence</h3>
+
+        <p>
+          Combine operational data, AI analysis, rules, and contextual
+          information to support faster and more informed decisions.
+        </p>
+
+      </article>
+
+
+      <article class="xavora-capability-card">
+
+        <div class="xavora-capability-icon">06</div>
+
+        <h3>Modular Applications</h3>
+
+        <p>
+          Deploy industry-specific modules and applications while maintaining
+          a common enterprise intelligence foundation underneath.
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
   
   
 </body>
