@@ -1968,10 +1968,8 @@
 
   .vora-detection-grid{
     grid-template-columns:1fr;
-
     gap:45px;
   }
-
 
   .vora-detection-content h2{
     font-size:2.2rem;
@@ -1983,4 +1981,560 @@
 @media(max-width:560px){
 
   .vora-detection-section{
-    padding:
+    padding:75px 0;
+  }
+
+  .vora-detection-content h2{
+    font-size:2rem;
+  }
+
+  .vora-detection-visual{
+    min-height:420px;
+    border-radius:22px;
+  }
+
+  .detection-visual-label{
+    top:20px;
+    left:20px;
+    font-size:.58rem;
+  }
+
+  .detection-status{
+    left:18px;
+    bottom:18px;
+
+    padding:10px 12px;
+  }
+
+  .detection-anomaly{
+    right:8%;
+  }
+
+  .detection-node{
+    transform:scale(.9);
+  }
+
+}
+
+
+/* =====================================
+   REDUCED MOTION ACCESSIBILITY
+   ===================================== */
+
+@media(prefers-reduced-motion:reduce){
+
+  .detection-node,
+  .detected-node,
+  .detected-node span,
+  .network-line,
+  .detection-scanner,
+  .detection-status,
+  .anomaly-core,
+  .anomaly-pulse{
+    animation:none;
+  }
+
+  .network-line{
+    opacity:.55;
+  }
+
+  .detection-status{
+    opacity:1;
+    transform:none;
+  }
+
+  .anomaly-core{
+    opacity:1;
+  }
+
+}
+
+
+/* =====================================================
+   PREDICTIVE INTELLIGENCE
+   ===================================================== */
+
+.vora-prediction-section{
+  padding:110px 0;
+  background:#ffffff;
+  overflow:hidden;
+}
+
+.vora-prediction-grid{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:80px;
+  align-items:center;
+}
+
+
+/* =====================================
+   VISUAL
+   ===================================== */
+
+.vora-prediction-visual{
+  position:relative;
+}
+
+.prediction-panel-label{
+  margin-bottom:16px;
+
+  color:#7d8da6;
+
+  font-size:.66rem;
+  font-weight:850;
+
+  letter-spacing:.16em;
+}
+
+.prediction-chart{
+  position:relative;
+
+  min-height:460px;
+
+  padding:25px;
+
+  border:1px solid #dce4ef;
+
+  border-radius:28px;
+
+  background:
+    radial-gradient(
+      circle at 75% 25%,
+      rgba(37,99,235,.08),
+      transparent 32%
+    ),
+    #f8faff;
+
+  box-shadow:
+    0 25px 60px rgba(17,24,39,.08);
+
+  overflow:hidden;
+}
+
+.prediction-chart svg{
+  position:absolute;
+
+  inset:25px;
+
+  width:calc(100% - 50px);
+  height:calc(100% - 50px);
+}
+
+
+/* Grid */
+
+.prediction-axis{
+  stroke:#aeb9c9;
+  stroke-width:1.3;
+}
+
+.prediction-grid-line{
+  stroke:#dfe6ef;
+  stroke-width:1;
+}
+
+
+/* Historical line */
+
+.prediction-history{
+  fill:none;
+
+  stroke:#455a78;
+  stroke-width:4;
+
+  stroke-linecap:round;
+}
+
+
+/* Forecast confidence area */
+
+.prediction-confidence{
+  fill:rgba(37,99,235,.08);
+
+  opacity:0;
+
+  animation:
+    predictionConfidenceReveal 8s ease-in-out infinite;
+}
+
+
+/* Forecast */
+
+.prediction-forecast{
+  fill:none;
+
+  stroke:#2563eb;
+  stroke-width:4;
+
+  stroke-linecap:round;
+
+  stroke-dasharray:10 10;
+
+  stroke-dashoffset:220;
+
+  animation:
+    predictionDraw 8s ease-in-out infinite;
+}
+
+
+/* Points */
+
+.prediction-current-point{
+  fill:#172033;
+
+  stroke:#ffffff;
+  stroke-width:3;
+}
+
+.prediction-future-point{
+  fill:#2563eb;
+
+  stroke:#ffffff;
+  stroke-width:3;
+
+  opacity:0;
+
+  animation:
+    predictionFuturePoint 8s ease-in-out infinite;
+}
+
+
+/* Labels */
+
+.prediction-now-label,
+.prediction-future-label{
+  position:absolute;
+
+  bottom:45px;
+
+  color:#8090a7;
+
+  font-size:.6rem;
+
+  font-weight:850;
+
+  letter-spacing:.13em;
+}
+
+.prediction-now-label{
+  left:67%;
+}
+
+.prediction-future-label{
+  right:7%;
+  color:#2563eb;
+}
+
+
+/* Insight box */
+
+.prediction-insight-card{
+  position:absolute;
+
+  top:48px;
+  right:35px;
+
+  max-width:215px;
+
+  padding:15px 17px;
+
+  border:1px solid #d7e2f2;
+
+  border-radius:14px;
+
+  background:rgba(255,255,255,.94);
+
+  backdrop-filter:blur(8px);
+
+  box-shadow:
+    0 13px 30px rgba(17,24,39,.08);
+
+  opacity:0;
+
+  transform:translateY(8px);
+
+  animation:
+    predictionInsightReveal 8s ease-in-out infinite;
+}
+
+.prediction-insight-status{
+  margin-bottom:5px;
+
+  color:#2563eb;
+
+  font-size:.54rem;
+
+  font-weight:850;
+
+  letter-spacing:.12em;
+}
+
+.prediction-insight-card strong{
+  display:block;
+
+  color:#172033;
+
+  font-size:.8rem;
+}
+
+.prediction-insight-card span{
+  display:block;
+
+  margin-top:4px;
+
+  color:#78869a;
+
+  font-size:.67rem;
+
+  line-height:1.5;
+}
+
+
+/* =====================================
+   RIGHT CONTENT
+   ===================================== */
+
+.vora-prediction-content h2{
+  margin:0 0 20px;
+
+  color:#172033;
+
+  font-size:2.65rem;
+
+  line-height:1.15;
+
+  letter-spacing:-.03em;
+}
+
+.vora-prediction-lead{
+  margin:0;
+
+  color:#667085;
+
+  font-size:1.02rem;
+
+  line-height:1.8;
+}
+
+.vora-prediction-points{
+  display:flex;
+  flex-direction:column;
+
+  gap:22px;
+
+  margin-top:34px;
+}
+
+.prediction-point{
+  display:flex;
+
+  gap:16px;
+
+  align-items:flex-start;
+}
+
+.prediction-point > span{
+  flex:0 0 38px;
+
+  width:38px;
+  height:38px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+
+  background:#e9eff8;
+
+  color:#315f9f;
+
+  font-size:.65rem;
+
+  font-weight:850;
+}
+
+.prediction-point strong{
+  display:block;
+
+  margin-bottom:4px;
+
+  color:#172033;
+
+  font-size:.95rem;
+}
+
+.prediction-point p{
+  margin:0;
+
+  color:#7a879a;
+
+  font-size:.85rem;
+
+  line-height:1.6;
+}
+
+/* =====================================================
+   PREDICTION ANIMATIONS
+   ===================================================== */
+
+@keyframes predictionDraw{
+
+  0%,
+  20%{
+    stroke-dashoffset:220;
+    opacity:.2;
+  }
+
+  45%{
+    stroke-dashoffset:0;
+    opacity:1;
+  }
+
+  80%{
+    stroke-dashoffset:0;
+    opacity:1;
+  }
+
+  100%{
+    stroke-dashoffset:220;
+    opacity:.15;
+  }
+
+}
+
+
+@keyframes predictionConfidenceReveal{
+
+  0%,
+  25%{
+    opacity:0;
+  }
+
+  45%,
+  80%{
+    opacity:1;
+  }
+
+  100%{
+    opacity:0;
+  }
+
+}
+
+
+@keyframes predictionFuturePoint{
+
+  0%,
+  35%{
+    opacity:0;
+
+    transform:scale(.7);
+  }
+
+  50%,
+  80%{
+    opacity:1;
+
+    transform:scale(1);
+  }
+
+  100%{
+    opacity:0;
+
+    transform:scale(.7);
+  }
+
+}
+
+
+@keyframes predictionInsightReveal{
+
+  0%,
+  40%{
+    opacity:0;
+
+    transform:translateY(8px);
+  }
+
+  55%,
+  82%{
+    opacity:1;
+
+    transform:translateY(0);
+  }
+
+  100%{
+    opacity:0;
+
+    transform:translateY(8px);
+  }
+
+}
+
+/* =====================================================
+   PREDICTION RESPONSIVE
+   ===================================================== */
+
+@media(max-width:900px){
+
+  .vora-prediction-grid{
+    grid-template-columns:1fr;
+
+    gap:50px;
+  }
+
+  .vora-prediction-content h2{
+    font-size:2.2rem;
+  }
+
+}
+
+
+@media(max-width:560px){
+
+  .vora-prediction-section{
+    padding:75px 0;
+  }
+
+  .prediction-chart{
+    min-height:360px;
+
+    padding:15px;
+  }
+
+  .prediction-chart svg{
+    inset:15px;
+
+    width:calc(100% - 30px);
+    height:calc(100% - 30px);
+  }
+
+  .prediction-insight-card{
+    top:30px;
+    right:22px;
+
+    max-width:175px;
+  }
+
+  .prediction-now-label,
+  .prediction-future-label{
+    display:none;
+  }
+
+}
+
+@media(prefers-reduced-motion:reduce){
+
+  .prediction-forecast,
+  .prediction-confidence,
+  .prediction-future-point,
+  .prediction-insight-card{
+    animation:none;
+
+    opacity:1;
+  }
+
+}
