@@ -3519,3 +3519,284 @@
   }
 
 }
+
+
+/* =====================================================
+   VORA CLOSING CTA
+   ===================================================== */
+
+.vora-cta-section{
+  padding:100px 0;
+  background:#ffffff;
+}
+
+
+.vora-cta-box{
+  position:relative;
+
+  overflow:hidden;
+
+  max-width:1050px;
+
+  margin:0 auto;
+
+  padding:75px 60px;
+
+  border-radius:30px;
+
+  text-align:center;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(69,112,180,.32),
+      transparent 45%
+    ),
+    #172033;
+
+  box-shadow:
+    0 30px 75px rgba(17,24,39,.18);
+}
+
+
+.vora-cta-box::before{
+  content:"";
+
+  position:absolute;
+
+  width:520px;
+  height:520px;
+
+  left:50%;
+  bottom:-410px;
+
+  transform:translateX(-50%);
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(59,130,246,.28),
+      transparent 68%
+    );
+
+  pointer-events:none;
+}
+
+
+.vora-cta-kicker{
+  position:relative;
+
+  z-index:2;
+
+  margin-bottom:16px;
+
+  color:#9fb7dc;
+
+  font-size:.72rem;
+
+  font-weight:850;
+
+  letter-spacing:.17em;
+}
+
+
+.vora-cta-box h2{
+  position:relative;
+
+  z-index:2;
+
+  max-width:760px;
+
+  margin:0 auto 20px;
+
+  color:#ffffff;
+
+  font-size:2.7rem;
+
+  line-height:1.2;
+
+  letter-spacing:-.03em;
+}
+
+
+.vora-cta-box p{
+  position:relative;
+
+  z-index:2;
+
+  max-width:760px;
+
+  margin:0 auto;
+
+  color:#c6d1e1;
+
+  font-size:1.02rem;
+
+  line-height:1.75;
+}
+
+
+.vora-cta-actions{
+  position:relative;
+
+  z-index:2;
+
+  display:flex;
+
+  justify-content:center;
+
+  flex-wrap:wrap;
+
+  gap:13px;
+
+  margin-top:32px;
+}
+
+
+.vora-cta-primary,
+.vora-cta-secondary{
+  display:inline-flex;
+
+  align-items:center;
+  justify-content:center;
+
+  padding:13px 21px;
+
+  border-radius:999px;
+
+  font-size:.9rem;
+
+  font-weight:750;
+
+  text-decoration:none;
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+
+.vora-cta-primary{
+  background:#ffffff;
+
+  color:#172033;
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,.12);
+}
+
+
+.vora-cta-secondary{
+  border:1px solid rgba(255,255,255,.22);
+
+  background:rgba(255,255,255,.06);
+
+  color:#ffffff;
+}
+
+
+.vora-cta-primary:hover,
+.vora-cta-secondary:hover{
+  transform:translateY(-2px);
+}
+
+
+/* =====================================================
+   VORA FOOTER
+   ===================================================== */
+
+.vora-footer{
+  padding:42px 0;
+
+  background:#0f1624;
+
+  border-top:1px solid rgba(255,255,255,.06);
+}
+
+
+.vora-footer-inner{
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+
+  gap:16px;
+
+  text-align:center;
+}
+
+
+.vora-footer-brand{
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  color:#ffffff;
+
+  font-weight:800;
+}
+
+
+.vora-footer-brand img{
+  width:38px;
+  height:38px;
+
+  object-fit:contain;
+}
+
+
+.vora-footer-links{
+  display:flex;
+
+  flex-wrap:wrap;
+
+  justify-content:center;
+
+  gap:16px;
+}
+
+
+.vora-footer-links a{
+  color:#c6d1e1;
+
+  text-decoration:none;
+
+  font-size:.88rem;
+}
+
+
+.vora-footer-links a:hover{
+  color:#ffffff;
+}
+
+
+.vora-footer-copy{
+  color:#8190a7;
+
+  font-size:.8rem;
+}
+
+
+@media(max-width:600px){
+
+  .vora-cta-section{
+    padding:70px 0;
+  }
+
+  .vora-cta-box{
+    padding:55px 25px;
+
+    border-radius:24px;
+  }
+
+  .vora-cta-box h2{
+    font-size:2rem;
+  }
+
+}
+
