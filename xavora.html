@@ -445,6 +445,157 @@
     font-size:.72rem;
   }
 
+}  
+
+
+/* =====================================
+   WHAT XAVORA DOES
+   ===================================== */
+
+.xavora-purpose-section{
+  padding:100px 0;
+
+  background:#ffffff;
+}
+
+.xavora-section-heading{
+  max-width:780px;
+
+  margin:0 auto 50px;
+
+  text-align:center;
+}
+
+.xavora-section-kicker{
+  margin-bottom:12px;
+
+  color:#2563eb;
+
+  font-size:.74rem;
+
+  font-weight:850;
+
+  letter-spacing:.17em;
+}
+
+.xavora-section-heading h2{
+  margin:0 0 18px;
+
+  color:#172033;
+
+  font-size:2.6rem;
+
+  line-height:1.2;
+
+  letter-spacing:-.025em;
+}
+
+.xavora-section-heading p{
+  margin:0;
+
+  color:#667085;
+
+  font-size:1.05rem;
+
+  line-height:1.75;
+}
+
+
+/* Value cards */
+
+.xavora-value-grid{
+  display:grid;
+
+  grid-template-columns:repeat(4,1fr);
+
+  gap:20px;
+}
+
+.xavora-value-card{
+  position:relative;
+
+  min-height:270px;
+
+  padding:28px;
+
+  border:1px solid #e5e9f1;
+
+  border-radius:20px;
+
+  background:#f8faff;
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    border-color .25s ease;
+}
+
+.xavora-value-card:hover{
+  transform:translateY(-5px);
+
+  border-color:#cbd8ef;
+
+  box-shadow:
+    0 18px 42px rgba(17,24,39,.08);
+}
+
+.xavora-value-number{
+  margin-bottom:34px;
+
+  color:#a7b7d4;
+
+  font-size:.76rem;
+
+  font-weight:850;
+
+  letter-spacing:.12em;
+}
+
+.xavora-value-card h3{
+  margin:0 0 12px;
+
+  color:#172033;
+
+  font-size:1.35rem;
+}
+
+.xavora-value-card p{
+  margin:0;
+
+  color:#657086;
+
+  line-height:1.7;
+}
+
+
+/* Responsive */
+
+@media(max-width:950px){
+
+  .xavora-value-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+@media(max-width:560px){
+
+  .xavora-purpose-section{
+    padding:75px 0;
+  }
+
+  .xavora-section-heading h2{
+    font-size:2rem;
+  }
+
+  .xavora-value-grid{
+    grid-template-columns:1fr;
+  }
+
+  .xavora-value-card{
+    min-height:auto;
+  }
+
 }    
   </style>
 </head>
@@ -550,6 +701,95 @@
 
 </section>
 
+
+<section id="capabilities" class="xavora-purpose-section">
+
+  <div class="xavora-container">
+
+    <div class="xavora-section-heading">
+
+      <div class="xavora-section-kicker">
+        WHAT XAVORA™ DOES
+      </div>
+
+      <h2>
+        From Fragmented Data to Enterprise Intelligence
+      </h2>
+
+      <p>
+        XAVORA™ brings together data, analytics, artificial intelligence,
+        workflows, and decision support in one intelligent environment —
+        helping organisations move from disconnected information to
+        coordinated, actionable intelligence.
+      </p>
+
+    </div>
+
+
+    <div class="xavora-value-grid">
+
+      <article class="xavora-value-card">
+
+        <div class="xavora-value-number">01</div>
+
+        <h3>Connect</h3>
+
+        <p>
+          Bring together information from multiple systems, databases,
+          spreadsheets, applications, and operational sources.
+        </p>
+
+      </article>
+
+
+      <article class="xavora-value-card">
+
+        <div class="xavora-value-number">02</div>
+
+        <h3>Understand</h3>
+
+        <p>
+          Transform raw information into dashboards, trends,
+          contextual analysis, and meaningful operational intelligence.
+        </p>
+
+      </article>
+
+
+      <article class="xavora-value-card">
+
+        <div class="xavora-value-number">03</div>
+
+        <h3>Predict</h3>
+
+        <p>
+          Apply AI and analytical models to identify patterns,
+          anticipate risks, and support forward-looking decisions.
+        </p>
+
+      </article>
+
+
+      <article class="xavora-value-card">
+
+        <div class="xavora-value-number">04</div>
+
+        <h3>Act</h3>
+
+        <p>
+          Turn intelligence into automated workflows, alerts,
+          recommendations, and coordinated organisational action.
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+  
   
 </body>
 </html>
