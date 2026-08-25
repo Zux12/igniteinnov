@@ -698,3 +698,16 @@
   }
 
 }
+
+/* Fix How It Works button text */
+.cert-hero .btn.ghost {
+  color: #1e3a8a;
+  border-color: #2563eb;
+  background: transparent;
+}
+
+.cert-hero .btn.ghost:hover {
+  color: #ffffff;
+  background: #2563eb;
+  border-color: #2563eb;
+}
