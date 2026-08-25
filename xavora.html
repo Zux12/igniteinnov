@@ -710,7 +710,296 @@
 
 }
 
+/* =====================================
+   XAVORA + VORA ENGINE ARCHITECTURE
+   ===================================== */
 
+.xavora-engine-section{
+  padding:105px 0;
+
+  background:#ffffff;
+}
+
+
+/* Architecture wrapper */
+
+.xavora-engine-architecture{
+  max-width:900px;
+
+  margin:55px auto 0;
+
+  text-align:center;
+}
+
+
+/* XAVORA layer */
+
+.xavora-platform-layer{
+  position:relative;
+
+  padding:42px 35px;
+
+  border:1px solid #dfe5ef;
+
+  border-radius:24px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #f3f6fb
+    );
+
+  box-shadow:
+    0 20px 50px rgba(17,24,39,.08);
+}
+
+.architecture-small-label{
+  margin-bottom:10px;
+
+  color:#6f7f99;
+
+  font-size:.7rem;
+
+  font-weight:850;
+
+  letter-spacing:.16em;
+}
+
+.architecture-main-name{
+  color:#172033;
+
+  font-size:2.8rem;
+
+  font-weight:850;
+
+  letter-spacing:-.03em;
+}
+
+
+/* XAVORA modules */
+
+.architecture-modules{
+  display:flex;
+
+  justify-content:center;
+
+  flex-wrap:wrap;
+
+  gap:9px;
+
+  margin-top:24px;
+}
+
+.architecture-modules span{
+  padding:8px 13px;
+
+  border-radius:999px;
+
+  background:#eaf0f8;
+
+  color:#43506a;
+
+  font-size:.78rem;
+
+  font-weight:700;
+}
+
+
+/* Connector */
+
+.architecture-connector{
+  position:relative;
+
+  height:105px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:8px;
+}
+
+.architecture-connector span{
+  color:#8694aa;
+
+  font-size:.66rem;
+
+  font-weight:850;
+
+  letter-spacing:.16em;
+}
+
+.architecture-line{
+  width:2px;
+
+  height:48px;
+
+  background:
+    linear-gradient(
+      #b9c5d8,
+      #41577c
+    );
+}
+
+
+/* VORA ENGINE layer */
+
+.vora-engine-layer{
+  position:relative;
+
+  overflow:hidden;
+
+  padding:48px 45px;
+
+  border-radius:28px;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(70,112,180,.30),
+      transparent 50%
+    ),
+    #172033;
+
+  color:#ffffff;
+
+  box-shadow:
+    0 30px 70px rgba(17,24,39,.22);
+}
+
+.vora-engine-layer .architecture-small-label{
+  position:relative;
+
+  z-index:2;
+
+  color:#9eacc4;
+}
+
+.vora-engine-name{
+  position:relative;
+
+  z-index:2;
+
+  margin-bottom:15px;
+
+  color:#ffffff;
+
+  font-size:3rem;
+
+  font-weight:850;
+
+  letter-spacing:-.03em;
+}
+
+.vora-engine-layer p{
+  position:relative;
+
+  z-index:2;
+
+  max-width:670px;
+
+  margin:0 auto;
+
+  color:#c8d2e2;
+
+  line-height:1.75;
+}
+
+
+/* Engine functions */
+
+.vora-engine-functions{
+  position:relative;
+
+  z-index:2;
+
+  display:flex;
+
+  justify-content:center;
+
+  flex-wrap:wrap;
+
+  gap:9px;
+
+  margin-top:28px;
+}
+
+.vora-engine-functions span{
+  padding:8px 13px;
+
+  border:1px solid rgba(255,255,255,.12);
+
+  border-radius:999px;
+
+  background:rgba(255,255,255,.06);
+
+  color:#d7dfec;
+
+  font-size:.76rem;
+
+  font-weight:700;
+}
+
+
+/* Subtle engine glow */
+
+.vora-glow{
+  position:absolute;
+
+  width:420px;
+  height:420px;
+
+  left:50%;
+  top:50%;
+
+  transform:translate(-50%,-50%);
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(69,115,190,.24),
+      transparent 65%
+    );
+
+  pointer-events:none;
+}
+
+
+/* Responsive */
+
+@media(max-width:600px){
+
+  .xavora-engine-section{
+    padding:75px 0;
+  }
+
+  .xavora-platform-layer{
+    padding:32px 22px;
+  }
+
+  .architecture-main-name{
+    font-size:2.2rem;
+  }
+
+  .vora-engine-layer{
+    padding:38px 24px;
+  }
+
+  .vora-engine-name{
+    font-size:2.25rem;
+  }
+
+}
+
+
+    
     
   </style>
 </head>
@@ -1019,6 +1308,103 @@
   </div>
 
 </section>
+
+
+
+<!-- POWERED BY VORA ENGINE -->
+<section class="xavora-engine-section">
+
+  <div class="xavora-container">
+
+    <div class="xavora-section-heading">
+
+      <div class="xavora-section-kicker">
+        INTELLIGENCE ARCHITECTURE
+      </div>
+
+      <h2>
+        Powered by VORA Engine™
+      </h2>
+
+      <p>
+        XAVORA™ provides the enterprise platform layer, while VORA Engine™
+        provides the underlying intelligence that enables advanced analysis,
+        contextual reasoning, prediction, automation, and AI-driven decision support.
+      </p>
+
+    </div>
+
+
+    <div class="xavora-engine-architecture">
+
+      <div class="xavora-platform-layer">
+
+        <div class="architecture-small-label">
+          ENTERPRISE INTELLIGENCE PLATFORM
+        </div>
+
+        <div class="architecture-main-name">
+          XAVORA™
+        </div>
+
+        <div class="architecture-modules">
+
+          <span>Dashboards</span>
+          <span>Applications</span>
+          <span>Workflows</span>
+          <span>Analytics</span>
+          <span>Enterprise Data</span>
+
+        </div>
+
+      </div>
+
+
+      <div class="architecture-connector">
+
+        <span>POWERED BY</span>
+
+        <div class="architecture-line"></div>
+
+      </div>
+
+
+      <div class="vora-engine-layer">
+
+        <div class="vora-glow"></div>
+
+        <div class="architecture-small-label">
+          AI & INTELLIGENCE ENGINE
+        </div>
+
+        <div class="vora-engine-name">
+          VORA ENGINE™
+        </div>
+
+        <p>
+          The intelligence layer that processes data, detects patterns,
+          interprets context, generates insight, supports prediction,
+          and enables intelligent automation.
+        </p>
+
+        <div class="vora-engine-functions">
+
+          <span>AI Reasoning</span>
+          <span>Prediction</span>
+          <span>Pattern Detection</span>
+          <span>Context Analysis</span>
+          <span>Intelligent Automation</span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
   
   
 </body>
