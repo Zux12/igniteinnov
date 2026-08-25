@@ -1117,6 +1117,323 @@
 }
 
 
+
+/* =====================================
+   WHY XAVORA
+   ===================================== */
+
+.xavora-difference-section{
+  padding:110px 0;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(37,99,235,.07),
+      transparent 35%
+    ),
+    #f4f7fb;
+
+  overflow:hidden;
+}
+
+
+/* Main architecture */
+
+.xavora-difference-visual{
+  display:grid;
+
+  grid-template-columns:1fr 260px 1fr;
+
+  gap:35px;
+
+  align-items:center;
+
+  margin-top:60px;
+}
+
+
+/* Columns */
+
+.difference-column{
+  display:flex;
+
+  flex-direction:column;
+
+  gap:13px;
+}
+
+.difference-column-label{
+  margin-bottom:8px;
+
+  color:#8793a8;
+
+  font-size:.67rem;
+
+  font-weight:850;
+
+  letter-spacing:.16em;
+}
+
+
+/* LEFT SOURCE CARDS */
+
+.difference-source{
+  display:flex;
+
+  align-items:center;
+
+  gap:14px;
+
+  padding:16px 18px;
+
+  border:1px solid #e0e5ef;
+
+  border-radius:15px;
+
+  background:#ffffff;
+
+  box-shadow:
+    0 10px 28px rgba(17,24,39,.05);
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease;
+}
+
+.difference-source:hover{
+  transform:translateX(4px);
+
+  box-shadow:
+    0 15px 35px rgba(17,24,39,.09);
+}
+
+
+.difference-source-icon{
+  flex:0 0 43px;
+
+  width:43px;
+  height:43px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  border-radius:11px;
+
+  background:#edf2f8;
+
+  color:#52627a;
+
+  font-size:.67rem;
+
+  font-weight:850;
+
+  letter-spacing:.05em;
+}
+
+
+.difference-source strong,
+.difference-result strong{
+  display:block;
+
+  color:#172033;
+
+  font-size:.94rem;
+}
+
+
+.difference-source span,
+.difference-result span:not(.result-dot){
+  display:block;
+
+  margin-top:2px;
+
+  color:#8792a5;
+
+  font-size:.76rem;
+}
+
+
+/* CENTER */
+
+.difference-centre{
+  position:relative;
+
+  min-height:420px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+}
+
+
+/* XAVORA CORE */
+
+.difference-xavora-core{
+  position:relative;
+
+  z-index:5;
+
+  width:225px;
+  height:225px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+  justify-content:center;
+
+  text-align:center;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle at 38% 28%,
+      #456da9,
+      #172033 64%
+    );
+
+  box-shadow:
+    0 30px 75px rgba(23,32,51,.28);
+
+  color:#ffffff;
+}
+
+
+.difference-core-small{
+  max-width:150px;
+
+  color:#bac7db;
+
+  font-size:.57rem;
+
+  font-weight:800;
+
+  letter-spacing:.12em;
+}
+
+
+.difference-core-name{
+  margin:9px 0;
+
+  font-size:2.35rem;
+
+  font-weight:850;
+
+  line-height:1;
+}
+
+
+.difference-core-divider{
+  width:42px;
+
+  height:1px;
+
+  margin:3px 0 10px;
+
+  background:rgba(255,255,255,.35);
+}
+
+
+.difference-core-powered{
+  color:#aabbd5;
+
+  font-size:.58rem;
+
+  font-weight:750;
+
+  letter-spacing:.09em;
+}
+
+
+/* RIGHT RESULT CARDS */
+
+.difference-result{
+  position:relative;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:14px;
+
+  padding:16px 18px;
+
+  border:1px solid #dce5f1;
+
+  border-radius:15px;
+
+  background:#ffffff;
+
+  box-shadow:
+    0 10px 28px rgba(17,24,39,.05);
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease;
+}
+
+
+.difference-result:hover{
+  transform:translateX(-4px);
+
+  box-shadow:
+    0 15px 35px rgba(17,24,39,.09);
+}
+
+
+.result-dot{
+  flex:0 0 11px;
+
+  width:11px;
+  height:11px;
+
+  border-radius:50%;
+
+  background:#315f9f;
+
+  box-shadow:
+    0 0 0 6px rgba(49,95,159,.09);
+}
+
+
+/* Bottom message */
+
+.xavora-difference-message{
+  max-width:850px;
+
+  margin:60px auto 0;
+
+  text-align:center;
+}
+
+.difference-message-line{
+  width:1px;
+
+  height:42px;
+
+  margin:0 auto 20px;
+
+  background:#bdc8d7;
+}
+
+.xavora-difference-message p{
+  margin:0;
+
+  color:#667085;
+
+  font-size:1.02rem;
+
+  line-height:1.8;
+}
+
+.xavora-difference-message strong{
+  color:#172033;
+}
     
     
   </style>
@@ -1653,6 +1970,215 @@
 
 </section>
 
+
+
+<!-- WHY XAVORA -->
+<section class="xavora-difference-section">
+
+  <div class="xavora-container">
+
+    <div class="xavora-section-heading">
+
+      <div class="xavora-section-kicker">
+        WHY XAVORA™
+      </div>
+
+      <h2>
+        Beyond Dashboards. Beyond Standalone AI.
+      </h2>
+
+      <p>
+        Organisations already have data, applications, spreadsheets,
+        dashboards, and digital systems. XAVORA™ is designed to connect
+        these environments and introduce an intelligent layer across them.
+      </p>
+
+    </div>
+
+
+    <!-- TRANSFORMATION ARCHITECTURE -->
+    <div class="xavora-difference-visual">
+
+
+      <!-- LEFT: EXISTING ENVIRONMENT -->
+      <div class="difference-column difference-inputs">
+
+        <div class="difference-column-label">
+          EXISTING DIGITAL ENVIRONMENT
+        </div>
+
+
+        <div class="difference-source source-database">
+          <div class="difference-source-icon">DB</div>
+
+          <div>
+            <strong>Databases</strong>
+            <span>Enterprise & operational data</span>
+          </div>
+        </div>
+
+
+        <div class="difference-source source-excel">
+          <div class="difference-source-icon">XL</div>
+
+          <div>
+            <strong>Excel & Files</strong>
+            <span>Existing organisational information</span>
+          </div>
+        </div>
+
+
+        <div class="difference-source source-systems">
+          <div class="difference-source-icon">SYS</div>
+
+          <div>
+            <strong>Existing Systems</strong>
+            <span>Applications & legacy platforms</span>
+          </div>
+        </div>
+
+
+        <div class="difference-source source-api">
+          <div class="difference-source-icon">API</div>
+
+          <div>
+            <strong>APIs</strong>
+            <span>External & connected services</span>
+          </div>
+        </div>
+
+
+        <div class="difference-source source-ai">
+          <div class="difference-source-icon">AI</div>
+
+          <div>
+            <strong>AI Tools</strong>
+            <span>Existing AI capabilities</span>
+          </div>
+        </div>
+
+      </div>
+
+
+
+      <!-- CENTRE -->
+      <div class="difference-centre">
+
+        <div class="difference-flow flow-left">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+
+        <div class="difference-xavora-core">
+
+          <div class="difference-core-small">
+            ENTERPRISE INTELLIGENCE PLATFORM
+          </div>
+
+          <div class="difference-core-name">
+            XAVORA™
+          </div>
+
+          <div class="difference-core-divider"></div>
+
+          <div class="difference-core-powered">
+            POWERED BY VORA ENGINE™
+          </div>
+
+        </div>
+
+
+        <div class="difference-flow flow-right">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+      </div>
+
+
+
+      <!-- RIGHT: INTELLIGENCE OUTPUT -->
+      <div class="difference-column difference-outputs">
+
+        <div class="difference-column-label">
+          UNIFIED INTELLIGENCE
+        </div>
+
+
+        <div class="difference-result">
+          <span class="result-dot"></span>
+
+          <div>
+            <strong>Connected Data</strong>
+            <span>Unified organisational visibility</span>
+          </div>
+        </div>
+
+
+        <div class="difference-result">
+          <span class="result-dot"></span>
+
+          <div>
+            <strong>AI Analysis</strong>
+            <span>Context-aware intelligence</span>
+          </div>
+        </div>
+
+
+        <div class="difference-result">
+          <span class="result-dot"></span>
+
+          <div>
+            <strong>Predictive Insight</strong>
+            <span>Forward-looking analysis</span>
+          </div>
+        </div>
+
+
+        <div class="difference-result">
+          <span class="result-dot"></span>
+
+          <div>
+            <strong>Automated Workflows</strong>
+            <span>Intelligence translated into action</span>
+          </div>
+        </div>
+
+
+        <div class="difference-result">
+          <span class="result-dot"></span>
+
+          <div>
+            <strong>Decision Support</strong>
+            <span>Better-informed organisational decisions</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- KEY MESSAGE -->
+    <div class="xavora-difference-message">
+
+      <div class="difference-message-line"></div>
+
+      <p>
+        <strong>XAVORA™ does not require organisations to discard everything they already have.</strong>
+        It is designed to connect with existing digital environments and introduce
+        an intelligence layer across data, systems, analytics, and workflows.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
   
   
 </body>
