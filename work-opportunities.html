@@ -1,0 +1,639 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Work Opportunities | IgniteInno Ventures</title>
+<meta name="description" content="Apply for selection as an IgniteInno Ventures Business Development Associate. Explore independent, commission-based business development opportunities.">
+
+<link rel="icon" href="/assets/img/logo.png">
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<style>
+:root {
+  --navy:#081525;
+  --navy2:#142d50;
+  --blue:#2563eb;
+  --text:#172033;
+  --muted:#64748b;
+  --line:#e2e8f0;
+  --bg:#f5f8fc;
+}
+
+* {box-sizing:border-box}
+
+html {scroll-behavior:smooth}
+
+body {
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:Arial,Helvetica,sans-serif;
+  line-height:1.65;
+}
+
+a {text-decoration:none}
+
+.bda-container {
+  width:min(1100px,calc(100% - 40px));
+  margin:auto;
+}
+
+/* HEADER */
+.bda-nav {
+  background:var(--navy);
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.bda-nav-inner {
+  min-height:85px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+}
+
+.bda-brand {
+  display:flex;
+  align-items:center;
+  gap:13px;
+  color:white;
+  font-weight:800;
+  letter-spacing:.5px;
+}
+
+.bda-brand img {
+  width:57px;
+  height:57px;
+  object-fit:contain;
+}
+
+.bda-back {
+  color:#dbeafe;
+  border:1px solid rgba(255,255,255,.25);
+  border-radius:30px;
+  padding:10px 18px;
+  font-size:13px;
+  font-weight:700;
+}
+
+.bda-back:hover {background:#2563eb;color:white}
+
+/* HERO */
+.bda-hero {
+  background:
+    radial-gradient(circle at 85% 15%,rgba(59,130,246,.23),transparent 38%),
+    linear-gradient(125deg,#081525,#153456);
+  color:white;
+  padding:90px 20px 95px;
+  text-align:center;
+}
+
+.bda-eyebrow {
+  display:inline-block;
+  color:#93c5fd;
+  font-size:12px;
+  letter-spacing:2px;
+  font-weight:800;
+  text-transform:uppercase;
+  margin-bottom:20px;
+}
+
+.bda-hero h1 {
+  font-size:clamp(34px,5vw,57px);
+  line-height:1.14;
+  color:white;
+  margin:0 0 22px;
+  letter-spacing:-1.3px;
+}
+
+.bda-hero h1 span {color:#93c5fd}
+
+.bda-hero p {
+  max-width:780px;
+  margin:auto;
+  color:#d4e1ef;
+  font-size:17px;
+  line-height:1.85;
+}
+
+.bda-hero-button {
+  display:inline-block;
+  margin-top:32px;
+  background:#2563eb;
+  color:white;
+  padding:14px 28px;
+  border-radius:30px;
+  font-weight:800;
+}
+
+.bda-hero-button:hover {background:#1d4ed8}
+
+/* INTRO */
+.bda-section {padding:75px 0}
+
+.bda-section-title {
+  text-align:center;
+  max-width:760px;
+  margin:0 auto 35px;
+}
+
+.bda-section-title h2 {
+  font-size:clamp(27px,3vw,37px);
+  color:#10223b;
+  margin:0 0 14px;
+}
+
+.bda-section-title p {
+  color:var(--muted);
+  margin:0;
+}
+
+.bda-grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:22px;
+}
+
+.bda-info-card {
+  background:white;
+  border:1px solid var(--line);
+  border-radius:17px;
+  padding:28px;
+  box-shadow:0 10px 30px rgba(15,23,42,.045);
+}
+
+.bda-info-icon {
+  font-size:30px;
+  margin-bottom:12px;
+}
+
+.bda-info-card h3 {
+  font-size:18px;
+  color:#10223b;
+  margin:0 0 12px;
+}
+
+.bda-info-card p {
+  font-size:14px;
+  color:#5c6879;
+  margin:0;
+}
+
+/* TERMS */
+.bda-terms {
+  background:white;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+
+.bda-terms-grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:20px;
+}
+
+.bda-term {
+  padding:21px 24px;
+  border-radius:13px;
+  background:#f5f8fc;
+  border:1px solid #e2e8f0;
+}
+
+.bda-term strong {
+  display:block;
+  color:#10223b;
+  margin-bottom:6px;
+}
+
+.bda-term p {
+  color:#64748b;
+  font-size:14px;
+  margin:0;
+}
+
+/* SELECTION */
+.bda-process {
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:18px;
+}
+
+.bda-step {
+  background:white;
+  border:1px solid var(--line);
+  border-radius:15px;
+  padding:24px;
+}
+
+.bda-step-number {
+  width:42px;
+  height:42px;
+  border-radius:12px;
+  background:#dbeafe;
+  color:#1d4ed8;
+  display:grid;
+  place-items:center;
+  font-weight:800;
+  margin-bottom:15px;
+}
+
+.bda-step h3 {
+  font-size:16px;
+  margin:0 0 9px;
+  color:#10223b;
+}
+
+.bda-step p {
+  font-size:13px;
+  color:#64748b;
+  margin:0;
+}
+
+/* APPLICATION FORM */
+.bda-application {
+  background:white;
+  border-top:1px solid var(--line);
+  padding:75px 0 90px;
+}
+
+.bda-form-wrap {
+  max-width:780px;
+  margin:auto;
+  background:#fff;
+  border:1px solid #dce5f0;
+  border-radius:22px;
+  padding:38px;
+  box-shadow:0 18px 50px rgba(15,23,42,.08);
+}
+
+.bda-form-grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:20px;
+}
+
+.bda-field {margin-bottom:22px}
+
+.bda-field label {
+  display:block;
+  font-size:13px;
+  font-weight:800;
+  color:#334155;
+  margin-bottom:8px;
+}
+
+.bda-field input,
+.bda-field select,
+.bda-field textarea {
+  display:block;
+  width:100%;
+  min-height:47px;
+  padding:12px 14px;
+  border:1px solid #cbd5e1;
+  border-radius:10px;
+  background:white;
+  color:#172033;
+  font-family:inherit;
+  font-size:14px;
+}
+
+.bda-field textarea {
+  resize:vertical;
+  min-height:110px;
+}
+
+.bda-field input:focus,
+.bda-field select:focus,
+.bda-field textarea:focus {
+  outline:none;
+  border-color:#2563eb;
+  box-shadow:0 0 0 3px rgba(37,99,235,.12);
+}
+
+.bda-file-note {
+  font-size:12px;
+  color:#64748b;
+  margin-top:8px;
+}
+
+.bda-check {
+  display:flex;
+  align-items:flex-start;
+  gap:11px;
+  margin:20px 0;
+  font-size:13px;
+  color:#475569;
+  line-height:1.7;
+}
+
+.bda-check input {
+  width:18px;
+  height:18px;
+  flex-shrink:0;
+  margin-top:3px;
+  accent-color:#2563eb;
+}
+
+.bda-notice {
+  background:#eff6ff;
+  border-left:4px solid #2563eb;
+  border-radius:9px;
+  padding:17px 19px;
+  color:#334155;
+  font-size:13px;
+  line-height:1.8;
+  margin:22px 0;
+}
+
+.bda-submit {
+  width:100%;
+  min-height:52px;
+  border:0;
+  border-radius:11px;
+  background:#2563eb;
+  color:white;
+  font-family:inherit;
+  font-size:15px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.bda-submit:disabled {
+  background:#94a3b8;
+  cursor:not-allowed;
+}
+
+.bda-status {
+  text-align:center;
+  color:#64748b;
+  font-size:13px;
+  margin-top:15px;
+}
+
+/* FOOTER */
+.bda-footer {
+  background:#081525;
+  padding:35px 0;
+  color:#cbd5e1;
+}
+
+.bda-footer-inner {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:15px;
+  font-size:13px;
+}
+
+.bda-footer a {color:#bfdbfe}
+
+@media(max-width:850px) {
+  .bda-grid {grid-template-columns:1fr 1fr}
+  .bda-process {grid-template-columns:1fr 1fr}
+}
+
+@media(max-width:600px) {
+  .bda-container {width:calc(100% - 30px)}
+  .bda-nav-inner {min-height:75px}
+  .bda-brand img {width:45px;height:45px}
+  .bda-brand span {font-size:12px}
+  .bda-back {font-size:12px;padding:8px 11px}
+  .bda-hero {padding:70px 15px}
+  .bda-hero p {font-size:15px}
+  .bda-section {padding:55px 0}
+  .bda-grid,.bda-process,
+  .bda-terms-grid,.bda-form-grid {
+    grid-template-columns:1fr;
+  }
+  .bda-form-wrap {padding:24px 19px}
+  .bda-application {padding:55px 0}
+  .bda-footer-inner {flex-direction:column;text-align:center}
+}
+</style>
+</head>
+
+<body>
+
+<header class="bda-nav">
+  <div class="bda-container bda-nav-inner">
+    <a href="/index.html" class="bda-brand">
+      <img src="/assets/img/logo.png" alt="IgniteInno Ventures logo">
+      <span>IGNITEINNO VENTURES</span>
+    </a>
+    <a href="/join-us.html" class="bda-back">
+      ← Join Us
+    </a>
+  </div>
+</header>
+
+<section class="bda-hero">
+  <div class="bda-container">
+    <div class="bda-eyebrow">
+      Ignite Business Development Program
+    </div>
+
+    <h1>
+      Build Connections.<br>
+      <span>Create Opportunities.</span>
+    </h1>
+
+    <p>
+      Apply for selection as an Ignite Business Development
+      Associate (BDA). Connect businesses and organizations
+      with innovative AI, software and digital solutions
+      through a professional, independent business
+      development opportunity.
+    </p>
+
+    <a href="#apply" class="bda-hero-button">
+      Apply for Selection →
+    </a>
+  </div>
+</section>
+
+<section class="bda-section">
+  <div class="bda-container">
+
+    <div class="bda-section-title">
+      <h2>About the Opportunity</h2>
+      <p>
+        IgniteInno Ventures welcomes applications from
+        motivated individuals interested in developing
+        professional networks and introducing businesses
+        to technology-driven solutions.
+      </p>
+    </div>
+
+    <div class="bda-grid">
+
+      <div class="bda-info-card">
+        <div class="bda-info-icon">🤝</div>
+        <h3>Connect With Businesses</h3>
+        <p>
+          Identify potential customers and introduce
+          organizations to Ignite's digital and
+          technology solutions.
+        </p>
+      </div>
+
+      <div class="bda-info-card">
+        <div class="bda-info-icon">💻</div>
+        <h3>Represent Innovation</h3>
+        <p>
+          Introduce Ignite's AI applications, digital
+          platforms, custom software and other
+          technology services.
+        </p>
+      </div>
+
+      <div class="bda-info-card">
+        <div class="bda-info-icon">📈</div>
+        <h3>Earn Through Performance</h3>
+        <p>
+          Eligible business engagements may generate
+          commission earnings under the agreed
+          appointment terms.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="bda-section bda-terms">
+  <div class="bda-container">
+
+    <div class="bda-section-title">
+      <h2>Appointment Framework</h2>
+      <p>
+        Successful applicants may be offered an
+        independent Business Development Associate
+        appointment, subject to Ignite's selection
+        and approval process.
+      </p>
+    </div>
+
+    <div class="bda-terms-grid">
+
+      <div class="bda-term">
+        <strong>12-Month Appointment</strong>
+        <p>
+          Appointment is for a defined 12-month period.
+          Renewal is subject to Ignite's approval.
+        </p>
+      </div>
+
+      <div class="bda-term">
+        <strong>Independent Contractor</strong>
+        <p>
+          The opportunity is structured as an independent
+          contractor engagement, not a salaried
+          employment position.
+        </p>
+      </div>
+
+      <div class="bda-term">
+        <strong>Commission-Based Earnings</strong>
+        <p>
+          No fixed salary or guaranteed income.
+          Commissions are subject to qualifying
+          purchase orders and agreed payment terms.
+        </p>
+      </div>
+
+      <div class="bda-term">
+        <strong>Professional Representation</strong>
+        <p>
+          Appointed associates may receive official
+          Ignite identification and authorization
+          to introduce designated services.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="bda-section">
+  <div class="bda-container">
+
+    <div class="bda-section-title">
+      <h2>Our Selection Process</h2>
+      <p>
+        Applications are reviewed through a structured
+        selection process. Submission does not
+        guarantee appointment.
+      </p>
+    </div>
+
+    <div class="bda-process">
+
+      <div class="bda-step">
+        <div class="bda-step-number">01</div>
+        <h3>Application</h3>
+        <p>Submit your details and CV or resume online.</p>
+      </div>
+
+      <div class="bda-step">
+        <div class="bda-step-number">02</div>
+        <h3>Screening</h3>
+        <p>Ignite reviews qualifications and suitability.</p>
+      </div>
+
+      <div class="bda-step">
+        <div class="bda-step-number">03</div>
+        <h3>Assessment & Interview</h3>
+        <p>Shortlisted candidates may be invited for further evaluation.</p>
+      </div>
+
+      <div class="bda-step">
+        <div class="bda-step-number">04</div>
+        <h3>Appointment</h3>
+        <p>Selected applicants complete the required agreement and onboarding.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="apply" class="bda-application">
+  <div class="bda-container">
+
+    <div class="bda-section-title">
+      <h2>Apply to Join Ignite</h2>
+      <p>
+        Complete the application form below.
+        Shortlisted applicants will be contacted
+        regarding the next stage of selection.
+      </p>
+    </div>
+
+    <div class="bda-form-wrap">
+
+      <form id="bdaApplicationForm">
+
+        <div class="bda-form-grid">
+
+          <div class="bda-field">
+            <label for="bdaName">Full Name *</label>
+            <input type="text" id="bdaName" name="name"
+                   autocomplete="name" maxlength="150" required>
+          </div>
+
+          <div class="bda-field">
+            <label for="bdaEmail">Email Address *</label>
+            <input type="email" id="bdaEmail" name="email"
+                   autocomplete="email" maxlength="254" required>
+          </div>
+
+          <div class="bda-field">
+            <label for="bdaPhone">Contact Number *</label>
+            <input type="tel" id="bdaPhone" name="phone"
+                   autocomplete="tel" maxlength="40" required>
+          </div>
+
+          <div class="b
