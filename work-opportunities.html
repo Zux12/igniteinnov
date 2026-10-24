@@ -600,6 +600,8 @@ a {text-decoration:none}
   </div>
 </section>
 
+
+<!-- BDA APPLICATION SECTION -->
 <section id="apply" class="bda-application">
   <div class="bda-container">
 
@@ -614,231 +616,45 @@ a {text-decoration:none}
 
     <div class="bda-form-wrap">
 
-      <form id="bdaApplicationForm">
-
-        
-<!-- Anti-spam honeypot field -->
-<div
-  aria-hidden="true"
-  style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden;">
-
-  <label for="bdaWebsite">
-    Website
-  </label>
-
-  <input
-    type="text"
-    id="bdaWebsite"
-    name="website"
-    tabindex="-1"
-    autocomplete="off">
-
-</div>
-
-
-        <div class="bda-form-grid">
-
-          <div class="bda-field">
-            <label for="bdaName">Full Name *</label>
-            <input type="text" id="bdaName" name="name"
-                   autocomplete="name" maxlength="150" required>
-          </div>
-
-          <div class="bda-field">
-            <label for="bdaEmail">Email Address *</label>
-            <input type="email" id="bdaEmail" name="email"
-                   autocomplete="email" maxlength="254" required>
-          </div>
-
-          <div class="bda-field">
-            <label for="bdaPhone">Contact Number *</label>
-            <input type="tel" id="bdaPhone" name="phone"
-                   autocomplete="tel" maxlength="40" required>
-          </div>
-
-
-          <!-- STATE OF RESIDENCE -->
-          <div class="bda-field">
-            <label for="bdaState">State of Residence *</label>
-            <select id="bdaState" name="state" required>
-              <option value="">Select State</option>
-              <option>Johor</option>
-              <option>Kedah</option>
-              <option>Kelantan</option>
-              <option>Melaka</option>
-              <option>Negeri Sembilan</option>
-              <option>Pahang</option>
-              <option>Perak</option>
-              <option>Perlis</option>
-              <option>Pulau Pinang</option>
-              <option>Sabah</option>
-              <option>Sarawak</option>
-              <option>Selangor</option>
-              <option>Terengganu</option>
-              <option>Kuala Lumpur</option>
-              <option>Putrajaya</option>
-              <option>Labuan</option>
-            </select>
-          </div>
-
-          <!-- CURRENT STATUS -->
-          <div class="bda-field">
-            <label for="bdaCurrentStatus">Current Status *</label>
-            <select id="bdaCurrentStatus"
-                    name="currentStatus" required>
-              <option value="">Select Current Status</option>
-              <option value="University Student">
-                University Student
-              </option>
-              <option value="Graduate / Seeking Employment">
-                Graduate / Seeking Employment
-              </option>
-              <option value="Employed Professional">
-                Employed Professional
-              </option>
-              <option value="Self-Employed / Business Owner">
-                Self-Employed / Business Owner
-              </option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-
-          <!-- HIGHEST QUALIFICATION -->
-          <div class="bda-field">
-            <label for="bdaQualification">
-              Highest Qualification *
-            </label>
-            <select id="bdaQualification"
-                    name="qualification" required>
-              <option value="">Select Qualification</option>
-              <option value="SPM / Equivalent">
-                SPM / Equivalent
-              </option>
-              <option value="Diploma">Diploma</option>
-              <option value="Bachelor's Degree">
-                Bachelor's Degree
-              </option>
-              <option value="Master's Degree">
-                Master's Degree
-              </option>
-              <option value="PhD">PhD</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-
-        </div>
-        <!-- END FORM GRID -->
-
-        <!-- MOTIVATION -->
-        <div class="bda-field">
-          <label for="bdaMotivation">
-            Why would you like to join Ignite? *
-          </label>
-
-          <textarea
-            id="bdaMotivation"
-            name="motivation"
-            rows="4"
-            maxlength="2000"
-            placeholder="Briefly tell us about your interest in joining Ignite and how you believe you could contribute."
-            required></textarea>
-        </div>
-
-        <!-- CV / RESUME UPLOAD -->
-        <div class="bda-field">
-          <label for="bdaCV">
-            Upload CV / Resume *
-          </label>
-
-          <input
-            type="file"
-            id="bdaCV"
-            name="cv"
-            accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-            required>
-
-          <div class="bda-file-note">
-            Accepted formats: PDF or DOCX.
-            Maximum file size: 5 MB.
-          </div>
-        </div>
-
-        <!-- DECLARATION -->
-        <div class="bda-check">
-          <input
-            type="checkbox"
-            id="bdaDeclaration"
-            name="declarationAccepted"
-            required>
-
-          <label for="bdaDeclaration">
-            I hereby declare that all information
-            provided in this application, including
-            my uploaded CV/resume, is true, accurate
-            and complete to the best of my knowledge.
-          </label>
-        </div>
-
-        <!-- PERSONAL DATA CONSENT -->
-        <div class="bda-check">
-          <input
-            type="checkbox"
-            id="bdaConsent"
-            name="consentAccepted"
-            required>
-
-          <label for="bdaConsent">
-            I consent to IgniteInno Ventures Sdn Bhd
-            collecting, processing and storing my
-            personal information for application
-            assessment, selection and related
-            administrative purposes.
-          </label>
-        </div>
-
-        <!-- APPLICATION NOTICE -->
-        <div class="bda-notice">
-          <strong>Important Information</strong>
-
-          <p style="margin:8px 0 0;">
-            This opportunity is offered under a
-            12-month independent contractor arrangement
-            and does not constitute a salaried
-            employment position.
-
-            Earnings are commission-based and subject
-            to qualifying business engagements and
-            agreed contractual terms.
-
-            Submission of an application does not
-            guarantee selection or appointment.
-          </p>
-        </div>
-
-        <!-- SUBMIT BUTTON -->
-        <button
-          type="submit"
-          id="bdaSubmitButton"
-          class="bda-submit"
-          disabled>
-          Application Submission Coming Soon
-        </button>
-
-        <p class="bda-status"
-           id="bdaStatus"
-           role="status"
-           aria-live="polite">
-          The application form is being prepared.
-          Online submissions will be available soon.
-        </p>
-
-      </form>
+      <iframe
+        id="igniteBDAApplicationFrame"
+        src="https://script.google.com/macros/s/AKfycbyHc6Hia4-0s6tbT96vpVYeQd4TV8IzSqRkLGQu3Dp4SCSx7exztM3rOkeyNh4AVd_gAQ/exec"
+        title="Ignite Business Development Associate Application Form"
+        width="100%"
+        height="1150"
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+        style="
+          display:block;
+          width:100%;
+          border:0;
+          background:#ffffff;
+        ">
+      </iframe>
 
     </div>
-    <!-- END FORM WRAPPER -->
 
   </div>
 </section>
+
+<style>
+/* Embedded Google Apps Script form */
+#igniteBDAApplicationFrame {
+  min-height:1150px;
+}
+
+@media (max-width:600px) {
+  #igniteBDAApplicationFrame {
+    height:1450px;
+    min-height:1450px;
+  }
+
+  .bda-form-wrap {
+    padding:12px;
+  }
+}
+</style>
+
 
 <!-- FOOTER -->
 <footer class="bda-footer">
@@ -862,53 +678,7 @@ a {text-decoration:none}
   </div>
 </footer>
 
-<!-- TEMPORARY FORM HANDLER -->
-<script>
-(function () {
-  "use strict";
 
-  const form = document.getElementById(
-    "bdaApplicationForm"
-  );
-
-  const cvInput = document.getElementById("bdaCV");
-  const status = document.getElementById("bdaStatus");
-
-  // Submission remains disabled until
-  // Google Apps Script integration is completed.
-
-  cvInput.addEventListener("change", function () {
-    const file = this.files[0];
-
-    if (!file) {
-      return;
-    }
-
-    const maxSize = 5 * 1024 * 1024;
-
-    const allowedExtensions = /\.(pdf|docx)$/i;
-
-    if (
-      file.size > maxSize ||
-      !allowedExtensions.test(file.name)
-    ) {
-      alert(
-        "Please upload a PDF or DOCX file, maximum 5 MB."
-      );
-
-      this.value = "";
-    }
-  });
-
-  form.addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    status.textContent =
-      "Online application submission is not yet active.";
-  });
-
-})();
-</script>
 
 </body>
 </html>
