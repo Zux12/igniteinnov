@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Applications Admin | IgniteInno Ventures</title>
+<link rel="icon" href="/assets/img/logo.png">
+<style>
+:root{color-scheme:light;--ink:#14263c;--muted:#62738a;--blue:#175cd3;--line:#dce4ef;--bg:#f3f6fb;--red:#b42318}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select,textarea{font:inherit}button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}button{cursor:pointer}button:disabled{cursor:wait;opacity:.6}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #78b4ff;outline-offset:3px}[hidden]{display:none!important}a{color:var(--blue)}.topbar{background:#102238;color:white}.topinner{max-width:1320px;margin:auto;padding:18px 28px;display:flex;justify-content:space-between;gap:20px;align-items:center}.brand{display:flex;align-items:center;gap:12px;font-weight:750;letter-spacing:.06em}.brand img{width:43px;height:43px;object-fit:contain}.topbar a{color:#dbe9ff;font-size:14px}.wrap{max-width:1320px;padding:36px 28px 48px;margin:auto}h1,h2,h3,p{margin-top:0}h1{font-size:clamp(26px,4vw,36px);line-height:1.15;letter-spacing:-.035em;margin-bottom:10px}h2{font-size:23px;letter-spacing:-.02em}h3{font-size:17px}.muted{color:var(--muted)}.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.12em;font-weight:750;color:var(--blue);margin-bottom:14px}.login{max-width:520px;margin:60px auto;background:white;border:1px solid var(--line);border-radius:20px;padding:40px;box-shadow:0 12px 45px #16354f08}.login p{color:var(--muted)}.login-note{border-top:1px solid var(--line);padding-top:20px;margin-top:26px;font-size:13px;margin-bottom:0}.intro,.toolbar,.dialog-head,.dialog-actions,.pager{display:flex;align-items:center;justify-content:space-between;gap:18px}.intro{margin-bottom:25px}.intro p{margin-bottom:0}.account{font-size:13px;text-align:right;overflow-wrap:anywhere}.btn{border:1px solid var(--line);background:#fff;border-radius:9px;padding:9px 15px;font-weight:650;color:var(--ink);text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px}.btn.primary{background:var(--blue);color:#fff;border-color:var(--blue)}.btn.small{padding:6px 11px;font-size:13px}.tabs{display:flex;gap:8px;border-bottom:1px solid var(--line);margin-bottom:24px;padding-bottom:12px}.tabs button{background:transparent;border:1px solid transparent;padding:10px 17px;border-radius:9px;font-weight:650;color:var(--muted)}.tabs button[aria-pressed=true]{background:#e7efff;color:#164eaf;border-color:#cddfff}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px}.stat{background:#fff;border:1px solid var(--line);border-radius:13px;padding:18px 20px}.stat span{display:block;color:var(--muted);font-size:13px}.stat strong{font-size:30px;line-height:1.4;letter-spacing:-.04em}.panel{background:#fff;border:1px solid var(--line);border-radius:15px;overflow:hidden}.toolbar{padding:20px;flex-wrap:wrap}.filters{display:flex;gap:12px;flex:1;align-items:end;flex-wrap:wrap}.field{display:flex;flex-direction:column;gap:5px;font-size:13px;font-weight:650}.field.search{min-width:220px;flex:1;max-width:420px}input,select,textarea{border:1px solid #c9d4e2;border-radius:8px;background:#fff;padding:10px 11px;color:var(--ink);width:100%;font-size:14px}textarea{resize:vertical;min-height:85px}.field select{min-width:170px}.table-scroll{overflow-x:auto;position:relative}table{border-collapse:collapse;width:100%;min-width:750px;text-align:left;font-size:14px}th{font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);background:#f8fafd;white-space:nowrap}th,td{padding:15px 20px;border-top:1px solid var(--line);vertical-align:middle}td strong{font-weight:650}td small{display:block;color:var(--muted);font-size:12px;overflow-wrap:anywhere}tbody tr:hover{background:#fafcff}.badge{display:inline-block;border-radius:20px;padding:4px 10px;font-size:12px;font-weight:650;background:#eef2f7;color:#44566c;white-space:nowrap}.badge.received{background:#eaf2ff;color:#245aa4}.badge.shortlisted,.badge.accepted{background:#e7f6ef;color:#19714d}.badge.rejected{background:#fff0ee;color:#a53c31}.empty{padding:45px 24px;text-align:center;color:var(--muted)}.pager{padding:16px 20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}.pager div{display:flex;gap:8px}.notice{padding:12px 16px;border:1px solid #bcd4fc;background:#edf4ff;border-radius:10px;margin:16px 0;color:#214f8c;overflow-wrap:anywhere}.notice.error{background:#fff1f0;border-color:#f3c8c3;color:var(--red)}.notice.success{background:#edf8f2;border-color:#bfdfce;color:#196441}.footnote{font-size:12px;color:var(--muted);margin-top:18px}dialog{width:min(880px,calc(100% - 28px));max-height:90vh;border:1px solid var(--line);border-radius:18px;padding:0;color:var(--ink);box-shadow:0 25px 90px #10223844}dialog::backdrop{background:#0b1b2f88}.dialog-head{padding:24px 28px;border-bottom:1px solid var(--line);align-items:start}.dialog-head h2{margin:5px 0 2px}.dialog-head p{margin:0;font-size:13px;color:var(--muted)}.dialog-body{padding:24px 28px}.details{display:grid;grid-template-columns:1fr 1fr;gap:18px 28px;margin:0 0 24px}.details div{min-width:0}.details dt{font-size:12px;color:var(--muted);margin-bottom:4px}.details dd{margin:0;font-size:14px;overflow-wrap:anywhere;white-space:pre-wrap}.details .wide{grid-column:1/-1}.documents{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px}.review-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.review-grid .wide{grid-column:1/-1}.dialog-actions{border-top:1px solid var(--line);padding-top:20px;margin-top:22px}.dialog-actions p{font-size:12px;max-width:390px;color:var(--muted);margin:0}.dialog-actions div{display:flex;gap:10px}.bridge{position:absolute;left:-10000px;width:1px;height:1px;border:0;pointer-events:none}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media(max-width:700px){.topinner{padding:15px 18px}.brand{font-size:12px;letter-spacing:.03em}.wrap{padding:25px 16px}.login{margin:25px auto;padding:28px 24px}.intro{align-items:start;flex-direction:column}.account{text-align:left}.stats{grid-template-columns:repeat(2,1fr);gap:10px}.stat{padding:14px 16px}.tabs{gap:0}.tabs button{padding:10px 12px}.toolbar{padding:16px}.details,.review-grid{grid-template-columns:1fr}.dialog-head,.dialog-body{padding:20px}.dialog-actions{align-items:start;flex-direction:column}.dialog-actions div{width:100%;justify-content:flex-end}.pager{gap:10px;flex-wrap:wrap}th,td{padding:12px 15px}}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="topinner"><div class="brand"><img src="/assets/img/logo.png" alt=""><span>IGNITEINNO VENTURES</span></div><a href="/">Back to website</a></div></header>
+<main class="wrap">
+<section id="login" class="login" aria-labelledby="loginTitle"><p class="eyebrow">Administration</p><h1 id="loginTitle">Application reviews,<br>in one place.</h1><p>Manage internship and Business Development Associate applications.</p><div id="googleButton"></div><p id="loginMessage" class="notice" role="status">Loading Google sign-in…</p><p class="login-note">Restricted to the authorised IgniteInno administrator. Use your Google account to continue.</p></section>
+<section id="dashboard" hidden>
+<div class="intro"><div><p class="eyebrow">Administration</p><h1>Applications</h1><p class="muted">Review applicants and keep track of each decision.</p></div><div class="account"><div id="accountEmail"></div><button id="signOut" class="btn small" style="margin-top:8px">Sign out</button></div></div>
+<nav class="tabs" aria-label="Application programmes"><button data-kind="internship" aria-pressed="true">Internship</button><button data-kind="bda" aria-pressed="false">Work Opportunities</button></nav>
+<div id="notice" class="notice" role="status" hidden></div>
+<div class="stats" aria-label="Application counts"><div class="stat"><span>Total applications</span><strong id="countTotal">—</strong></div><div class="stat"><span>Received</span><strong id="countReceived">—</strong></div><div class="stat"><span>Shortlisted</span><strong id="countShortlisted">—</strong></div><div class="stat"><span>Accepted</span><strong id="countAccepted">—</strong></div></div>
+<section class="panel" aria-label="Application list">
+<div class="toolbar"><div class="filters"><label class="field search">Search applications<input id="search" type="search" placeholder="Name, email, reference…" autocomplete="off"></label><label class="field">Status<select id="filter"><option value="">All statuses</option></select></label></div><button id="refresh" class="btn">Refresh</button></div>
+<div class="table-scroll"><table><thead><tr><th scope="col">Applicant</th><th scope="col">Reference / submitted</th><th scope="col" id="contextHeading">Institution / country</th><th scope="col">Status</th><th scope="col"><span class="sr-only">Review</span></th></tr></thead><tbody id="rows"></tbody></table></div>
+<div id="empty" class="empty" hidden></div><div class="pager"><span id="pageInfo"></span><div><button id="previous" class="btn small">Previous</button><button id="next" class="btn small">Next</button></div></div>
+</section><p class="footnote" id="freshness"></p><p class="footnote">Reviews are saved to the existing application sheet. Saving a review does not send an email to the applicant.</p>
+</section>
+</main>
+<dialog id="reviewDialog" aria-labelledby="reviewTitle"><div class="dialog-head"><div><span class="eyebrow" id="reviewReference"></span><h2 id="reviewTitle"></h2><p id="reviewSubtitle"></p></div><button id="closeReview" class="btn small" type="button" aria-label="Close application">Close</button></div><div class="dialog-body"><dl id="details" class="details"></dl><div id="documents" class="documents"></div><h3>Application review</h3><form id="reviewForm"><div id="reviewFields" class="review-grid"></div><div id="reviewMessage" class="notice" role="status" hidden></div><div class="dialog-actions"><p>Internal review only. Applicant details and uploaded documents stay unchanged.</p><div><button id="cancelReview" class="btn" type="button">Cancel</button><button id="saveReview" class="btn primary" type="submit">Save review</button></div></div></form></div></dialog>
+<script>
+'use strict';
+(() => {
+  const CLIENT_ID = '730174704173-m5h9tojck8k1h932cckpd2tcf3fers1p.apps.googleusercontent.com';
+  const ORIGIN = 'https://igniteinnov.com';
+  const PROTOCOL = 'ignite-admin-v1';
+  const ENDPOINTS = {
+    internship: 'https://script.google.com/macros/s/AKfycbz0eAOoBMbV7f8DxxrDTt9CR3x1h8R8LbvM0bo1ZMvby4mabhQsdnqPWzpQUkCdym9KVw/exec',
+    bda: 'https://script.google.com/macros/s/AKfycbyHc6Hia4-0s6tbT96vpVYeQd4TV8IzSqRkLGQu3Dp4SCSx7exztM3rOkeyNh4AVd_gAQ/exec'
+  };
+  const LABELS = {
+    submitted:'Submitted',email:'Email address',whatsapp:'WhatsApp number',wechat:'WeChat ID',country:'Country of residence',institution:'University / college',program:'Program of study',area:'Internship area',mode:'Internship mode',startDate:'Proposed start date',endDate:'Proposed end date',phone:'Contact number',state:'State',currentStatus:'Current status',qualification:'Highest qualification',motivation:'Motivation',updated:'Last updated'
+  };
+  const REVIEW = {
+    internship: [['status','Application status',0],['supervisor','Assigned supervisor',200],['interview','Interview result',1000],['remarks','Admin remarks',5000]],
+    bda: [['status','Application status',0],['assessment','Assessment result',1000],['interview','Interview result',1000],['remarks','Admin remarks',5000]]
+  };
+  const $ = id => document.getElementById(id);
+  const randomHex = bytes => Array.from(crypto.getRandomValues(new Uint8Array(bytes)), b => b.toString(16).padStart(2,'0')).join('');
+  const nonce = randomHex(32);
+  const state = {token:'',kind:'internship',data:{},loaded:{},page:0,epoch:0,busy:false,saving:false,record:null,expiryTimer:null};
+  const bridges = {};
+  const pending = new Map();
+  function message(id, text, kind='') { const e=$(id); e.textContent=text; e.className='notice'+(kind?' '+kind:''); e.hidden=!text; }
+  function error(text, code='SERVER') { const e=new Error(text);e.code=code;return e; }
+  function childOf(source, target) {
+    try { for (let i=0;source && i<8;i++) { if(source===target)return true; const p=source.parent;if(p===source)break;source=p; } } catch (_) { return false; }
+    return false;
+  }
+  function connect(kind) {
+    if(bridges[kind]) return bridges[kind].ready;
+    const iframe=document.createElement('iframe');iframe.className='bridge';iframe.title='Secure '+kind+' data connection';iframe.setAttribute('aria-hidden','true');iframe.tabIndex=-1;iframe.referrerPolicy='no-referrer';
+    const b={iframe,channel:randomHex(32),source:null,origin:'',ready:null,resolve:null,reject:null};
+    b.ready=new Promise((resolve,reject)=>{b.resolve=resolve;b.reject=reject;});
+    bridges[kind]=b;
+    b.timer=setTimeout(()=>{b.reject(error('Could not connect to '+(kind==='bda'?'Work Opportunities':'Internship')+'. Check the Apps Script deployment and reload this page.','CONNECTION'));},75000);
+    iframe.src=ENDPOINTS[kind]+'?page=admin-bridge&channel='+b.channel;
+    document.body.appendChild(iframe);
+    return b.ready;
+  }
+  window.addEventListener('message', event => {
+    const m=event.data;
+    if(!m || m.protocol!==PROTOCOL || typeof m.channel!=='string')return;
+    const kind=Object.keys(bridges).find(k=>bridges[k].channel===m.channel);
+    if(!kind)return;
+    const b=bridges[kind];
+    if(m.type==='ready') {
+      let origin;
+      try{origin=new URL(event.origin);}catch(_){return;}
+      const googleFrame = origin.hostname==='script.googleusercontent.com' ||
+        origin.hostname.endsWith('.script.googleusercontent.com') ||
+        /^[a-z0-9-]+-script\.googleusercontent\.com$/.test(origin.hostname);
+      if(origin.protocol!=='https:' || !googleFrame || !childOf(event.source,b.iframe.contentWindow))return;
+      if(b.source && b.source!==event.source)return;
+      b.source=event.source;b.origin=event.origin;clearTimeout(b.timer);b.resolve(b);
+      b.source.postMessage({protocol:PROTOCOL,channel:b.channel,type:'ack'},b.origin);
+      return;
+    }
+    if(m.type!=='response' || event.source!==b.source || event.origin!==b.origin)return;
+    const p=pending.get(m.id);if(!p || p.kind!==kind)return;
+    clearTimeout(p.timer);pending.delete(m.id);
+    if(m.result && m.result.ok===true)p.resolve(m.result.data);
+    else p.reject(error(m.result?.message || 'The request could not be completed.',m.result?.code || 'SERVER'));
+  });
+  async function rpc(kind,action,input) {
+    const epoch=state.epoch, token=state.token;
+    if(!token)throw error('Please sign in again.','AUTH');
+    const b=await connect(kind);
+    if(epoch!==state.epoch || token!==state.token)throw error('Your session changed. Please sign in again.','AUTH');
+    const id=randomHex(16);
+    return new Promise((resolve,reject)=>{
+      const timer=setTimeout(()=>{pending.delete(id);reject(error(action==='update'?'The save response timed out. Close this review and refresh the list to check whether it saved before trying again.':'Loading timed out. Please refresh the list.','TIMEOUT'));},60000);
+      pending.set(id,{resolve,reject,timer,kind});
+      b.source.postMessage({protocol:PROTOCOL,channel:b.channel,type:'request',id,action,token,input},b.origin);
+    });
+  }
+  function busy(value) {
+    state.busy=value;$('refresh').disabled=value;
+    document.querySelectorAll('[data-kind]').forEach(b=>b.disabled=value);
+    document.querySelectorAll('#rows button').forEach(b=>b.disabled=value);
+  }
+  function clearSession(text='You have signed out.') {
+    state.epoch++;state.token='';state.data={};state.loaded={};state.record=null;state.saving=false;clearTimeout(state.expiryTimer);
+    pending.forEach(p=>{clearTimeout(p.timer);p.reject(error('Session ended.','AUTH'));});pending.clear();
+    if($('reviewDialog').open)$('reviewDialog').close();
+    $('details').replaceChildren();$('documents').replaceChildren();$('reviewFields').replaceChildren();$('rows').replaceChildren();
+    ['accountEmail','reviewReference','reviewTitle','reviewSubtitle'].forEach(id=>$(id).textContent='');
+    $('dashboard').hidden=true;$('login').hidden=false;busy(false);message('loginMessage',text);
+    if(window.google?.accounts?.id)google.accounts.id.disableAutoSelect();
+  }
+  function handleFailure(e,id='notice') {
+    if(e.code==='AUTH'){clearSession(e.message);return;}
+    message(id,e.message,'error');
+  }
+  function populateFilter() {
+    const selected=$('filter').value,d=state.data[state.kind];
+    $('filter').replaceChildren(new Option('All statuses',''));
+    const options=new Set([...(d?.statuses||[]),...(d?.applications||[]).map(r=>r.status).filter(Boolean)]);
+    options.forEach(s=>$('filter').add(new Option(s,s)));
+    $('filter').value=options.has(selected)?selected:'';
+  }
+  function render() {
+    const d=state.data[state.kind],all=d?.applications||[];
+    const query=$('search').value.trim().toLowerCase(),status=$('filter').value;
+    const filtered=all.filter(r=>(!status || r.status===status) && (!query || Object.entries(r).some(([k,v])=>!['version','cv','letter'].includes(k) && String(v).toLowerCase().includes(query))));
+    const pages=Math.max(1,Math.ceil(filtered.length/25));state.page=Math.min(state.page,pages-1);
+    $('countTotal').textContent=all.length;
+    ['Received','Shortlisted','Accepted'].forEach(s=>$('count'+s).textContent=all.filter(r=>r.status===s).length);
+    $('contextHeading').textContent=state.kind==='internship'?'Institution / country':'Qualification / state';
+    $('rows').replaceChildren();
+    filtered.slice(state.page*25,state.page*25+25).forEach(r=>{
+      const tr=document.createElement('tr');
+      const cell=(main,sub)=>{const td=document.createElement('td'),strong=document.createElement('strong');strong.textContent=main||'—';td.append(strong);if(sub){const small=document.createElement('small');small.textContent=sub;td.append(small);}tr.append(td);return td;};
+      cell(r.name,r.email);cell(r.id,r.submitted);
+      cell(state.kind==='internship'?r.institution:r.qualification,state.kind==='internship'?r.country:r.state);
+      const td=document.createElement('td'),tag=document.createElement('span');tag.className='badge '+(['Received','Shortlisted','Accepted','Rejected'].includes(r.status)?r.status.toLowerCase():'');tag.textContent=r.status||'—';td.append(tag);tr.append(td);
+      const action=document.createElement('td'),button=document.createElement('button');button.className='btn small';button.textContent='Review';button.setAttribute('aria-label','Review '+r.name);button.disabled=state.busy;button.addEventListener('click',()=>openReview(r));action.append(button);tr.append(action);$('rows').append(tr);
+    });
+    $('empty').hidden=filtered.length>0;$('empty').textContent=all.length?'No applications match your search.':'No applications received yet.';
+    $('pageInfo').textContent=filtered.length?`${state.page*25+1}–${Math.min((state.page+1)*25,filtered.length)} of ${filtered.length} applications`:'0 applications';
+    $('previous').disabled=state.page===0;$('next').disabled=state.page>=pages-1;
+    const loaded=state.loaded[state.kind];$('freshness').textContent=loaded?'Last refreshed '+loaded.toLocaleString('en-MY')+'. Application timestamps use the Google Sheet’s time zone.':'';
+  }
+  async function load(kind,initial=false) {
+    const epoch=state.epoch;busy(true);message(initial?'loginMessage':'notice','Loading '+(kind==='bda'?'Work Opportunities':'Internship')+' applications…');
+    try{
+      const data=await rpc(kind,'list');if(epoch!==state.epoch)return;
+      if(data.kind!==kind || !Array.isArray(data.applications))throw error('This endpoint is connected to the wrong application sheet. Check the deployment URLs.','CONFIG');
+      state.data[kind]=data;state.loaded[kind]=new Date();state.kind=kind;state.page=0;
+      $('accountEmail').textContent=data.email;$('login').hidden=true;$('dashboard').hidden=false;
+      document.querySelectorAll('[data-kind]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.kind===kind)));
+      populateFilter();render();message('notice','');message('loginMessage','');
+    }catch(e){if(epoch===state.epoch)handleFailure(e,initial?'loginMessage':'notice');}
+    finally{if(epoch===state.epoch)busy(false);}
+  }
+  function openReview(record) {
+    if(state.busy)return;state.record=record;$('reviewReference').textContent=record.id;$('reviewTitle').textContent=record.name;$('reviewSubtitle').textContent=state.kind==='internship'?'International Internship':'Work Opportunities · Business Development Associate';
+    $('details').replaceChildren();Object.entries(LABELS).forEach(([key,label])=>{
+      if(record[key]===undefined)return;const div=document.createElement('div');if(key==='motivation')div.className='wide';const dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=label;dd.textContent=record[key]||'—';div.append(dt,dd);$('details').append(div);
+    });
+    $('documents').replaceChildren();[['cv','Open CV / resume'],['letter','Open university letter']].forEach(([key,label])=>{
+      if(!record[key])return;let url;try{url=new URL(record[key]);}catch(_){return;}
+      if(url.protocol!=='https:' || !['drive.google.com','docs.google.com'].includes(url.hostname))return;
+      const a=document.createElement('a');a.className='btn';a.textContent=label;a.href=url.href;a.target='_blank';a.rel='noopener noreferrer';$('documents').append(a);
+    });
+    $('reviewFields').replaceChildren();REVIEW[state.kind].forEach(([key,label,max])=>{
+      const wrapper=document.createElement('label');wrapper.className='field'+(key==='remarks'?' wide':'');wrapper.textContent=label;
+      let input;
+      if(key==='status'){
+        input=document.createElement('select');const statuses=new Set(state.data[state.kind].statuses);if(record.status)statuses.add(record.status);statuses.forEach(s=>input.add(new Option(s,s)));input.required=true;
+      }else if(key==='supervisor'){input=document.createElement('input');input.type='text';input.maxLength=max;}
+      else{input=document.createElement('textarea');input.rows=key==='remarks'?4:2;input.maxLength=max;}
+      input.name=key;input.setAttribute('aria-label',label);input.value=record[key]||'';wrapper.append(input);$('reviewFields').append(wrapper);
+    });
+    message('reviewMessage','');$('saveReview').disabled=false;$('saveReview').textContent='Save review';$('reviewDialog').showModal();
+  }
+  function hasEdits() {
+    if(!state.record)return false;
+    return REVIEW[state.kind].some(([key])=>$('reviewForm').elements.namedItem(key).value!==(state.record[key]||''));
+  }
+  function closeReview() {
+    if(state.saving)return;
+    if(hasEdits() && !window.confirm('Discard your unsaved review changes?'))return;
+    $('reviewDialog').close();state.record=null;
+  }
+  $('reviewForm').addEventListener('submit',async event=>{
+    event.preventDefault();if(state.saving || !state.record)return;
+    const epoch=state.epoch,kind=state.kind,record=state.record;
+    const review=Object.fromEntries(REVIEW[kind].map(([key])=>[key,$('reviewForm').elements.namedItem(key).value]));
+    state.saving=true;$('saveReview').disabled=true;$('saveReview').textContent='Saving…';$('closeReview').disabled=true;$('cancelReview').disabled=true;$('signOut').disabled=true;message('reviewMessage','Saving your review…');
+    try{
+      const saved=await rpc(kind,'update',{id:record.id,version:record.version,review});if(epoch!==state.epoch)return;
+      const rows=state.data[kind].applications,index=rows.findIndex(r=>r.id===saved.id);if(index>=0)rows[index]=saved;
+      state.record=null;$('reviewDialog').close();populateFilter();render();message('notice','Review saved for '+saved.id+'.','success');
+    }catch(e){if(epoch===state.epoch)handleFailure(e,'reviewMessage');}
+    finally{state.saving=false;$('saveReview').disabled=false;$('saveReview').textContent='Save review';$('closeReview').disabled=false;$('cancelReview').disabled=false;$('signOut').disabled=false;}
+  });
+  $('closeReview').addEventListener('click',closeReview);$('cancelReview').addEventListener('click',closeReview);
+  $('reviewDialog').addEventListener('cancel',e=>{e.preventDefault();closeReview();});
+  $('signOut').addEventListener('click',()=>clearSession());
+  $('refresh').addEventListener('click',()=>load(state.kind));
+  document.querySelectorAll('[data-kind]').forEach(button=>button.addEventListener('click',()=>{
+    if(state.busy)return;$('search').value='';$('filter').value='';load(button.dataset.kind);
+  }));
+  ['search','filter'].forEach(id=>$(id).addEventListener(id==='search'?'input':'change',()=>{state.page=0;render();}));
+  $('previous').addEventListener('click',()=>{state.page--;render();});$('next').addEventListener('click',()=>{state.page++;render();});
+  window.addEventListener('beforeunload',event=>{if(state.saving || ($('reviewDialog').open && hasEdits())){event.preventDefault();event.returnValue='';}});
+  async function credential(response) {
+    if(state.busy)return;
+    try{
+      // This check binds the browser response to this sign-in attempt.
+      // Only the server's signature verification grants access to sheet data.
+      const token=response?.credential;
+      const middle=token?.split('.')[1];
+      const claims=JSON.parse(atob(middle.replace(/-/g,'+').replace(/_/g,'/')));
+      if(claims.nonce!==nonce || !Number.isFinite(claims.exp) || claims.exp*1000<=Date.now())throw new Error('Sign-in response expired. Reload the page and sign in again.');
+      state.epoch++;state.token=token;clearTimeout(state.expiryTimer);
+      state.expiryTimer=setTimeout(()=>clearSession('Your session expired. Please sign in again.'),Math.min(claims.exp*1000-Date.now(),2147483647));
+      await load('internship',true);
+    }catch(e){clearSession(e.message||'Google sign-in could not be completed. Please try again.');}
+  }
+  if(location.origin!==ORIGIN){message('loginMessage','Open this page at https://igniteinnov.com/admin.html after installation. Google sign-in is configured for that website.','error');return;}
+  const script=document.createElement('script');script.src='https://accounts.google.com/gsi/client';script.async=true;
+  script.onload=()=>{
+    google.accounts.id.initialize({client_id:CLIENT_ID,callback:credential,nonce,auto_select:false,cancel_on_tap_outside:true});
+    google.accounts.id.renderButton($('googleButton'),{theme:'outline',size:'large',text:'signin_with',shape:'rectangular'});
+    message('loginMessage','');
+  };
+  script.onerror=()=>message('loginMessage','Google sign-in could not load. Check your connection and reload this page.','error');
+  document.head.append(script);
+})();
+</script>
+</body></html>
