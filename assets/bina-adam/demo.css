@@ -95,6 +95,12 @@ footer p{margin:16px 0 8px}
 .contact a{margin-top:8px;width:fit-content}
 dialog{width:min(520px,calc(100% - 30px));max-height:88vh;max-height:88dvh;overflow:auto;overscroll-behavior:contain;padding:0;border:0;border-radius:6px;color:var(--ink);background:var(--paper);box-shadow:0 18px 70px #17251e55}
 dialog::backdrop{background:#122019aa}
+body:has(#welcome[open]){overflow:hidden}
+#welcome{width:min(455px,calc(100% - 32px));border-top:4px solid var(--rust)}
+#welcome form{padding:clamp(24px,4vw,38px)}
+#welcome h2{max-width:10.5em;padding-right:32px;font-size:clamp(30px,5vw,42px);line-height:1.08}
+#welcome p{margin-top:14px;color:var(--muted)}
+#welcome .primary{margin-top:23px}
 .dialog-close{position:absolute;right:12px;top:12px;background:var(--paper);border:1px solid var(--line);border-radius:50%;width:40px;height:40px;font:26px/1 sans-serif;z-index:1}
 #detail-image{max-height:29vh;object-fit:cover}
 .dialog-copy{padding:25px}

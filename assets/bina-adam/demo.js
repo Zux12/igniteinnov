@@ -81,7 +81,7 @@ document.querySelectorAll('[data-social]').forEach(button => {
     viewer.showModal();
   });
 });
-find('.dialog-close').addEventListener('click', () => viewer.close());
+viewer.querySelector('.dialog-close').addEventListener('click', () => viewer.close());
 viewer.addEventListener('click', event => {
   if (event.target !== viewer) return;
   const bounds = viewer.getBoundingClientRect();
@@ -122,3 +122,9 @@ function editQuote(reset) {
 find('#edit').addEventListener('click', () => editQuote(false));
 find('#reset').addEventListener('click', () => editQuote(true));
 form.hidden = false;
+
+const welcome = find('#welcome');
+welcome.showModal();
+window.addEventListener('pageshow', event => {
+  if (event.persisted && !welcome.open) welcome.showModal();
+});
